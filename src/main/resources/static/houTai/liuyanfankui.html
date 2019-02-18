@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        		留言反馈管理<BR></H4>
+         <form method="post" name="searchform" action="">
+            <TABLE border=0 class="tablesorter" cellSpacing=1 cellPadding=6 width="100%">
+                <TBODY>
+                <TR>
+                         <TD >  
+					用户名:
+                      <input name="name" type="text" id="name" size="15" maxlength="20" style="height: 15px;margin-top:10px ;">
+					   文章标题:
+                    <input name="proname" type="text" id="proname" size="15" style="height: 15px;margin-top:10px ;">
+
+                  <input type="submit" name="button" id="button" value="搜索">
+				  </TD>
+                    <TD width="240" >&nbsp;</TD>
+                    <TD >&nbsp;</TD>
+
+
+                </TR>
+                </TBODY>
+            </TABLE>
+        </form>
+
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+							 <th>&nbsp;</th>
+                    <th>序号</th>
+                    <TH >姓名</TH>
+                    <TH >电话</TH>
+                    <TH >邮箱</TH>
+                    <TH >具体需求</TH>
+                    <TH >加盟方式</TH>
+                    <TH >留言时间</TH>
+
+
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+						     
+      <tr>
+                        <td align="center"><input value="50" type="checkbox" name="messageid[]"></td>
+                        <td align="center">
+                        1                        </td>
+                        <td align="center" nowrap>asdsad</td>
+                        <td align="center" nowrap>15197398630</td>
+                      <td align="center" nowrap>2574950163@qq.com</td>
+                        <td >哈希哈希呱呱几</td>
+                      <td align="center" nowrap></td>
+                        <td align="center" nowrap>2019-01-16 09:42</td>
+                      </tr>
+
+<tr>
+                        <td align="center"><input value="50" type="checkbox" name="messageid[]"></td>
+                        <td align="center">
+                        1                        </td>
+                        <td align="center" nowrap>asdsad</td>
+                        <td align="center" nowrap>15197398630</td>
+                      <td align="center" nowrap>2574950163@qq.com</td>
+                        <td >哈希哈希呱呱几</td>
+                      <td align="center" nowrap></td>
+                        <td align="center" nowrap>2019-01-16 09:42</td>
+                      </tr>
+<tr>
+                        <td align="center"><input value="50" type="checkbox" name="messageid[]"></td>
+                        <td align="center">
+                        1                        </td>
+                        <td align="center" nowrap>asdsad</td>
+                        <td align="center" nowrap>15197398630</td>
+                      <td align="center" nowrap>2574950163@qq.com</td>
+                        <td >哈希哈希呱呱几</td>
+                      <td align="center" nowrap></td>
+                        <td align="center" nowrap>2019-01-16 09:42</td>
+                      </tr>
+
+
+
+					</tbody>
+					<tfoot>
+						
+						
+
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		   <TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%">
+<TR>
+                    <TD colspan="8"><div class="digg"><div>  <span class="current">1</span>  </div></div></td>
+              </TR>
+                <TR>
+                    <TD colspan="8">
+                        <table width="100%" border="0">
+                            <tr>
+                              <td width="33%" nowrap><INPUT id="select" value="选择所有" type=button name="select">
+                                    <INPUT id="delete" value="删除所选" type="submit" name="delete" onClick="return confirm('是否删除选择的评论?');"></td>
+                                <td width="67%" nowrap></td>
+                            </tr>
+                        </table>
+                    </td>
+                </TR>
+
+          </TABLE>
+
+
+
+     
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>

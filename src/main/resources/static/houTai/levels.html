@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#vm td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	服务级别管理<BR></H4>
+        <form method="post" class="form-inline" name="searchform" action="" style="display:;">
+          	<div class="form-group" >
+           <TABLE >
+                <TBODY>
+                <TR>
+                   <TD >分类:
+                        <select name="catid">
+                            <option value="0">所有的</option>
+                            <option value="4">微整形</option><option value="5">留学中介</option><option value="6">韩语翻译</option><option value="7">学习资源</option><option value="217">sxd</option><option value="229">qwe</option><option value="3">自驾游</option>                        </select>
+                        <input value="搜索" type="submit" name=""></TD>
+
+                </TR></TBODY></TABLE>
+
+
+                </div>
+        </form>
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+						  <th >ID</th>
+	<th >级别名称</th>
+    <th>分类</th>
+    <th>最小值</th>
+    <th>最大值 </th>
+    <th>操作</th>
+
+
+
+
+
+						</tr>
+					</thead>
+					<tbody id="vm">
+						 <td nowrap  >1</td>
+    <td  nowrap>
+      
+      砖石商家      
+        <input type="text" name="catname[1]" id="catname1" value="" class="validate[required]" style="display:none" /></td>
+    <td  nowrap>自驾游</td>
+    <td  nowrap>15000</td>
+    <td  nowrap>20000</td>
+    <td nowrap><a href="updatefengleiguanli.html" >修改</a>　
+    <a href="javascript:__del(1)" >删除</a>
+    </td>
+  </tr>
+<td nowrap  >1</td>
+    <td  nowrap>
+      
+      砖石商家      
+        <input type="text" name="catname[1]" id="catname1" value="" class="validate[required]" style="display:none" /></td>
+    <td  nowrap>自驾游</td>
+    <td  nowrap>15000</td>
+    <td  nowrap>20000</td>
+    <td nowrap><a href="updatefengleiguanli.html" >修改</a>　
+    <a href="javascript:__del(1)" >删除</a>
+    </td>
+  </tr>
+<td nowrap  >1</td>
+    <td  nowrap>
+      
+      砖石商家      
+        <input type="text" name="catname[1]" id="catname1" value="" class="validate[required]" style="display:none" /></td>
+    <td  nowrap>自驾游</td>
+    <td  nowrap>15000</td>
+    <td  nowrap>20000</td>
+    <td nowrap><a href="updatefengleiguanli.html" >修改</a>　
+    <a href="javascript:__del(1)" >删除</a>
+    </td>
+  </tr>
+
+
+					</tbody>
+					<tfoot>
+						
+						
+
+                     <tr><td colspan="6">
+<input type="hidden" name="update" value="update" />
+<input type="submit" value=" 更新" />
+<input name="按钮" type="button" value=" 增加级别" onClick="location.href='addfengleiguanli.html'" /></td></tr>
+
+                                  
+                             
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		         </tbody>             </TABLE>
+         
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>

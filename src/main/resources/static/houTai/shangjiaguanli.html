@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	商家管理<BR></H4>
+         <form method="post" name="searchform" action="">
+            <TABLE border=0 class="tablesorter" cellSpacing=1 cellPadding=6 width="100%">
+                <TBODY>
+                <TR>
+                    <TD >
+                      用户昵称:
+                      <input name="username" type="text" style="height: 15px;margin-top: 10px;" size="15" maxlength="10" />
+					  店铺名称:
+                      <input name="shopname" type="text" style="height: 15px;margin-top: 10px;" size="15" maxlength="10" />
+                  会员组:
+                 
+                  <select name="group_id" id="group_id" style="margin-top: 10px;">
+                    <option value="0">所有</option>
+                    <option value="2">大陆商家用户</option><option value="3">海外商家用户</option>                  </select>				  <input type="hidden" name="t" value="0" />
+				  <input type="submit" name="button" id="button" value="搜索">　　<input type="submit" name="export" id="button" value=" 导出 ">
+				  
+				  </TD>
+                    <TD >&nbsp;</TD>
+
+                </TR>
+                </TBODY>
+            </TABLE>
+        </form>
+
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+	  <th >序号</th>
+                    <TH >用户昵称</TH>
+					<TH >商铺名称</TH>                    
+					<TH>会员组</TH>
+                    <TH>邮箱</TH>
+                    <TH>积分</TH>
+                    <TH >金币</TH>
+                    <TH >邮箱验证</TH>
+                    <TH >审核</TH>
+                    <TH >鉴定</TH>
+                    <TH >状态</TH>
+                    <TH>电话</TH>
+                  <TH >最后登录时间</TH>
+                    <TH >浏览量</TH>
+                  <TH >操作</TH>
+
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+						     
+                
+                                    <tr>
+						<!--
+                        <td align="center"><input  value="459" type="checkbox" name="userid[]"></td>
+						-->
+                        <td align="center" bgcolor="#ffffff">1</td>
+                        <td align="center" nowrap>骆辉权</td>
+						<td align="center" nowrap>学海阁2</td>                        <td align="center" nowrap>大陆商家用户</td>
+                        <td align="center" nowrap>2172251069@qq.com</td>
+                        <td align="center" nowrap>0</td>
+                        <td align="center" nowrap>4500.00</td>
+                        <td align="center" nowrap>已验证</td>
+                        <td align="center" nowrap>已审核</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>
+                            <span>开启</span>                        </td>
+                        <td align="center" nowrap>13298543706</td>
+                        <td align="center" nowrap>2019-01-21 15:22</td>
+                        <td align="center" nowrap>0</td>
+                        <td nowrap >
+                        <a href="huiyuanxinxi.html">修改</a>　
+                        <a href="jifenguanli.html">积分记录</a>　
+                        <a href="auth.html">鉴定申请</a>　                  
+                        <a href="pingjiaguanli.html">评论</a>　　
+                        </td>
+                    </tr>
+                    <tr>
+						<!--
+                        <td align="center"><input  value="457" type="checkbox" name="userid[]"></td>
+						-->
+                        <td align="center" bgcolor="#ffffff">2</td>
+                        <td align="center" nowrap>成_C</td>
+						<td align="center" nowrap>成c</td>                        <td align="center" nowrap>大陆商家用户</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>10</td>
+                        <td align="center" nowrap>2980.00</td>
+                        <td align="center" nowrap>已验证</td>
+                        <td align="center" nowrap>已审核</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>
+                            <span>开启</span>                        </td>
+                        <td align="center" nowrap>15616346818</td>
+                        <td align="center" nowrap>2019-01-18 23:25</td>
+                        <td align="center" nowrap>0</td>
+                        <td nowrap >
+                                 <a href="huiyuanxinxi.html">修改</a>　
+                        <a href="jifenguanli.html">积分记录</a>　
+                        <a href="auth.html">鉴定申请</a>　                  
+                        <a href="pingjiaguanli.html">评论</a>　
+                        </td>
+                    </tr>
+                    <tr>
+						<!--
+                        <td align="center"><input  value="455" type="checkbox" name="userid[]"></td>
+						-->
+                        <td align="center" bgcolor="#ffffff">3</td>
+                        <td align="center" nowrap>时♂钟✓©©</td>
+						<td align="center" nowrap>gauysg</td>                        <td align="center" nowrap>海外商家用户</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>10</td>
+                        <td align="center" nowrap>4586.40</td>
+                        <td align="center" nowrap>未验证</td>
+                        <td align="center" nowrap>已审核</td>
+                        <td align="center" nowrap>待审核</td>
+                        <td align="center" nowrap>
+                            <span>开启</span>                        </td>
+                        <td align="center" nowrap>1234567890</td>
+                        <td align="center" nowrap>2019-01-21 13:51</td>
+                        <td align="center" nowrap>0</td>
+                        <td nowrap >
+                                 <a href="huiyuanxinxi.html">修改</a>　
+                        <a href="jifenguanli.html">积分记录</a>　
+                        <a href="auth.html">鉴定申请</a>　                  
+                        <a href="pingjiaguanli.html">评论</a>　
+                        </td>
+                    </tr>
+
+					</tbody>
+					<tfoot>
+						
+						
+
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		
+     
+             <TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%">
+<TR>
+                    <TD colspan="8"><div class="digg">金币：311,963,561.57个，积分：5,303个</div></td>
+              </TR>
+<TR>
+                    <TD colspan="8"><div class="digg"><div>  <span class="current">1</span><a class="num" href="/index.php/Admincp/User/index/p/2.html">2</a><a class="num" href="/index.php/Admincp/User/index/p/3.html">3</a><a class="num" href="/index.php/Admincp/User/index/p/4.html">4</a><a class="num" href="/index.php/Admincp/User/index/p/5.html">5</a><a class="num" href="/index.php/Admincp/User/index/p/6.html">6</a><a class="num" href="/index.php/Admincp/User/index/p/7.html">7</a> <a class="next" href="/index.php/Admincp/User/index/p/2.html">下一页</a> </div></div></td>
+              </TR>
+                <TR>
+                    <TD colspan="10" style="display:none;">
+                        <table width="100%" border="0">
+                            <tr>
+                                <td width="33%" nowrap><INPUT id="select" value="选择所有" type=button name="select">
+                                    <INPUT id="delete" value="删除所选" type="submit" name="delete" onClick="return confirm('是否删除选择的会员?');">
+                                    <!--
+									<INPUT id="blacklist" value="设置资料需要审核" type="submit" name="needcheck" onClick="return confirm('是否对选择的会员设置资料需要审核?');">
+									<INPUT id="blacklist" value="设置资料不需要审核" type="submit" name="noneedcheck" onClick="return confirm('是否对选择的会员设置资料需要审核?');">                                    
+                                    <INPUT id="blacklistno" value="取消黑名单" type="submit" name="blacklistno" onClick="return confirm('是否对选择的会员取消黑名单?');">
+                                    -->
+                                    </td>
+                                <td width="67%" nowrap></td>
+                            </tr>
+                        </table>
+                    </td>
+                </TR>
+
+          </TABLE>
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>

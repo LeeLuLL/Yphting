@@ -1,0 +1,78 @@
+
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Language" content="zh-cn">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="Css/style_admin.css">
+		
+	</head>
+
+	<body>
+		<form>
+			<table cellspacing="1" cellpadding="4" width="100%"
+				class="tableborder" id="table3">
+
+				<input type="hidden" name="action" value="save" />
+				<tr>
+					<td colspan="12" class="header">
+					分类管理
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						栏目名称:
+					</td>
+					<td class="altbg2" colspan="11">
+						  <INPUT id="catname" size=40 type="text" name="catname" readonly value="微整形">
+            </TD>
+
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						是否需要审核:
+					</td>
+					<td class="altbg2" colspan="11">
+						<input type="radio" name="need_check" id="need_check" checked value="1">需要
+						<input type="radio" name="need_check" id="need_check"  value="0">不需要
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						广告图:
+					</td>
+					<td class="altbg2" colspan="11">
+						<input type="button" id="uploadimage" value="上传图片" class="button" />1920px × 200px
+				<div id="thumb_preview" style="margin-top: 5px; "><img src ="/Uploads/desc/2017-01/20170125010031-42965.jpg" width="80" /></div>
+
+					</td>
+				</tr>
+				
+          
+         
+          <TR>
+            <TD class="altbg1" >&nbsp;</TD>
+            <TD class="altbg2" colspan="11" >
+              <INPUT id=button3 value="   保存     " type=submit name=button3 class="button white">
+              <INPUT class="button white" id="add" value="返回" type=button name="add" onClick="location.href='/index.php/Admincp/Cat/blog.html'">
+
+			</TD>
+          </TR>
+
+				</tr>
+				
+
+			
+			</table>
+		</form>
+
+	</body>
+	<script src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+	
+</script>	
+</html>

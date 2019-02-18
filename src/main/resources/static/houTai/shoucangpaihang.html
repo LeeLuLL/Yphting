@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	收藏排行<BR></H4>
+         <form method="post" name="searchform" action="">
+            <TABLE border=0 class="tablesorter" cellSpacing=1 cellPadding=6 width="100%">
+                <TBODY>
+                <TR>
+                      <TD >  
+					分类:
+                        <select name="type" style="margin-top: 10px;">
+                            <option value="0">所有的</option>
+							<option value="1">服务</option>
+							<option value="2">商家</option>
+							<option value="3">帖子</option>
+                        </select>					
+					<!--
+					栏目:
+                        <select name="catid">
+                            <option value="0">所有的</option>
+                                                    </select>					-->
+                  <input type="submit" name="button" id="button" value="搜索">
+				  </TD>
+                    <TD width="240" >&nbsp;</TD>
+                    <TD >&nbsp;</TD>
+                </TR>
+                </TBODY>
+            </TABLE>
+        </form>
+
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+	 <th >序号</th>
+					<TH >类别</TH>
+                    <TH >收藏次数</TH>
+                    <TH >名称</TH>
+
+
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+						     
+           <tr>
+                        <td align="center">
+                         1                        </td>
+						<td align="center" nowrap>商家</td>
+                        <td align="center" nowrap>9</td>
+                        <td  nowrap>■ˉ苏〃筱萌◇◆ </td>
+                      </tr>
+ <tr>
+                        <td align="center">
+                         1                        </td>
+						<td align="center" nowrap>商家</td>
+                        <td align="center" nowrap>9</td>
+                        <td  nowrap>■ˉ苏〃筱萌◇◆ </td>
+                      </tr>
+ <tr>
+                        <td align="center">
+                         1                        </td>
+						<td align="center" nowrap>商家</td>
+                        <td align="center" nowrap>9</td>
+                        <td  nowrap>■ˉ苏〃筱萌◇◆ </td>
+                      </tr>
+
+					</tbody>
+					<tfoot>
+						
+						
+
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		
+     
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>

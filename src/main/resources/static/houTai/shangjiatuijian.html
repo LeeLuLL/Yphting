@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	商家推荐<BR></H4>
+         <form method="post" name="searchform" action="">
+            <TABLE border=0 class="tablesorter" cellSpacing=1 cellPadding=6 width="100%">
+                <TBODY>
+                <TR>
+                     <TD >
+                      用户昵称:
+                      <input name="username" type="text" style="width:120px;height: 15px;margin-top:5px ;" size="15" maxlength="10" />
+					  店铺名称:
+                      <input name="shopname" type="text" style="width:120px;height: 15px;margin-top:5px ;" size="15" maxlength="10" />
+                  会员组:
+                  
+                  <select name="group_id" id="group_id">
+                    <option value="0">所有</option>
+                    <option value="2">大陆商家用户</option><option value="3">海外商家用户</option>                  </select>                 是否推荐:
+                
+                <select name="is_recommend" id="is_recommend">
+                    <option value="">所有</option>
+                    <option value="0">推荐</option>
+                    <option value="0">不推荐</option>
+                </select>
+				  <input type="hidden" name="t" value="0" />
+				  
+				  </TD>
+                    <TD >&nbsp;</TD>
+
+                </TR>
+                </TBODY>
+            </TABLE>
+        </form>
+
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+	  <th >序号</th>
+                    <TH >用户昵称</TH>
+                    
+					<TH >商铺名称</TH> 
+					<TH >服务类别</TH>
+                    <TH >会员组</TH>
+                    <TH >电话</TH>
+                    <TH >店铺状态</TH>
+                    <TH >是否推荐</TH>
+                  <TH  >操作</TH>
+
+
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+						     
+                
+                                  <tr>
+                        <td align="center" bgcolor="#ffffff">
+                            1                        </td>
+                        <td align="center" nowrap>时♂钟✓©©</td>
+						<td align="center" nowrap>gauysg</td>
+                        <td align="center" nowrap>自驾游</td>
+                        <td align="center" nowrap>海外商家用户</td>
+
+                        <td align="center" nowrap>1234567890</td>
+                        <td align="center" nowrap>
+                            <span>开启</span>                        </td>
+                        <td align="center" nowrap>
+                            <span style="color:lightcoral;">否</span>                        </td>
+                        <td nowrap >
+                        <a href="updateshangjiatuijian.html">修改</a>　
+                        </td>
+                    </tr><tr>
+                        <td align="center" bgcolor="#ffffff">
+                            2                        </td>
+                        <td align="center" nowrap>万家灯火</td>
+						<td align="center" nowrap>不告诉你</td>
+                        <td align="center" nowrap>自驾游</td>
+                        <td align="center" nowrap>大陆商家用户</td>
+
+                        <td align="center" nowrap>12345678900</td>
+                        <td align="center" nowrap>
+                            <span>开启</span>                        </td>
+                        <td align="center" nowrap>
+                            <span style="color:lightcoral;">否</span>                        </td>
+                        <td nowrap >
+                        <a href="updateshangjiatuijian.html">修改</a>　
+                        </td>
+                    </tr><tr>
+                        <td align="center" bgcolor="#ffffff">
+                            3                        </td>
+                        <td align="center" nowrap>亡徒</td>
+						<td align="center" nowrap>日本一日游</td>
+                        <td align="center" nowrap>自驾游</td>
+                        <td align="center" nowrap>大陆商家用户</td>
+
+                        <td align="center" nowrap>13077037380</td>
+                        <td align="center" nowrap>
+                            <span style="color:lightcoral;">暂停</span>                        </td>
+                        <td align="center" nowrap>
+                            <span style="color:lightcoral;">否</span>                        </td>
+                        <td nowrap >
+                        <a href="updateshangjiatuijian.html">修改</a>　
+                        </td>
+                    </tr><tr>
+                        <td align="center" bgcolor="#ffffff">
+                            4                        </td>
+                        <td align="center" nowrap>阿giao</td>
+						<td align="center" nowrap>欧阳万淘买毛片</td>
+                        <td align="center" nowrap>留学中介</td>
+                        <td align="center" nowrap>大陆商家用户</td>
+
+                        <td align="center" nowrap>15197398630</td>
+                        <td align="center" nowrap>
+                            <span style="color:lightcoral;">暂停</span>                        </td>
+                        <td align="center" nowrap>
+                            <span style="color:red;">是</span>                        </td>
+                        <td nowrap >
+                        <a href="updateshangjiatuijian.html">修改</a>　
+                        </td>
+                    </tr><tr>
+                        <td align="center" bgcolor="#ffffff">
+                            5                        </td>
+                        <td align="center" nowrap>阿giao</td>
+						<td align="center" nowrap>欧阳万淘买毛片</td>
+                        <td align="center" nowrap>留学中介</td>
+                        <td align="center" nowrap>大陆商家用户</td>
+
+                        <td align="center" nowrap>15197398630</td>
+                        <td align="center" nowrap>
+                            <span style="color:lightcoral;">暂停</span>                        </td>
+                        <td align="center" nowrap>
+                            <span style="color:lightcoral;">否</span>                        </td>
+                        <td nowrap >
+                        <a href="updateshangjiatuijian.html">修改</a>　
+                        </td>
+                    </tr>
+					</tbody>
+					<tfoot>
+						
+						
+
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		
+     
+                  <TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%">
+<TR>
+                    <TD colspan="8"><div class="digg"><div>  <span class="current">1</span><a class="num" href="/index.php/Admincp/User/recommend/p/2.html">2</a><a class="num" href="/index.php/Admincp/User/recommend/p/3.html">3</a> <a class="next" href="/index.php/Admincp/User/recommend/p/2.html">下一页</a> </div></div></td>
+
+          </TABLE>
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>

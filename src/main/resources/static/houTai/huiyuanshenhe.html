@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	会员管理<BR></H4>
+         <form method="post" name="searchform" action="">
+            <TABLE border=0 class="tablesorter" cellSpacing=1 cellPadding=6 width="100%">
+                <TBODY>
+                <TR>
+                    <TD >
+                      用户昵称:
+                        <input type="text" name="username" style="height: 15px;margin-top: 10px;"> 
+                     
+					  <input type="hidden" name="t" value="1" />
+				  <input type="submit" name="button" id="button" value="搜索">　　<input type="submit" name="export" id="button" value=" 导出 ">
+				  
+				  </TD>
+                    <TD >&nbsp;</TD>
+                </TR>
+                </TBODY>
+            </TABLE>
+        </form>
+
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+	 <th >序号</th>
+                    <TH >用户昵称</TH>
+					                <TH >会员组</TH>
+                    <TH >邮箱</TH>
+                    <TH >积分</TH>
+                    <TH >金币</TH>
+                    <TH>邮箱验证</TH>
+                    <TH >审核</TH>
+                    <TH>鉴定</TH>
+                    <TH >状态</TH>
+                    <TH >电话</TH>
+                  <TH >最后登录时间</TH>
+                    <TH >浏览量</TH>
+                  <TH >操作</TH>
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+						     
+                 <tr>
+						<!--
+                        <td align="center"><input  value="473" type="checkbox" name="userid[]"></td>
+						-->
+                        <td align="center" bgcolor="#ffffff">1</td>
+                        <td align="center" nowrap>kami</td>
+						                        <td align="center" nowrap>普通会员</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>0</td>
+                        <td align="center" nowrap>4999.00</td>
+                        <td align="center" nowrap>未验证</td>
+                        <td align="center" nowrap>已审核</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>
+                            <span>开启</span>                        </td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>2019-01-21 15:26</td>
+                        <td align="center" nowrap>0</td>
+                        <td nowrap >
+                        <a href="huiyuanshenhexinxi.html">修改</a>　
+                        <a href="jifenguanli.html">积分记录</a>　
+                                                <a href="pingjiaguanli.html">评论</a>　　
+                        </td>
+                    </tr>
+                    <tr>
+						<!--
+                        <td align="center"><input  value="472" type="checkbox" name="userid[]"></td>
+						-->
+                        <td align="center" bgcolor="#ffffff">2</td>
+                        <td align="center" nowrap>旁白。</td>
+						                        <td align="center" nowrap>普通会员</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>0</td>
+                        <td align="center" nowrap>5000.00</td>
+                        <td align="center" nowrap>未验证</td>
+                        <td align="center" nowrap>已审核</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>
+                            <span>开启</span>                        </td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>2019-01-21 14:20</td>
+                        <td align="center" nowrap>0</td>
+                        <td nowrap >
+                        <a href="huiyuanshenhexinxi.html">修改</a>　
+                        <a href="jifenguanli.html">积分记录</a>　
+                                                <a href="pingjiaguanli.html">评论</a>　　
+                        </td>
+                    </tr>
+                    <tr>
+						<!--
+                        <td align="center"><input  value="471" type="checkbox" name="userid[]"></td>
+						-->
+                        <td align="center" bgcolor="#ffffff">3</td>
+                        <td align="center" nowrap>Zack.</td>
+						                        <td align="center" nowrap>普通会员</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>0</td>
+                        <td align="center" nowrap>4636.00</td>
+                        <td align="center" nowrap>未验证</td>
+                        <td align="center" nowrap>已审核</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>
+                            <span>开启</span>                        </td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>2019-01-21 15:08</td>
+                        <td align="center" nowrap>0</td>
+                        <td nowrap >
+                        <a href="huiyuanshenhexinxi.html">修改</a>　
+                        <a href="jifenguanli.html">积分记录</a>　
+                                                <a href="pingjiaguanli.html">评论</a>　　
+                        </td>
+                    </tr>
+
+					</tbody>
+					<tfoot>
+						
+						
+
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		
+      </TABLE>
+            <TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%">
+<TR>
+                    <TD colspan="8"><div class="digg">金币：301,015,322.97个，积分：1,969个</div></td>
+              </TR>
+<TR>
+                    <TD colspan="8"><div class="digg"><div>  <span class="current">1</span><a class="num" href="/index.php/Admincp/User/index/t/1/p/2.html">2</a><a class="num" href="/index.php/Admincp/User/index/t/1/p/3.html">3</a><a class="num" href="/index.php/Admincp/User/index/t/1/p/4.html">4</a><a class="num" href="/index.php/Admincp/User/index/t/1/p/5.html">5</a><a class="num" href="/index.php/Admincp/User/index/t/1/p/6.html">6</a><a class="num" href="/index.php/Admincp/User/index/t/1/p/7.html">7</a><a class="num" href="/index.php/Admincp/User/index/t/1/p/8.html">8</a><a class="num" href="/index.php/Admincp/User/index/t/1/p/9.html">9</a><a class="num" href="/index.php/Admincp/User/index/t/1/p/10.html">10</a><a class="num" href="/index.php/Admincp/User/index/t/1/p/11.html">11</a> <a class="next" href="/index.php/Admincp/User/index/t/1/p/2.html">下一页</a> </div></div></td>
+              </TR>
+                <TR>
+                    <TD colspan="10" style="display:none;">
+                        <table width="100%" border="0">
+                            <tr>
+                                <td width="33%" nowrap><INPUT id="select" value="选择所有" type=button name="select">
+                                    <INPUT id="delete" value="删除所选" type="submit" name="delete" onClick="return confirm('是否删除选择的会员?');">
+                                    <!--
+									<INPUT id="blacklist" value="设置资料需要审核" type="submit" name="needcheck" onClick="return confirm('是否对选择的会员设置资料需要审核?');">
+									<INPUT id="blacklist" value="设置资料不需要审核" type="submit" name="noneedcheck" onClick="return confirm('是否对选择的会员设置资料需要审核?');">                                    
+                                    <INPUT id="blacklistno" value="取消黑名单" type="submit" name="blacklistno" onClick="return confirm('是否对选择的会员取消黑名单?');">
+                                    -->
+                                    </td>
+                                <td width="67%" nowrap></td>
+                            </tr>
+                        </table>
+                    </td>
+                </TR>
+
+          </TABLE>
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>

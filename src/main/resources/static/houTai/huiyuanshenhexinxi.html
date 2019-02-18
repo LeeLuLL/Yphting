@@ -1,0 +1,162 @@
+
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Language" content="zh-cn">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="Css/style_admin.css">
+		
+	</head>
+
+	<body>
+		<form>
+			<table cellspacing="1" cellpadding="4" width="100%"
+				class="tableborder" id="table3">
+
+				<input type="hidden" name="action" value="save" />
+				<tr>
+					<td colspan="12" class="header">
+					会员信息
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						会员组:
+					</td>
+					<td class="altbg2" colspan="11">
+						  普通会员
+
+            
+
+					</td>
+				</tr>
+						<tr>
+					<td class="altbg1">
+						用户名:
+					</td>
+					<td class="altbg2" colspan="11">
+						阿giao
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						密码:
+					</td>
+					<td class="altbg2" colspan="11">
+						<input id="password" size=20 type="text" name="password" value="">
+					</td>
+				</tr>
+				<tr>
+					<TD class="altbg1">手机:</TD>
+            <TD class="altbg2" colspan="11"><input name="mobile" type="text" class="" id="mobile" value="15007338619" maxlength="13"></TD>
+<TR>
+            <TD class="altbg1">邮箱:</TD>
+            <TD class="altbg2" colspan="11">2574950163@qq.com</TD>
+            </TR>
+            	<TR>
+            <TD class="altbg1" >真实姓名:</TD>
+            <TD class="altbg2" colspan="11"><input name="truename" type="text" id="truename" value="张世贸" size=20  class=""></TD>
+          </TR>
+          <TR>
+            <TD class="altbg1">性别:</TD>
+            <TD class="altbg2" colspan="11"><input name="sex" type="radio" id="check_0" value="男" checked>男
+             <input type="radio" name="sex" value="女" id="check_1" >女
+            </TD>
+            
+          </TR>
+          <TR>
+            <TD class="altbg1">住址：</TD>
+            <TD class="altbg2" colspan="11">
+            <select class="sel_f sel_f2 sel_b2" name="countryid" onChange="setarea(this.value, 'shengid')">
+					<option value="399" >中国</option><option value="400" selected>韩国</option><option value="1023" >测试地址</option>				</select>
+				<select class="sel_f sel_f2 sel_b2" name="shengid" id="shengid" onChange="setarea(this.value, 'areaid')">
+					<option value="0">省</option>
+					<option value="401" >首尔特别市</option><option value="402" selected>釜山广域市</option><option value="403" >大邱广域市</option><option value="404" >仁川广域市</option><option value="405" >光州广域市</option><option value="406" >大田广域市</option><option value="407" >蔚山广域市</option><option value="408" >济州特别自治道</option><option value="409" >江原道</option><option value="410" >庆尚北道</option><option value="411" >庆尚南道</option><option value="412" >忠清北道</option><option value="413" >忠清南道</option><option value="414" >全罗北道</option><option value="415" >全罗南道</option><option value="416" >京畿道</option><option value="592" >世宗特别自治市</option>				</select>
+			  <select class="sel_f sel_f2 sel_b2" name="areaid" id="areaid"  >
+					<option value="0">市</option>
+                    <option value="651" >中 区</option><option value="652" selected>西 区</option><option value="653" >东 区</option><option value="654" >东 区</option><option value="655" >影 岛 区</option><option value="656" >釜山鎭区</option><option value="657" >东 莱 区</option><option value="658" >南 区</option><option value="659" >北 区</option><option value="660" >海云台区</option><option value="661" >沙 下 区</option><option value="662" >金 井 區</option><option value="663" > 江 西 区</option><option value="664" >蓮 堤 区</option><option value="665" > 水 营 区</option><option value="666" >沙 上 区</option><option value="667" >機 張 郡</option>			  </select>
+				<input name="address" type="text" class="input_c inf_inc" id="address" value="" size="50"  />
+            </TD>
+           
+          </TR>
+				
+				
+
+			
+			</table>
+						<table cellspacing="1" cellpadding="4" width="100%"
+				class="tableborder" id="table3" style="margin-top: 10px;">
+
+				
+				
+				<tr>
+					
+         
+			<TR>
+            <TD class="altbg1">注册时间:</TD>
+            <TD class="altbg2" colspan="11">
+          2019-01-16 09:40   
+            </TD>
+           
+          </TR>
+           <TR>
+            <TD class="altbg1">注册 IP:</TD>
+            <TD class="altbg2" colspan="11">
+          117.136.89.106
+            </TD>
+           
+          </TR>
+           <TR>
+            <TD class="altbg1">最后登录时间:</TD>
+            <TD class="altbg2" colspan="11">
+          2019-02-13 14:55  
+            </TD>
+           
+          </TR>
+           <TR>
+            <TD class="altbg1">最后登录IP:</TD>
+            <TD class="altbg2" colspan="11">
+          
+            </TD>
+           
+          </TR>
+          
+           <TR>
+            <TD class="altbg1">资料审核:</TD>
+            <TD class="altbg2" colspan="11">
+           <input name="zt" type="radio" id="check_0" value="1" checked>已通过审核
+            <input type="radio" name="zt" value="0" id="check_1" >未通过审核
+            </TD>
+           
+          </TR>
+          
+           <TR>
+            <TD class="altbg1">邮箱验证：</TD>
+            <TD class="altbg2" colspan="11">
+         <input name="check" type="radio" id="check_0" value="1" checked>已通过验证
+          <input type="radio" name="check" value="0" id="check_1" >未通过验证
+            </TD>
+           
+          </TR>
+
+			<TR>
+            <TD class="altbg1" >&nbsp;</TD>
+            <TD class="altbg2" colspan="11" >
+            <input type="submit" value=" 保存" />
+			<a href="javascript:;" onclick="history.go(-1)"> 返回 </a>
+			
+			</TD>
+          </TR>
+
+			</table>
+		</form>
+
+	</body>
+	<script src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+	
+</script>	
+</html>

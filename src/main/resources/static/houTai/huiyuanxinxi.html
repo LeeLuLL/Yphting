@@ -1,0 +1,309 @@
+
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Language" content="zh-cn">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="Css/style_admin.css">
+		<style>
+			.cm .altbg1{
+				width: 115px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<form>
+			<table cellspacing="1" cellpadding="4" width="100%"
+				class="tableborder" id="table3">
+
+				<input type="hidden" name="action" value="save" />
+				<tr>
+					<td colspan="12" class="header">
+						会员信息
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						<strong>会员组:</strong>
+					</td>
+					<td class="altbg2" colspan="11">
+						  大陆商家用户
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						用户名:
+					</td>
+					<td class="altbg2" colspan="11">
+						阿giao
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						密码:
+					</td>
+					<td class="altbg2" colspan="11">
+						<input id="password" size=20 type="text" name="password" value="">
+					</td>
+				</tr>
+				<tr>
+					<TD class="altbg1">手机:</TD>
+            <TD class="altbg2" colspan="11"><input name="mobile" type="text" class="" id="mobile" value="15007338619" maxlength="13"></TD>
+<TR>
+            <TD class="altbg1">邮箱:</TD>
+            <TD class="altbg2" colspan="11">2574950163@qq.com</TD>
+            </TR>
+            	<TR>
+            <TD class="altbg1" >真实姓名:</TD>
+            <TD class="altbg2" colspan="11"><input name="truename" type="text" id="truename" value="张世贸" size=20  class=""></TD>
+          </TR>
+          <TR>
+            <TD class="altbg1">性别:</TD>
+            <TD class="altbg2" colspan="11"><input name="sex" type="radio" id="check_0" value="男" checked>男
+             <input type="radio" name="sex" value="女" id="check_1" >女
+            </TD>
+            
+          </TR>
+          <TR>
+            <TD class="altbg1">住址：</TD>
+            <TD class="altbg2" colspan="11">
+            <select class="sel_f sel_f2 sel_b2" name="countryid" onChange="setarea(this.value, 'shengid')">
+					<option value="399" >中国</option><option value="400" selected>韩国</option><option value="1023" >测试地址</option>				</select>
+				<select class="sel_f sel_f2 sel_b2" name="shengid" id="shengid" onChange="setarea(this.value, 'areaid')">
+					<option value="0">省</option>
+					<option value="401" >首尔特别市</option><option value="402" selected>釜山广域市</option><option value="403" >大邱广域市</option><option value="404" >仁川广域市</option><option value="405" >光州广域市</option><option value="406" >大田广域市</option><option value="407" >蔚山广域市</option><option value="408" >济州特别自治道</option><option value="409" >江原道</option><option value="410" >庆尚北道</option><option value="411" >庆尚南道</option><option value="412" >忠清北道</option><option value="413" >忠清南道</option><option value="414" >全罗北道</option><option value="415" >全罗南道</option><option value="416" >京畿道</option><option value="592" >世宗特别自治市</option>				</select>
+			  <select class="sel_f sel_f2 sel_b2" name="areaid" id="areaid"  >
+					<option value="0">市</option>
+                    <option value="651" >中 区</option><option value="652" selected>西 区</option><option value="653" >东 区</option><option value="654" >东 区</option><option value="655" >影 岛 区</option><option value="656" >釜山鎭区</option><option value="657" >东 莱 区</option><option value="658" >南 区</option><option value="659" >北 区</option><option value="660" >海云台区</option><option value="661" >沙 下 区</option><option value="662" >金 井 區</option><option value="663" > 江 西 区</option><option value="664" >蓮 堤 区</option><option value="665" > 水 营 区</option><option value="666" >沙 上 区</option><option value="667" >機 張 郡</option>			  </select>
+				<input name="address" type="text" class="input_c inf_inc" id="address" value="萨达" size="50"  />
+            </TD>
+           
+          </TR>
+         
+				
+
+			
+			</table>
+			<table cellspacing="1" cellpadding="4" width="100%"
+				class="tableborder cm" id="table3" style="margin-top: 10px;">
+
+				
+				
+				<tr>
+					<td colspan="12" class="header">
+						商家信息
+					</td>
+					
+				</tr>
+				<tr>
+					<td class="altbg1">
+						店铺名称:
+					</td>
+					<td class="altbg2" colspan="11">
+						阿giao
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						保证金:
+					</td>
+					<td class="altbg2" colspan="11">
+						0 &nbsp;<input id="kbzj" type="text" name="deposit" value="0"><a href="javascript:void(0)" onclick="kcbzj('429')" >扣除保证金</a>
+					</td>
+				</tr>
+				<tr>
+					<TD class="altbg1">服务类别:</TD>
+            <TD class="altbg2" colspan="11">   留学中介,</TD>
+            </tr>
+<TR>
+           <TD class="altbg1">身份证:</TD>
+            <TD class="altbg2" colspan="11">身份证：436456456456456343</TD>
+            
+            </TR>
+            <TR>
+            <TD class="altbg1" >身份证正面：</TD>
+            <TD class="altbg2" colspan="11"><a href="/Uploads/image/2019-01/20190121080912-35192.jpeg" target="_blank"><img src="/Uploads/image/2019-01/20190121080912-35192.jpeg" width="150" /></a>          </TD>
+          
+          </TR>
+          <TR>
+            <TD class="altbg1">身份证背面：</TD>
+            <TD class="altbg2" colspan="11">
+           <a href="/Uploads/image/2019-01/20190121080938-58478.jpeg" target="_blank"><img src="/Uploads/image/2019-01/20190121080938-58478.jpeg" width="150" /></a>
+                        </TD>
+          </TR>
+          <TR>
+            <TD class="altbg1" >身份证手持：</TD>
+            <TD class="altbg2" colspan="11">
+            	<a href="/Uploads/image/2019-01/20190121080938-58478.jpeg" target="_blank"><img src="/Uploads/image/2019-01/20190121080938-58478.jpeg" width="150" /></a>
+            </TD>
+            
+          </TR>
+          <TR>
+            <TD class="altbg1" >服务语言:</TD>
+            <TD class="altbg2" colspan="11">中文,    </TD>
+           </TR>
+           <TR>
+            <TD class="altbg1" >擅长专业：</TD>
+            <TD class="altbg2" colspan="11">  视觉设计,人口学,其它,国语国文,工科,电子信息学,体育学,</TD>
+          </TR>
+            	<TR>
+            <TD class="altbg1" >所在城市:</TD>
+            <TD class="altbg2" colspan="11">光州广域市</TD>
+          </TR>
+              <TR>
+            <TD class="altbg1">QQ：</TD>
+            <TD class="altbg2" colspan="11" >
+            	2962941905         </TD>
+          </TR>
+          <TR>
+            <TD class="altbg1">微信:</TD>
+            <TD class="altbg2" colspan="11" >
+            m2962941905  </TD>
+          </TR>
+           <TR>
+            <TD class="altbg1">职业:</TD>
+            <TD class="altbg2" colspan="11" >
+            hi  </TD>
+          </TR> 
+          <TR>
+            <TD class="altbg1">身高:</TD>
+            <TD class="altbg2" colspan="11" >
+            123cm  </TD>
+          </TR>
+          <TR>
+            <TD class="altbg1">星座:</TD>
+            <TD class="altbg2" colspan="11" >
+            白羊座   </TD>
+          </TR>
+           <TR>
+            <TD class="altbg1">自我介绍:</TD>
+            <TD class="altbg2" colspan="11" >
+             </TD>
+          </TR>
+          <TR>
+            <TD class="altbg1">店铺免费体验:</TD>
+            <TD class="altbg2" colspan="11" >
+            	否           店铺免费体验月数：
+            	<select id="free_time"  type="text" name="free_time" class="input-heigt">
+                <option value="1"> 1</option>
+                <option value="2"> 2</option>
+                <option value="3"> 3</option>
+                <option value="4"> 4</option>
+                <option value="5"> 5</option>
+                <option value="6"> 6</option>
+                <option value="7"> 7</option>
+                <option value="8"> 8</option>
+                <option value="9"> 9</option>
+                <option value="10"> 10</option>
+                <option value="11"> 11</option>
+                <option value="12"> 12</option>
+              </select>
+
+             </TD>
+          </TR>
+          <TR>
+            <TD class="altbg1">店铺状态:</TD>
+            <TD class="altbg2" colspan="11"><input name="shopstatus" type="radio" value="1" >开启</label>
+             <input type="radio" name="shopstatus" value="2"  checked>暂停</label>
+             <input type="radio" name="shopstatus" value="0"  >关闭
+            </TD>
+            
+          </TR>
+          <TR>
+            <TD class="altbg1">暂停时间：</TD>
+            <TD class="altbg2" colspan="11">
+           2019-02-14 16:06
+            </TD>
+           
+          </TR>
+         <TR>
+            <TD class="altbg1">关闭时间：</TD>
+            <TD class="altbg2" colspan="11">
+         2019-01-17 16:38
+            </TD>
+           
+          </TR>
+			 <TR>
+            <TD class="altbg1">店铺暂停理由：</TD>
+            <TD class="altbg2" colspan="11">
+          <textarea rows="2"  name="pausereason"  cols="100%" style="text-align: left;padding-left:5px;">
+                                                                                          </textarea>
+            </TD>
+           
+          </TR>
+            <TR>
+            <TD class="altbg1">店铺光闭理由：</TD>
+            <TD class="altbg2" colspan="11">
+         <textarea  rows="2" name="stopreason" cols="100%" style="text-align: left;padding-left:5px;">
+                             </textarea>
+            </TD>
+           
+          </TR> <TR>
+            <TD class="altbg1">注册时间:</TD>
+            <TD class="altbg2" colspan="11">
+          2019-01-16 09:40   
+            </TD>
+           
+          </TR>
+           <TR>
+            <TD class="altbg1">注册 IP:</TD>
+            <TD class="altbg2" colspan="11">
+          117.136.89.106
+            </TD>
+           
+          </TR>
+           <TR>
+            <TD class="altbg1">最后登录时间:</TD>
+            <TD class="altbg2" colspan="11">
+          2019-02-13 14:55  
+            </TD>
+           
+          </TR>
+           <TR>
+            <TD class="altbg1">最后登录IP:</TD>
+            <TD class="altbg2" colspan="11">
+          
+            </TD>
+           
+          </TR>
+          
+           <TR>
+            <TD class="altbg1">资料审核:</TD>
+            <TD class="altbg2" colspan="11">
+           <input name="zt" type="radio" id="check_0" value="1" checked>已通过审核
+            <input type="radio" name="zt" value="0" id="check_1" >未通过审核
+            </TD>
+           
+          </TR>
+          
+           <TR>
+            <TD class="altbg1">邮箱验证：</TD>
+            <TD class="altbg2" colspan="11">
+         <input name="check" type="radio" id="check_0" value="1" checked>已通过验证
+          <input type="radio" name="check" value="0" id="check_1" >未通过验证
+            </TD>
+           
+          </TR>
+
+			<TR>
+            <TD class="altbg1" >&nbsp;</TD>
+            <TD class="altbg2" colspan="11" >
+            <input type="submit" value=" 保存" />
+			<a href="javascript:;" onclick="history.go(-1)"> 返回 </a>
+			
+			</TD>
+          </TR>
+
+			</table>
+		</form>
+
+	</body>
+	<script src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+	
+</script>	
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#vm td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	论坛投诉管理<BR></H4>
+        <form method="post" class="form-inline" name="searchform" action="" style="display:;">
+          	<div class="form-group" >
+           <TABLE >
+                <TBODY>
+                <TR>
+                    <TD >
+                  
+                        标题：
+                         <label for="subject"></label>
+                  <input type="text" name="subject" id="subject">   
+                  <input type="hidden" name="t" id="t" value="3" />   
+                        <input value="搜索" type="submit" name="">
+                  </TD>
+                </TR></TBODY></TABLE>
+
+
+                </div>
+        </form>
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+						  <th >ID</th>
+                    <TH >类型</TH>
+                    <TH >标题</TH>
+                    <TH >举报会员</TH>
+                    <TH >举报原因</TH>
+                    <TH >状态</TH>
+                    <TH >举报时间</TH>
+                    <TH >&nbsp;</TH>
+
+
+
+
+
+						</tr>
+					</thead>
+					<tbody id="vm">
+						                     <tr>
+						<!--
+                        <td align="center"><input  value="63" type="checkbox" name="jb_id[]"></td>
+						-->
+                        <td align="center">63</td>
+						                        <td align="center" nowrap>帖子</td>
+                        <td  nowrap><a href="/index.php/Home/Bbs/detail/aid/740.html" target="_blank">vvvvvvvvvvvvvvvvv</a></td>
+												
+                        <td align="center" nowrap>亡徒</td>
+                        <td  nowrap>广告或垃圾信息</td>
+                        <td  nowrap>删除帖子</td>                        
+                        <td  nowrap>2019-01-21 13:20</td>
+                        <td nowrap align=center>
+												-						</td>
+                    </tr>
+                    <tr>
+						<!--
+                        <td align="center"><input  value="63" type="checkbox" name="jb_id[]"></td>
+						-->
+                        <td align="center">63</td>
+						                        <td align="center" nowrap>帖子</td>
+                        <td  nowrap><a href="/index.php/Home/Bbs/detail/aid/740.html" target="_blank">vvvvvvvvvvvvvvvvv</a></td>
+												
+                        <td align="center" nowrap>亡徒</td>
+                        <td  nowrap>广告或垃圾信息</td>
+                        <td  nowrap>删除帖子</td>                        
+                        <td  nowrap>2019-01-21 13:20</td>
+                        <td nowrap align=center>
+												-						</td>
+                    </tr>
+                    <tr>
+						<!--
+                        <td align="center"><input  value="63" type="checkbox" name="jb_id[]"></td>
+						-->
+                        <td align="center">63</td>
+						                        <td align="center" nowrap>帖子</td>
+                        <td  nowrap><a href="/index.php/Home/Bbs/detail/aid/740.html" target="_blank">vvvvvvvvvvvvvvvvv</a></td>
+												
+                        <td align="center" nowrap>亡徒</td>
+                        <td  nowrap>广告或垃圾信息</td>
+                        <td  nowrap>删除帖子</td>                        
+                        <td  nowrap>2019-01-21 13:20</td>
+                        <td nowrap align=center>
+												-						</td>
+                    </tr>
+
+
+					</tbody>
+					<tfoot>
+						
+						
+
+                     
+                                  
+                             
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		         </tbody>             </TABLE>
+      	<TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%" bgColor=#ffffff>			
+                <TR>
+                    <TD><div class="digg"><div>  <span class="current">1</span><a class="num" href="/index.php/Admincp/Services/reports/t/3/p/2.html">2</a> <a class="next" href="/index.php/Admincp/Services/reports/t/3/p/2.html">下一页</a> </div></div></td>
+                </TR>
+                <TR style="display:none;">
+                    <TD>
+                        <table width="100%" border="0">
+                            <tr>
+                                <td width="33%" nowrap><INPUT id="select" value="选择所有" type=button name="select">
+                                    <INPUT id="delete" value="删除选择" type="submit" name="button"></td>
+                                <td width="67%" nowrap></td>
+                            </tr>
+                        </table>
+                    </td>
+                </TR>
+            </TABLE>
+
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>

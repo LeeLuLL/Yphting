@@ -1,0 +1,122 @@
+
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Language" content="zh-cn">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="Css/style_admin.css">
+		
+	</head>
+
+	<body>
+		<form>
+			<table cellspacing="1" cellpadding="4" width="100%"
+				class="tableborder" id="table3">
+
+				<input type="hidden" name="action" value="save" />
+				<tr>
+					<td colspan="12" class="header">
+					广告
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						标题:
+					</td>
+					<td class="altbg2" colspan="11">
+						 <INPUT id="title" size=60 type="text" name="title" class="validate[required]" value="学习资源"> 
+
+            </TD>
+
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						排序:
+					</td>
+					<td class="altbg2" colspan="11">
+					<INPUT id="order" value="0" size=5 type="text" name="order" class="validate[required,custom[integer],min[0],max[32767]]"> 
+              0 - 32767(降序)
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="altbg1">
+						原图片:
+					</td>
+					<td class="altbg2" colspan="11">
+						 <img src="/Uploads/adv/2017-01/20170120042501-79576.jpg" width="150" />
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						图片:
+					</td>
+					<td class="altbg2" colspan="11">
+						 <input name="code" type="text" id="imagecode" value="/Uploads/adv/2017-01/20170120042501-79576.jpg" size="80" /> <input type="button" id="uploadimage" value=" 上传 " />
+
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						分类:
+					</td>
+					<td class="altbg2" colspan="11">
+						 <select name="adv_catid" id="adv_catid" class="input-heigt">
+                <option value="23" >首页幻灯片(1920*420)</option><option value="24" >首页韩汀社区上方广告(585*110)</option><option value="25" >底部加入我们上方广告(1200*100)</option><option value="26" >首页社区服务左上角大图(590*590)</option><option value="27" >首页社区服务右上角大图(590*285)</option><option value="28" selected="selected">首页社区服务中间小图(285*285)</option><option value="29" >首页社区服务底部图片(590*275)</option><option value="30" >商家会员中心左侧图片(170*150)</option><option value="31" >商家会员中心底部图片(1200*90)</option><option value="32" >商家会员中心右侧图片(970*90)</option><option value="34" >服务右侧图片(365*300)</option><option value="35" >帖子列表页面顶部图片(880*100)</option><option value="36" >帖子详细页面右侧图片(220*200)</option><option value="37" >登录广告(680*420)</option><option value="38" >手机端首页幻灯(926*420)</option>            </select>
+
+					</td>
+				</tr>
+          
+         <tr>
+					<td class="altbg1">
+						PC端网址:
+					</td>
+					<td class="altbg2" colspan="11">
+						<INPUT id="url" size="100" type="text" name="url" class="validate[required]" value="http://yphting.zglxkj.com/index.php/Home/Service/learning.html">
+					</td>
+				</tr>
+          <tr>
+					<td class="altbg1">
+						手机端网址:
+					</td>
+					<td class="altbg2" colspan="11">
+						<INPUT id="url_wap" size="100" type="text" name="url_wap" class="validate[required]" value="http://yphting.zglxkj.com/index.php/Wap/Service/learning.html"> 
+					</td>
+				</tr>
+          
+          <tr>
+					<td class="altbg1">
+						描述:
+					</td>
+					<td class="altbg2" colspan="11">
+					   <textarea name="descr" id="descr" cols="45" rows="5">1500项学习资料</textarea>
+					</td>
+				</tr>
+          
+         
+          <TR>
+            <TD class="altbg1" >&nbsp;</TD>
+            <TD class="altbg2" colspan="11" >
+              <INPUT id=button3 value="   保存     " type=submit name=button3 class="button white">
+              <INPUT class="button white" id="add" value="返回" type=button name="add" onClick="history.go(-1)">
+
+			</TD>
+          </TR>
+
+				</tr>
+				
+
+			
+			</table>
+		</form>
+
+	</body>
+	<script src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+	
+</script>	
+</html>

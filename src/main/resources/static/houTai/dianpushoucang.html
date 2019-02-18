@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        		店铺		收藏管理<BR></H4>
+         <form method="post" name="searchform" action="">
+            <TABLE border=0 class="tablesorter" cellSpacing=1 cellPadding=6 width="100%">
+                <TBODY>
+                <TR>
+                        <TD >                    
+                    用户名:
+                      <input name="name" type="text" id="name" size="15" maxlength="20" style="height: 15px;margin-top:10px ;">
+                    标题:
+                    <input name="proname" type="text" id="proname" size="15" style="height: 15px;margin-top:10px ;">
+					服务类别:
+                        <select name="catid" style="height: 25px;margin-top:10px ;">
+                            <option value="0">所有的</option>
+                            <option value="4">微整形</option><option value="5">留学中介</option><option value="6">韩语翻译</option><option value="7">学习资源</option><option value="217">sxd</option><option value="229">qwe</option><option value="3">自驾游</option>                        </select>					商家级别:
+                        <select name="group_id" style="height: 25px;margin-top:10px ;">
+                            <option value="0">所有的</option>
+							<option value="2">大陆商家</option>
+							<option value="3">海外商家</option>
+                        </select>                  <input type="submit" name="button" id="button" value="搜索">
+				  <input type="hidden" name="type" value="2" />
+				  </TD>
+                    <TD width="240" >&nbsp;</TD>
+                    <TD >&nbsp;</TD>
+
+
+                </TR>
+                </TBODY>
+            </TABLE>
+        </form>
+
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+							<th>序号</th>
+					     <TH>用户</TH>
+                    <TH >店铺用户名</TH>
+                    <th >店铺名称</TH>
+                    <TH >收藏时间</TH>
+
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+						     
+        <tr>
+						<!--
+                        <td align="center"><input value="" type="checkbox" name="comment_id[]"></td>
+						-->
+                        <td align="center">
+                        1                        </td>
+						                        <td align="center" nowrap>好饿</td>
+						<td align="center" nowrap>"五毒俱全"妄想症强迫症</td>                        <td  nowrap>清泉</td>
+                        <td align="center" nowrap>2019-01-18 14:58</td>
+                      </tr>
+<tr>
+						<!--
+                        <td align="center"><input value="" type="checkbox" name="comment_id[]"></td>
+						-->
+                        <td align="center">
+                        1                        </td>
+						                        <td align="center" nowrap>好饿</td>
+						<td align="center" nowrap>"五毒俱全"妄想症强迫症</td>                        <td  nowrap>清泉</td>
+                        <td align="center" nowrap>2019-01-18 14:58</td>
+                      </tr>
+<tr>
+						<!--
+                        <td align="center"><input value="" type="checkbox" name="comment_id[]"></td>
+						-->
+                        <td align="center">
+                        1                        </td>
+						                        <td align="center" nowrap>好饿</td>
+						<td align="center" nowrap>"五毒俱全"妄想症强迫症</td>                        <td  nowrap>清泉</td>
+                        <td align="center" nowrap>2019-01-18 14:58</td>
+                      </tr>
+
+
+					</tbody>
+					<tfoot>
+						
+						
+
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		  <TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%">
+<TR>
+                    <TD colspan="8"><div class="digg"><div>  <span class="current">1</span><a class="num" href="/index.php/Admincp/User/favs/type/3/p/2.html">2</a><a class="num" href="/index.php/Admincp/User/favs/type/3/p/3.html">3</a><a class="num" href="/index.php/Admincp/User/favs/type/3/p/4.html">4</a><a class="num" href="/index.php/Admincp/User/favs/type/3/p/5.html">5</a><a class="num" href="/index.php/Admincp/User/favs/type/3/p/6.html">6</a> <a class="next" href="/index.php/Admincp/User/favs/type/3/p/2.html">下一页</a> </div></div></td>
+              </TR>
+                
+
+          </TABLE>
+
+     
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>

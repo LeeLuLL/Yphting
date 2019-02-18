@@ -1,0 +1,191 @@
+
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Language" content="zh-cn">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="Css/style_admin.css">
+		
+		<style>
+			.cm .altbg1{
+				width: 175px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<form>
+			<table cellspacing="1" cellpadding="4" width="100%"
+				class="tableborder cm" id="table3">
+
+				<input type="hidden" name="action" value="save" />
+				<tr>
+					<td colspan="12" class="header">
+						系统配置
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						<strong>金币比率:</strong>
+					</td>
+					<td class="altbg2" colspan="11">
+						
+									<input style="height: 30px;" type="text" name="exchangerate"
+										class="layui-input" value="1">
+								 1元==XX金币
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						收费比例:
+					</td>
+					<td class="altbg2" colspan="11">
+						
+									<input style="height: 30px;" type="text" name="charge"
+										class="layui-input" value="70">
+								 %
+
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						签到获得:
+					</td>
+					<td class="altbg2" colspan="11">
+						
+								
+									<input style="height: 30px;" type="text" name="signin"
+										class="layui-input" value="9">
+								 积分
+
+
+					</td>
+				</tr>
+				
+				<tr>
+					<TD class="altbg1">发帖获得:</TD>
+            <TD class="altbg2" colspan="11">
+            	
+									<input style="height: 30px;" type="text" name="postintegral"
+										class="layui-input" value="1">
+								 积分
+</TD>
+</tr>
+<TR>
+            <TD class="altbg1">跟帖获得:</TD>
+            <TD class="altbg2" colspan="11">
+            	
+									<input style="height: 30px;" type="text" name="track"
+										class="layui-input" value="5">
+					 积分
+
+            </TD>
+            </TR>
+            	
+        
+			
+			</table>
+			<table cellspacing="1" cellpadding="4" width="100%"
+				class="tableborder cm" id="table3" style="margin-top: 10px;">
+
+				
+				
+				<tr>
+					<td colspan="12" class="header">
+						交易设置
+					</td>
+					
+				</tr>
+				<tr>
+					<td class="altbg1">
+						自动关闭未付款订单:
+					</td>
+					<td class="altbg2" colspan="11">
+						下单几天后
+								
+									<input style="height: 30px;" type="text" name="closeorderdays	"
+										class="layui-input" value="1">
+								天 （订单下单未付款，n天自动关闭，0为不自动关闭）
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						自动确认服务:
+					</td>
+					<td class="altbg2" colspan="11">
+						自动确定服务天数
+								
+									<input style="height: 30px;" type="text" name="receivedays"
+										class="layui-input" value="1">
+								 天 （订单完成后，n天自动确认服务，0为不自动确认服务）
+
+					</td>
+				</tr>
+				<tr>
+					<TD class="altbg1">退款申请:</TD>
+            <TD class="altbg2" colspan="11">  完成订单
+									<input style="height: 30px;" type="text" name="refunddays"
+										class="layui-input" value="3">
+								 天后 （订单完成后，用户在n天内可以发起退款申请，设置0天不允许完成订单退款）
+</TD>
+</tr>
+<TR>
+           <TD class="altbg1">退款申请自动确认:</TD>
+            <TD class="altbg2" colspan="11">退款申请
+								
+									<input style="height: 30px;" type="text" name="refundconfirmdays"
+										class="layui-input" value="7">
+								 天后 （用户发起退款申请后，订单退款申请几天后自动确认）
+</TD>
+            
+            </TR>
+            <TR>
+            <TD class="altbg1" >是否开启店铺免费体验模式：</TD>
+            <TD class="altbg2" colspan="11">
+            	<input name="shopfreestatus" type="radio" value="1" checked="checked"/>关闭
+            	<input name="shopfreestatus" type="radio" value="2"/>开启
+         </TD>
+          
+          </TR>
+          <TR>
+            <TD class="altbg1">店铺免费体验月数：</TD>
+            <TD class="altbg2" colspan="11">
+          <select name="freetime">
+										<option></option>
+										<option selected="selected">1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option>
+										<option>9</option>
+										<option>10</option>
+										<option>11</option>
+										<option>12</option>
+									</select>
+
+                        </TD>
+          </TR>
+          <TR>
+            <TD class="altbg1" ></TD>
+            <TD class="altbg2" colspan="11">
+            	<input type="submit" class='ys' value="保存"  />
+
+            </TD>
+            
+          </TR>
+         
+			</table>
+		</form>
+
+	</body>
+	<script src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+	
+</script>	
+</html>
