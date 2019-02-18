@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	商家托管<BR></H4>
+         <form method="post" name="searchform" action="">
+            <TABLE border=0 class="tablesorter" cellSpacing=1 cellPadding=6 width="100%">
+                <TBODY>
+                <TR>
+                    <TD >
+                      用户昵称:
+                      <input name="username" type="text" style="width:120px;height: 15px;margin-top:10px ;" value="" size="15" maxlength="10" />
+					  店铺名称:
+                      <input name="shopname" type="text" style="width:120px;height: 15px;margin-top:10px ;"  value="" size="15" maxlength="10" />
+                  会员组:
+                 
+                  <select name="group_id" id="group_id" style="margin-top:10px ;">
+                    <option value="0">所有</option>
+                    <option value="2">大陆商家用户</option><option value="3">海外商家用户</option>                  </select>                 托管状态:
+                
+                <select name="status" id="status" style="margin-top:10px ;">
+                    <option value="">所有</option>
+                    <option value="0"  >未审核</option>
+                    <option value="1">托管中</option>
+                </select>
+                  <input type="submit" name="button" id="button" value="搜索">
+				  </TD>
+                    <TD >&nbsp;</TD
+                </TR>
+
+                </TBODY>
+            </TABLE>
+        </form>
+
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+	 <th >序号</th>
+                <TH >用户昵称</TH>
+                <TH >商铺名称</TH>
+                <TH >托管提交时间</TH>
+                <TH >托管通过时间</TH>
+                <TH>托管开始时间</TH>
+                <TH>托管到期时间</TH>
+                <TH >托管状态</TH>
+                <TH >月数</TH>
+                <TH >托管费用(金币)</TH>
+                <TH>会员组</TH>
+                <TH>店铺状态</TH>
+               <TH  >操作</TH>
+
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+						     
+                 <tr>
+                    <td align="center" bgcolor="#ffffff">
+                        1                    </td>
+                    <td align="center" nowrap>万家灯火</td>
+                    <td align="center" nowrap>不告诉你</td>
+                    <td align="center" nowrap>2019-01-18 10</td>
+                    <td align="center" nowrap></td>
+
+                    <td align="center" nowrap>2019-01-18</td>
+                    <td align="center" nowrap>2019-02-18</td>
+                    <td align="center" nowrap>
+                        <span style="color:red;">未审核</span>                    </td>
+                    <td align="center" nowrap>1</td>
+                    <td align="center" nowrap>0</td>
+                    <td align="center" nowrap>大陆商家用户</td>
+                    <td align="center" nowrap>
+                        <span>开启</span>                    </td>
+                    <td nowrap >
+                    <a href="updateshangjiatuoguan.html">修改</a>　
+                                        </td>
+                </tr><tr>
+                    <td align="center" bgcolor="#ffffff">
+                        2                    </td>
+                    <td align="center" nowrap>亡徒</td>
+                    <td align="center" nowrap>日本一日游</td>
+                    <td align="center" nowrap>2019-01-17 16</td>
+                    <td align="center" nowrap>2019-01-17 16:17</td>
+
+                    <td align="center" nowrap>2019-01-17</td>
+                    <td align="center" nowrap>2019-04-17</td>
+                    <td align="center" nowrap>
+                        <span>托管中</span>                    </td>
+                    <td align="center" nowrap>3</td>
+                    <td align="center" nowrap>200</td>
+                    <td align="center" nowrap>大陆商家用户</td>
+                    <td align="center" nowrap>
+                        <span style="color:lightcoral;">暂停</span>                    </td>
+                    <td nowrap >
+                    <a href="updateshangjiatuoguan.html">修改</a>　
+                    |&nbsp;<a href="/index.php/Admincp/User/dotrustsv/userid/432.html" target="_blank" >托管</a>　                    </td>
+                </tr><tr>
+                    <td align="center" bgcolor="#ffffff">
+                        3                    </td>
+                    <td align="center" nowrap>巨蟹boy7730</td>
+                    <td align="center" nowrap>搜索</td>
+                    <td align="center" nowrap>2019-01-02 10</td>
+                    <td align="center" nowrap>2019-01-02 14:24</td>
+
+                    <td align="center" nowrap>2019-01-09</td>
+                    <td align="center" nowrap>2019-02-09</td>
+                    <td align="center" nowrap>
+                        <span>托管中</span>                    </td>
+                    <td align="center" nowrap>1</td>
+                    <td align="center" nowrap>0</td>
+                    <td align="center" nowrap>海外商家用户</td>
+                    <td align="center" nowrap>
+                        <span>开启</span>                    </td>
+                    <td nowrap >
+                    <a href="updateshangjiatuoguan.html">修改</a>　
+                    |&nbsp;<a href="/index.php/Admincp/User/dotrustsv/userid/413.html" target="_blank" >托管</a>　                    </td>
+                </tr><tr>
+                    <td align="center" bgcolor="#ffffff">
+                        4                    </td>
+                    <td align="center" nowrap>巨蟹boy</td>
+                    <td align="center" nowrap>dsds</td>
+                    <td align="center" nowrap>2018-12-21 09</td>
+                    <td align="center" nowrap></td>
+
+                    <td align="center" nowrap>2018-12-29</td>
+                    <td align="center" nowrap>2019-01-29</td>
+                    <td align="center" nowrap>
+                        <span style="color:red;">未审核</span>                    </td>
+                    <td align="center" nowrap>1</td>
+                    <td align="center" nowrap>0</td>
+                    <td align="center" nowrap>大陆商家用户</td>
+                    <td align="center" nowrap>
+                        <span>开启</span>                    </td>
+                    <td nowrap >
+                    <a href="updateshangjiatuoguan.html">修改</a>　
+                                        </td>
+                </tr><tr>
+                    <td align="center" bgcolor="#ffffff">
+                        5                    </td>
+                    <td align="center" nowrap>"五毒俱全"妄想症强迫症</td>
+                    <td align="center" nowrap>清泉</td>
+                    <td align="center" nowrap>2018-12-21 15</td>
+                    <td align="center" nowrap>2018-12-22 08:53</td>
+
+                    <td align="center" nowrap>2018-12-29</td>
+                    <td align="center" nowrap>2019-04-29</td>
+                    <td align="center" nowrap>
+                        <span style="color:lightcoral;">暂停</span>                    </td>
+                    <td align="center" nowrap>4</td>
+                    <td align="center" nowrap>300</td>
+                    <td align="center" nowrap>大陆商家用户</td>
+                    <td align="center" nowrap>
+                        <span>开启</span>                    </td>
+                    <td nowrap >
+                    <a href="updateshangjiatuoguan.html">修改</a>　
+                                        </td>
+                </tr><tr>
+                    <td align="center" bgcolor="#ffffff">
+                        6                    </td>
+                    <td align="center" nowrap>liu111</td>
+                    <td align="center" nowrap>123</td>
+                    <td align="center" nowrap>2018-12-20 11</td>
+                    <td align="center" nowrap>2018-12-20 22:10</td>
+
+                    <td align="center" nowrap>2018-12-21</td>
+                    <td align="center" nowrap>2019-01-21</td>
+                    <td align="center" nowrap>
+                        <span>托管中</span>                    </td>
+                    <td align="center" nowrap>1</td>
+                    <td align="center" nowrap>0</td>
+                    <td align="center" nowrap>大陆商家用户</td>
+                    <td align="center" nowrap>
+                        <span>开启</span>                    </td>
+                    <td nowrap >
+                    <a href="updateshangjiatuoguan.html">修改</a>　
+                    |&nbsp;<a href="/index.php/Admincp/User/dotrustsv/userid/384.html" target="_blank" >托管</a>　                    </td>
+                </tr><tr>
+                    <td align="center" bgcolor="#ffffff">
+                        7                    </td>
+                    <td align="center" nowrap>aadada</td>
+                    <td align="center" nowrap>范德萨发</td>
+                    <td align="center" nowrap>2018-12-22 09</td>
+                    <td align="center" nowrap>2018-12-22 09:15</td>
+
+                    <td align="center" nowrap>2018-12-31</td>
+                    <td align="center" nowrap>2019-10-31</td>
+                    <td align="center" nowrap>
+                        <span>托管中</span>                    </td>
+                    <td align="center" nowrap>10</td>
+                    <td align="center" nowrap>900</td>
+                    <td align="center" nowrap>大陆商家用户</td>
+                    <td align="center" nowrap>
+                        <span>开启</span>                    </td>
+                    <td nowrap >
+                    <a href="updateshangjiatuoguan.html">修改</a>　
+                    |&nbsp;<a href="/index.php/Admincp/User/dotrustsv/userid/382.html" target="_blank" >托管</a>　                    </td>
+                </tr>
+					</tbody>
+					<tfoot>
+						
+						
+
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		
+       <TABLE class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%">
+          <TR>
+                <TD colspan="8"><div class="digg"><div>  <span class="current">1</span><a class="num" href="/index.php/Admincp/User/trustservice/p/2.html">2</a> <a class="next" href="/index.php/Admincp/User/trustservice/p/2.html">下一页</a> </div></div></td>
+
+      </TABLE>
+
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>

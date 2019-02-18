@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>登录</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="stylesheet" type="text/css" href="static/css/admin-login.css">
+<script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
+<link rel="shortcut icon" href="/Public/images/favicon.ico" type="image/x-icon" />
+<script type="text/javascript">
+if (window.top != self)
+	window.top.location = self.location;
+
+
+$(function(){
+    $('#loginid').focus();
+	
+	$('#captcha_img').click(function(){
+		$('#captcha_img').attr('src' , '/index.php/General/Misc/captcha.html'+new Date().getTime() + '.' + Math.random());
+	});
+
+    $('#form1').submit(function(){
+        var loginid = $('#loginid').val();
+        var pwd = $('#password').val();
+        //var verify = $('#verify').val();
+
+        if(loginid.length < 1)
+        {
+            alert("Login ID can't be blank.");
+            $('#loginid').focus();
+            return false;
+        }
+        if(pwd.length < 1)
+        {
+            alert("Password can't be blank.");
+            $('#password').focus();
+            return false;
+        }
+
+        /*
+		if(verify.length < 1)
+        {
+            alert("Verification code can't be blank.");
+            $('#verify').focus();
+            return false;
+        }
+		*/
+
+    });
+});
+</script>
+<meta name="__hash__" content="6301814ef4b57efe843224f7389e0bd0_5f8b1b50f96b5da7d0ba24df3e11caf0" /></head>
+<body style="BACKGROUND-IMAGE: url(static/images/001_01.gif);background-repeat:repeat-x; padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px">
+<form id="form1" method="post" name="form1" action=""  autocomplete="off">
+<input type="hidden" name="continue" value="aHR0cDovL3lwaHRpbmcuemdseGtqLmNvbS9pbmRleC5waHAvQWRtaW5jcC9JbmRleC9pbmRleC5odG1s" />
+<div>
+<table border=0 cellspacing=0 cellpadding=0 width="377" align="center">
+  <TBODY>
+  <TR>
+    <TD height=238 colSpan=2>&nbsp;</TD></TR>
+  <TR>
+    <TD colSpan=2><IMG src="static/picture/001_04.png" width=377 height=72></TD></TR>
+  <TR>
+    <TD height=21 colSpan=2>
+      <P><IMG src="static/picture/001_06.gif" width=377 height=21></P></TD></TR>
+  <TR>
+    <TD height=47 background=static/images/001_062.gif width=360>
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width=280 align=center>
+        <TBODY>
+        <TR>
+          <TD class=xiaotext width=99>
+            <DIV align=right>登录ID:</DIV></TD>
+          <TD width=12>&nbsp;</TD>
+          <TD colSpan=2><INPUT id="loginid" class="loginiput" name="loginid"></TD></TR>
+        <TR>
+          <TD class="xiaotext">
+            <DIV align="right">密码:</DIV></TD>
+          <TD>&nbsp;</TD>
+          <td colspan=2><input id="password" class="loginiput" type="password" name="password"></td></tr>
+
+         <tr style="display:none;">
+          <TD class="xiaotext" align="right">验证码:</TD>
+          <TD>&nbsp;</TD>
+          <TD width=44><INPUT id="verify" class="loginiput" size="5" name="verify"> </TD>
+          <TD width=120 >&nbsp;&nbsp;
+          <img  alt="点击此图片换一张" id="captcha_img" src="static/picture/467095181.html" width="75">
+          </td>
+         </tr>
+
+
+        </tbody></table></td>
+    <td rowSpan=4 width=17 style="background:url(static/images/001_07-2.gif) repeat-y;"><IMG src="static/picture/001_07-2.gif" width=17
+      height=135></td>
+      </TR>
+ <TR>
+    <TD height=21 background="static/images/001_062.gif">&nbsp; </TD>
+</TR>
+  <TR>
+    <TD height=21 background="static/images/001_06.gif">
+      <DIV align="center"><INPUT id="Image1" src="static/picture//001_10.gif" type="image" name="Image1"></DIV></TD></TR>
+  <TR>
+    <TD class="xiaotext" vAlign="bottom" background=static/images/001_06.gif>
+      <DIV class=xiaotext2 align=right><A href="/" target=_blank>韩汀社区</A></DIV></TD></TR>
+  <tr>
+    <td colspan=2><img src="static/picture/001_13.gif" width="377" height="33"></td></tr>
+  <tr>
+    <td height=250 colspan=2>&nbsp;</td></tr></tbody></table></div>
+<input type="hidden" name="__hash__" value="6301814ef4b57efe843224f7389e0bd0_5f8b1b50f96b5da7d0ba24df3e11caf0" /></form>
+</body>
+</html>

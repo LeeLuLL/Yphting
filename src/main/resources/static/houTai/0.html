@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#vm td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	帖子管理<BR></H4>
+        <form method="post" class="form-inline" name="searchform" action="" style="display:;">
+          	<div class="form-group" >
+           <TABLE >
+                <TBODY>
+                <TR>
+                    <TD >栏目:
+                        <select name="catid">
+                            <option value="0">所有的</option>
+                            <option value="8">语种学习</option>
+                    <option value="21">——初级韩语</option><option value="22">——中级韩语</option><option value="54">——高级韩语</option><option value="75">——日常韩语</option><option value="76">——专业韩语</option><option value="134">——韩语考试</option><option value="139">——求职用语</option><option value="135">——韩语求助</option><option value="105">校园互动</option>
+                    <option value="110">——艺术类</option><option value="108">——理工类</option><option value="106">——医科类</option><option value="111">——农业类</option><option value="138">——其他类</option><option value="136">——专业求助</option><option value="109">——财经类</option><option value="26">交友聚会</option>
+                    <option value="47">——交朋结友</option><option value="131">——非诚勿扰</option><option value="132">——兴趣爱好</option><option value="140">——生活情感</option><option value="133">——其它相关</option><option value="9">热门视频</option>
+                    <option value="206">——大学教程</option><option value="23">——美妆天地</option><option value="24">——日系韩妆</option><option value="141">——韩语教程</option><option value="55">留学资讯</option>
+                    <option value="216">——Tan111</option><option value="147">——韩国</option><option value="149">——美国</option><option value="148">——日本</option><option value="150">校园招聘</option>
+                    <option value="199">——国有企业</option><option value="205">——私营企业</option><option value="198">——民营企业</option><option value="210">——</option><option value="151">校园求职</option>
+                    <option value="194">大学教程</option>
+                    <option value="195">——韩语入门</option><option value="196">——中级韩语教程</option><option value="197">——高级韩语教程</option><option value="223">快乐大本营</option>
+                    <option value="224">——何d</option><option value="27">房屋信息</option>
+                    <option value="28">——首尔</option><option value="29">——仁川</option><option value="30">——釜山</option><option value="31">——大邱</option><option value="32">——大田</option><option value="33">——光州</option><option value="34">——京畿</option><option value="35">——忠北</option><option value="36">——忠南</option><option value="37">——全北</option><option value="39">——庆北</option><option value="40">——庆南</option><option value="41">——济州</option><option value="42">——蔚山</option><option value="43">——其他</option><option value="44">——房屋短租</option><option value="45">——房屋出租</option><option value="46">——房屋合租</option><option value="71">整形后记</option>
+                    <option value="72">——ID整形医院</option><option value="61">海外签证</option>
+                    <option value="62">——韩国签证</option><option value="137">——韩国法律</option><option value="67">软件资源</option>
+                    <option value="68">——游戏软件</option><option value="69">——办公软件</option><option value="70">——MAC论坛</option>                        </select>
+                        标题：
+                         <label for="subject"></label>
+                         <input type="hidden" name="pid" value="0" />
+                  <input type="text" name="subject" id="subject" style="height: 15px;margin-top: 5px;">   
+                        <input value="搜索" type="submit" name=""></TD>
+                </TR></TBODY></TABLE>
+
+
+
+                </div>
+        </form>
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+						  <th >&nbsp;</th>
+                    <th >ID</th>
+                    <TH >分类</TH>
+                    <TH >标题</TH>
+                    <TH >发布时间</TH>
+                    <TH >状态</TH>
+                    <TH >&nbsp;</TH>
+
+
+
+
+
+						</tr>
+					</thead>
+					<tbody id="vm">
+						   <tr>
+                        <td align="center"><input  value="739" type="checkbox"
+                                                   name="articleid[]"></td>
+                        <td align="center">739</td>
+                        <td align="center" nowrap>校园求职</td>
+                        <td  nowrap>ttttt</td>                        
+                        <td  nowrap>2019-01-21 10:01</td>
+                        <td  nowrap>
+						已审核						</td>
+                        <td nowrap align=center><a href="zixunguanli.html">修改</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td align="center"><input  value="738" type="checkbox"
+                                                   name="articleid[]"></td>
+                        <td align="center">738</td>
+                        <td align="center" nowrap>fffff</td>
+                        <td  nowrap>zxzxzx</td>                        
+                        <td  nowrap>2019-01-21 09:32</td>
+                        <td  nowrap>
+						已审核						</td>
+                        <td nowrap align=center><a href="zixunguanli.html">修改</a></td>
+                    </tr>
+ <tr>
+                        <td align="center"><input  value="739" type="checkbox"
+                                                   name="articleid[]"></td>
+                        <td align="center">739</td>
+                        <td align="center" nowrap>校园求职</td>
+                        <td  nowrap>ttttt</td>                        
+                        <td  nowrap>2019-01-21 10:01</td>
+                        <td  nowrap>
+						已审核						</td>
+                        <td nowrap align=center><a href="zixunguanli.html">修改</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td align="center"><input  value="738" type="checkbox"
+                                                   name="articleid[]"></td>
+                        <td align="center">738</td>
+                        <td align="center" nowrap>fffff</td>
+                        <td  nowrap>zxzxzx</td>                        
+                        <td  nowrap>2019-01-21 09:32</td>
+                        <td  nowrap>
+						已审核						</td>
+                        <td nowrap align=center><a href="zixunguanli.html">修改</a></td>
+                    </tr>
+ <tr>
+                        <td align="center"><input  value="739" type="checkbox"
+                                                   name="articleid[]"></td>
+                        <td align="center">739</td>
+                        <td align="center" nowrap>校园求职</td>
+                        <td  nowrap>ttttt</td>                        
+                        <td  nowrap>2019-01-21 10:01</td>
+                        <td  nowrap>
+						已审核						</td>
+                        <td nowrap align=center><a href="zixunguanli.html">修改</a></td>
+                    </tr>
+                   
+                    <tr>
+                        <td align="center"><input  value="738" type="checkbox"
+                                                   name="articleid[]"></td>
+                        <td align="center">738</td>
+                        <td align="center" nowrap>fffff</td>
+                        <td  nowrap>zxzxzx</td>                        
+                        <td  nowrap>2019-01-21 09:32</td>
+                        <td  nowrap>
+						已审核						</td>
+                        <td nowrap align=center><a href="zixunguanli.html">修改</a></td>
+                    </tr>
+
+					</tbody>
+					<tfoot>
+						
+						
+
+                     
+                                  
+                             
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		         </tbody>             </TABLE>
+          <TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%">
+                     <TR>
+                    <TD colspan="7"><div class="digg"><div>  <span class="current">1</span><a class="num" href="/index.php/Admincp/Bbs/index/status/0/p/2.html">2</a><a class="num" href="/index.php/Admincp/Bbs/index/status/0/p/3.html">3</a><a class="num" href="/index.php/Admincp/Bbs/index/status/0/p/4.html">4</a><a class="num" href="/index.php/Admincp/Bbs/index/status/0/p/5.html">5</a><a class="num" href="/index.php/Admincp/Bbs/index/status/0/p/6.html">6</a><a class="num" href="/index.php/Admincp/Bbs/index/status/0/p/7.html">7</a><a class="num" href="/index.php/Admincp/Bbs/index/status/0/p/8.html">8</a><a class="num" href="/index.php/Admincp/Bbs/index/status/0/p/9.html">9</a><a class="num" href="/index.php/Admincp/Bbs/index/status/0/p/10.html">10</a><a class="num" href="/index.php/Admincp/Bbs/index/status/0/p/11.html">11</a> <a class="next" href="/index.php/Admincp/Bbs/index/status/0/p/2.html">下一页</a> <a class="end" href="/index.php/Admincp/Bbs/index/status/0/p/13.html">13</a></div></div></td>
+                </TR>
+ <TR>
+                    <TD colspan="11">
+                        <table width="100%" border="0">
+                            <tr>
+                                <td width="33%" nowrap>
+                                <INPUT id="select" value="选择所有" type=button name="select">
+                                <INPUT id="delete" value="删除所选" type="submit" name="delete" onClick="return confirm('是否要删除所选订单！');">
+                                　
+                                
+                                </td>
+                                <td width="67%" nowrap></td>
+                            </tr>
+                        </table>
+                    </td>
+                </TR>
+				
+
+          </TABLE>
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>

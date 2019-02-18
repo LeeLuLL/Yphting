@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	费用包含管理<BR></H4>
+         <form method="post" name="searchform" action="">
+            <TABLE border=0 class="tablesorter" cellSpacing=1 cellPadding=6 width="100%">
+                <TBODY>
+         <TR>
+                    <TD >
+                   分类:<select style="margin-top: 5px;">
+									<option value="0">选择所有</option>
+									<option value="1">自驾游</option>
+									<option value="2">微整形</option>
+									<option value="3">留学中介</option>
+									<option value="4">韩语翻译</option>
+									<option value="5">学习资源</option>
+								</select>
+</TD>
+                </TR>
+
+                </TBODY>
+            </TABLE>
+        </form>
+
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+	   <th >ID</th>
+				<th>费用名称</th>
+				<th >分类</th>
+				<th >操作</th>
+
+
+
+
+
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+						     
+       <tr>
+                        <td align="center">
+                        5                              
+                        </td>
+                        <td align="center" nowrap>小费</td>
+                        <td align="center" nowrap>自驾游</td>
+                       
+                        <td nowrap >
+						<a href="updatefeiyong.html">
+						修改</a>
+					
+					<a href="">
+						删除
+					</a></td>						</tr>
+<tr>
+                        <td align="center">
+                        5                              
+                        </td>
+                        <td align="center" nowrap>小费</td>
+                        <td align="center" nowrap>自驾游</td>
+                       
+                        <td nowrap >
+						<a href="updatefeiyong.html">
+						修改</a>
+					
+					<a href="">
+						删除
+					</a></td>						</tr>
+					<tr>
+                        <td align="center">
+                        5                              
+                        </td>
+                        <td align="center" nowrap>小费</td>
+                        <td align="center" nowrap>自驾游</td>
+                       
+                        <td nowrap >
+						<a href="updatefeiyong.html">
+						修改</a>
+					
+					<a href="">
+						删除
+					</a></td>						</tr>
+					</tbody>
+					<tfoot>
+						
+						
+<tr>
+    <td colspan="4">
+        <input type="hidden" name="update" value="update" />
+        <input type="submit" value=" 更新" />
+        <input name="按钮" type="button" value=" 增加费用" onClick="location.href='addfeiyong.html'" />
+    </td>
+</tr>
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		
+    
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#vm td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	保证金		管理<BR></H4>
+        <form method="post" class="form-inline" name="searchform" action="" style="display:;">
+          	<div class="form-group" >
+          <TABLE border=0 class="tablesorter" cellSpacing=1 cellPadding=6 width="100%">
+                <TBODY>
+                <TR>
+                    <TD >
+                    用户名:<input name="name" type="text" id="name" size="15" maxlength="20" style="height: 15px;margin-top: 5px;">
+                    <select name="status">
+                        <option value="">全部状态</option>
+                        <option value="1">待审核</option><option value="2">拒绝</option><option value="3">完成</option>                    </select>                  <input type="submit" name="button" id="button" value="搜索">
+				  <input type="hidden" name="type" value="0" />
+				  <input type="hidden" name="umid" value="16" />
+				  </TD>
+                    <TD width="240" >&nbsp;</TD>
+                    <TD >&nbsp;</TD>
+                </TR>
+                </TBODY>
+            </TABLE>
+
+                </div>
+        </form>
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+						<th >序号</th>
+                    <TH >用户</TH>
+                    <TH >商家</TH>                   
+                    <TH >类型</TH>
+                    <TH >获取方式</TH>
+                    <TH >消费</TH>
+                    <TH >获得</TH>
+                    <TH >状态</TH>
+                    <TH >备注</TH>
+                    <TH >消费时间</TH>
+                    <TH ></TH>
+
+
+
+						</tr>
+					</thead>
+					<tbody id="vm">
+						  <tr>
+                        <td align="center">
+                        1                        <input value="" type="checkbox" name="favid[]" style="display:none;">                        
+                        </td>
+                        <td align="center" nowrap><a href="huiyuanxinxi.html" target="_blank">骆辉权</a></td>
+                        <td align="center" nowrap>学海阁2</TH>                        <td align="center" nowrap>金币</td>
+                        <td align="center" nowrap>保证金</td>
+                        <td align="center" nowrap>
+                                                -                        </td>
+                        <td align="center" nowrap>
+                        +0.00                                                </td>
+						<td align="center" nowrap>
+                        完成                        </td>
+                        <td align="center" nowrap>退保证金</td>
+                        <td  nowrap>2019-01-18 15:41</td>
+
+                        <td nowrap >
+						<a href="baozhengjintixianshenqing.html">查看</a></td>						</tr>
+ <tr>
+                        <td align="center">
+                        1                        <input value="" type="checkbox" name="favid[]" style="display:none;">                        
+                        </td>
+                        <td align="center" nowrap><a href="huiyuanxinxi.html" target="_blank">骆辉权</a></td>
+                        <td align="center" nowrap>学海阁2</TH>                        <td align="center" nowrap>金币</td>
+                        <td align="center" nowrap>保证金</td>
+                        <td align="center" nowrap>
+                                                -                        </td>
+                        <td align="center" nowrap>
+                        +0.00                                                </td>
+						<td align="center" nowrap>
+                        完成                        </td>
+                        <td align="center" nowrap>退保证金</td>
+                        <td  nowrap>2019-01-18 15:41</td>
+
+                        <td nowrap >
+						<a href="baozhengjintixianshenqing.html">查看</a></td>						</tr>
+ <tr>
+                        <td align="center">
+                        1                        <input value="" type="checkbox" name="favid[]" style="display:none;">                        
+                        </td>
+                        <td align="center" nowrap><a href="huiyuanxinxi.html" target="_blank">骆辉权</a></td>
+                        <td align="center" nowrap>学海阁2</TH>                        <td align="center" nowrap>金币</td>
+                        <td align="center" nowrap>保证金</td>
+                        <td align="center" nowrap>
+                                                -                        </td>
+                        <td align="center" nowrap>
+                        +0.00                                                </td>
+						<td align="center" nowrap>
+                        完成                        </td>
+                        <td align="center" nowrap>退保证金</td>
+                        <td  nowrap>2019-01-18 15:41</td>
+
+                        <td nowrap >
+						<a href="baozhengjintixianshenqing.html">查看</a></td>						</tr>
+
+
+					</tbody>
+					<tfoot>
+						
+						
+
+                     
+                                  
+                             
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		         </tbody>             </TABLE>
+          <TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%">
+                <TR>
+                    <TD><div class="digg"><div>  <span class="current">1</span><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/2.html">2</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/3.html">3</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/4.html">4</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/5.html">5</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/6.html">6</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/7.html">7</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/8.html">8</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/9.html">9</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/10.html">10</a> <a class="next" href="/index.php/Admincp/User/moneys/umid/16/p/2.html">下一页</a> </div></div></td>
+              </TR>
+
+          </TABLE>
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>

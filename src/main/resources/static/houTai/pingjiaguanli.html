@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	评论管理<BR></H4>
+         <form method="post" name="searchform" action="">
+            <TABLE border=0 class="tablesorter" cellSpacing=1 cellPadding=6 width="100%">
+                <TBODY>
+                <TR>
+                    <TD >
+                    
+                    用户名:
+                      <input name="name" type="text" id="name" size="15" maxlength="20" style="width:120px;height: 15px;margin-top:10px ;" >
+                    文章标题:
+                    <input name="proname" type="text" id="proname" size="15" style="width:120px;height: 15px;margin-top:10px ;" >
+                  <input type="submit" name="button" id="button" value="搜索"></TD>
+                    <TD width="240" >&nbsp;</TD>
+                    <TD >&nbsp;</TD>
+                </TR>
+
+                </TBODY>
+            </TABLE>
+        </form>
+
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+	  <th >&nbsp;</th>
+                    <th>序号</th>
+                    <TH >用户</TH>
+                    <TH >文章</TH>
+                    <TH >评论内容</TH>
+                    <TH >评论时间</TH>
+
+
+
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+						     
+                 <tr>
+                        <td align="center"><input value="436" type="checkbox" name="comment_id[]"></td>
+                        <td align="center">
+                        1                        </td>
+                        <td align="center" nowrap><a href="/index.php/Admincp/user/edit/id/466.html" target="_blank">净说笑7544</a></td>
+                        <td align="center" nowrap>快到碗里来</td>
+                        <td >assa</td>
+                        <td align="center" nowrap>2019-01-21 13:16</td>
+                      </tr>
+ <tr>
+                        <td align="center"><input value="436" type="checkbox" name="comment_id[]"></td>
+                        <td align="center">
+                        1                        </td>
+                        <td align="center" nowrap><a href="/index.php/Admincp/user/edit/id/466.html" target="_blank">净说笑7544</a></td>
+                        <td align="center" nowrap>快到碗里来</td>
+                        <td >assa</td>
+                        <td align="center" nowrap>2019-01-21 13:16</td>
+                      </tr>
+ <tr>
+                        <td align="center"><input value="436" type="checkbox" name="comment_id[]"></td>
+                        <td align="center">
+                        1                        </td>
+                        <td align="center" nowrap><a href="/index.php/Admincp/user/edit/id/466.html" target="_blank">净说笑7544</a></td>
+                        <td align="center" nowrap>快到碗里来</td>
+                        <td >assa</td>
+                        <td align="center" nowrap>2019-01-21 13:16</td>
+                      </tr>
+
+					</tbody>
+					<tfoot>
+						
+						
+
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		
+      <TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%">
+<TR>
+                    <TD colspan="8"><div class="digg"><div>  <span class="current">1</span><a class="num" href="/index.php/Admincp/User/comment/p/2.html">2</a><a class="num" href="/index.php/Admincp/User/comment/p/3.html">3</a><a class="num" href="/index.php/Admincp/User/comment/p/4.html">4</a><a class="num" href="/index.php/Admincp/User/comment/p/5.html">5</a><a class="num" href="/index.php/Admincp/User/comment/p/6.html">6</a><a class="num" href="/index.php/Admincp/User/comment/p/7.html">7</a><a class="num" href="/index.php/Admincp/User/comment/p/8.html">8</a><a class="num" href="/index.php/Admincp/User/comment/p/9.html">9</a><a class="num" href="/index.php/Admincp/User/comment/p/10.html">10</a><a class="num" href="/index.php/Admincp/User/comment/p/11.html">11</a> <a class="next" href="/index.php/Admincp/User/comment/p/2.html">下一页</a> <a class="end" href="/index.php/Admincp/User/comment/p/16.html">16</a></div></div></td>
+              </TR>
+                <TR>
+                    <TD colspan="8">
+                        <table width="100%" border="0">
+                            <tr>
+                              <td width="33%" nowrap><INPUT id="select" value="选择所有" type=button name="select">
+                                    <INPUT id="delete" value="删除所选" type="submit" name="delete" onClick="return confirm('是否删除选择的评论?');">
+                                    <INPUT class="button white" id="add" value="关闭" type=button name="add" onClick="window.close()">
+                                    </td>
+                                <td width="67%" nowrap></td>
+                            </tr>
+                        </table>
+                    </td>
+                </TR>
+
+          </TABLE>
+
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>

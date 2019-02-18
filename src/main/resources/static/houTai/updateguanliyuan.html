@@ -1,0 +1,82 @@
+
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Language" content="zh-cn">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="Css/style_admin.css">
+		
+	</head>
+
+	<body>
+		<form>
+			<table cellspacing="1" cellpadding="4" width="100%"
+				class="tableborder" id="table3">
+
+				<input type="hidden" name="action" value="save" />
+				<tr>
+					<td colspan="12" class="header">
+						修改管理员
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						管理员名称：
+					</td>
+					<td class="altbg2" colspan="11">
+						<input type="text" name="userName" size="34" value="admin" id="name" >
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						密&nbsp; 码：
+					</td>
+					<td class="altbg2" colspan="11">
+						<input type="password" name="password" size="34" id="pwd" value="11">
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						确认密码：
+					</td>
+					<td class="altbg2" colspan="11">
+						<input name="confirmpassword" size="34" type="password" id="pwd1" value="11">
+					</td>
+				</tr>
+				<tr>
+					<td class="altbg1">
+						角色：
+					</td>
+					<td style="background: white;"><select name="role" >
+						
+					<option value="1">普通管理员</option>
+					<option value="2">管理员</option>	
+					</select></td>
+				</tr>
+
+         
+          <TR>
+            <TD class="altbg1" >&nbsp;</TD>
+            <TD class="altbg2" colspan="11" >
+              <INPUT id=button3 value="   保存     " type=submit name=button3 class="button white">
+              <INPUT class="button white" id="add" value="返回" type=button name="add" onClick="history.go(-1)">
+
+			</TD>
+          </TR>
+
+				</tr>
+				
+
+			
+			</table>
+		</form>
+
+	</body>
+	<script src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+	
+</script>	
+</html>

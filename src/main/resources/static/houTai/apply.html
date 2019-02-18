@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	商家入驻<BR></H4>
+        <form method="post" class="form-inline" name="searchform" action="" style="display:;">
+          	<div class="form-group" >
+          <TABLE border=0 class="tablesorter" cellSpacing=1 cellPadding=6 width="100%">
+                <TBODY>
+                <TR>
+                    <TD >
+                    用户昵称:
+                      <input name="username" type="text" style="height: 15px;margin-top: 5px;" size="15" maxlength="10" />
+                  会员组:
+                  <label for="group_id"></label>
+                  <select name="group_id" id="group_id">
+                    <option value="0">所有</option>
+                    <option value="2">大陆商家用户</option><option value="3">海外商家用户</option>                  </select>
+                                    审核状态:
+                  <label for="group_id"></label>
+                  <select name="zt_disagree" id="zt_disagree">
+                    <option value="0">所有</option>
+                    <option value="1">审核中</option><option value="2">未通过</option><option value="3">成功</option>                  </select>
+				  <input type="submit" name="button" id="button" value="搜索">　　<input type="submit" name="export" id="button" value=" 导出 ">
+				  
+				  </TD>
+                    <TD >&nbsp;</TD>
+                </TR>
+                </TBODY>
+            </TABLE>
+
+                </div>
+        </form>
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+							<th >序号</th>
+                    <TH >用户昵称</TH>
+                    <TH >店铺名称</TH>
+                    <TH >邮箱</TH>
+                    <TH >真实姓名</TH>
+                    <TH >QQ</TH>
+                    <TH >微信</TH>
+                    <TH >身份证</TH>
+                    <TH >申请类别</TH>
+                    <TH >所在城市</TH>
+                    <TH >状态</TH>
+                  <TH >申请时间</TH>
+                  <TH >&nbsp;</TH>
+
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+						     
+                <tr>
+						<!--
+                        <td align="center"><input  value="459" type="checkbox" name="userid[]"></td>
+						-->
+                        <td align="center" bgcolor="#ffffff">1</td>
+                        <td align="center" nowrap>骆辉权</td>
+                        <td align="center" nowrap>学海阁2</td>
+                        <td align="center" nowrap>2172251069@qq.com</td>
+                        <td align="center" nowrap>qwerty</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>43112123456789</td>
+                        <td align="center" nowrap>大陆商家用户</td>
+                        <td align="center" nowrap>首尔特别市</td>
+                        <td align="center" nowrap>成功</td>
+                        <td align="center" nowrap>1970-01-01 08:33</td>
+                        <td nowrap >
+                        <a href="shangjiaruzhu.html">查看</a>　
+                        </td>
+                    </tr>
+     
+                <tr>
+						<!--
+                        <td align="center"><input  value="459" type="checkbox" name="userid[]"></td>
+						-->
+                        <td align="center" bgcolor="#ffffff">1</td>
+                        <td align="center" nowrap>骆辉权</td>
+                        <td align="center" nowrap>学海阁2</td>
+                        <td align="center" nowrap>2172251069@qq.com</td>
+                        <td align="center" nowrap>qwerty</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>43112123456789</td>
+                        <td align="center" nowrap>大陆商家用户</td>
+                        <td align="center" nowrap>首尔特别市</td>
+                        <td align="center" nowrap>成功</td>
+                        <td align="center" nowrap>1970-01-01 08:33</td>
+                        <td nowrap >
+                        <a href="shangjiaruzhu.html">查看</a>　
+                        </td>
+                    </tr>
+     
+                <tr>
+						<!--
+                        <td align="center"><input  value="459" type="checkbox" name="userid[]"></td>
+						-->
+                        <td align="center" bgcolor="#ffffff">1</td>
+                        <td align="center" nowrap>骆辉权</td>
+                        <td align="center" nowrap>学海阁2</td>
+                        <td align="center" nowrap>2172251069@qq.com</td>
+                        <td align="center" nowrap>qwerty</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>43112123456789</td>
+                        <td align="center" nowrap>大陆商家用户</td>
+                        <td align="center" nowrap>首尔特别市</td>
+                        <td align="center" nowrap>成功</td>
+                        <td align="center" nowrap>1970-01-01 08:33</td>
+                        <td nowrap >
+                        <a href="shangjiaruzhu.html">查看</a>　
+                        </td>
+                    </tr>
+     
+                <tr>
+						<!--
+                        <td align="center"><input  value="459" type="checkbox" name="userid[]"></td>
+						-->
+                        <td align="center" bgcolor="#ffffff">1</td>
+                        <td align="center" nowrap>骆辉权</td>
+                        <td align="center" nowrap>学海阁2</td>
+                        <td align="center" nowrap>2172251069@qq.com</td>
+                        <td align="center" nowrap>qwerty</td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap></td>
+                        <td align="center" nowrap>43112123456789</td>
+                        <td align="center" nowrap>大陆商家用户</td>
+                        <td align="center" nowrap>首尔特别市</td>
+                        <td align="center" nowrap>成功</td>
+                        <td align="center" nowrap>1970-01-01 08:33</td>
+                        <td nowrap >
+                        <a href="/index.php/Admincp/Feedback/applyedit/id/459/continue/aHR0cDovL3lwaHRpbmcuemdseGtqLmNvbS9pbmRleC5waHAvQWRtaW5jcC9GZWVkYmFjay9hcHBseS5odG1s.html">查看</a>　
+                        </td>
+                    </tr>
+
+						
+
+					</tbody>
+					<tfoot>
+						
+						
+
+                     
+                                  
+                             
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>

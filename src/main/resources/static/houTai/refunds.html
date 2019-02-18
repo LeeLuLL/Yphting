@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#vm td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	退款管理<BR></H4>
+        <form method="post" class="form-inline" name="searchform" action="" style="display:;">
+          	<div class="form-group" >
+           <TABLE >
+                <TBODY>
+                <TR>
+                    <TD >
+                      会员名:
+                      <input name="username" type="text" id="username" value="" size="15" style="height: 15px;margin-top: 5px;">
+                        退款编号:
+                        <input name="rfid" type="text" id="rfid" value="" size="15" style="height: 15px;margin-top: 5px;">
+                      时间:
+                     <input type="date" value="" name="starttime" id="starttime"  class="Wdate" />
+                      ——
+                      <input type="date" value="" name="endtime" id="endtime"  class="Wdate" />				  
+				                  <label for="pay_status"></label>
+                  <select name="status" id="status">
+                    <option value="0">不限</option>
+                    <option value="1">退款申请中</option><option value="2">不同意</option><option value="3">申请管理员介入</option><option value="4">管理员拒绝</option><option value="5">退款完成</option><option value="6">退款取消</option>                  </select>
+              
+                  <input value="搜索" type="submit">
+                  </TD>
+                </TR></TBODY></TABLE>
+
+
+                </div>
+        </form>
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+						 <th >&nbsp;</th>
+                    <th >退款编号</th>
+                    <th >订单号</th>
+                    <TH >退款申请时间</TH>
+                    <TH >申请会员</TH>
+                    <TH >订单服务</TH>
+                    <TH >金币</TH>
+                    <TH >处理状态</TH>
+                    <TH >处理时间</TH>
+                    <TH >备注</TH>
+                    <TH >&nbsp;</TH>
+
+
+
+
+						</tr>
+					</thead>
+					<tbody id="vm">
+						  <tr>
+                        <td align="center"><input value="100800" type="checkbox" name="orderid[]"></td>
+                        <td align="center">
+                        100148                        </td>
+                        <td align="center" valign="middle"><a href="tuikuanchuli.html">15478003163996</a></td>
+                      <td align="center" nowrap>2019-01-21 13:12</td>
+                        <td align="center" nowrap>
+                        净说笑7544                        </td>
+                        <td align="center" nowrap>快到碗里来</td>
+                        <td align="center" nowrap>20</td>
+                        <td align="center" nowrap>
+                        退款完成                        </td>
+                        <td align="center" nowrap>未处理</td>
+                        <td align="center" nowrap>
+                                                
+                        </td>
+                        <td nowrap align=center>
+                        <a href="tuikuanchuli.html">查看</a>
+                        </td>
+                    </tr>
+ <tr>
+                        <td align="center"><input value="100800" type="checkbox" name="orderid[]"></td>
+                        <td align="center">
+                        100148                        </td>
+                        <td align="center" valign="middle"><a href="tuikuanchuli.html">15478003163996</a></td>
+                      <td align="center" nowrap>2019-01-21 13:12</td>
+                        <td align="center" nowrap>
+                        净说笑7544                        </td>
+                        <td align="center" nowrap>快到碗里来</td>
+                        <td align="center" nowrap>20</td>
+                        <td align="center" nowrap>
+                        退款完成                        </td>
+                        <td align="center" nowrap>未处理</td>
+                        <td align="center" nowrap>
+                                                
+                        </td>
+                        <td nowrap align=center>
+                        <a href="tuikuanchuli.html">查看</a>
+                        </td>
+                    </tr>
+                     
+                       <tr>
+                        <td align="center"><input value="100800" type="checkbox" name="orderid[]"></td>
+                        <td align="center">
+                        100148                        </td>
+                        <td align="center" valign="middle"><a href="tuikuanchuli.html">15478003163996</a></td>
+                      <td align="center" nowrap>2019-01-21 13:12</td>
+                        <td align="center" nowrap>
+                        净说笑7544                        </td>
+                        <td align="center" nowrap>快到碗里来</td>
+                        <td align="center" nowrap>20</td>
+                        <td align="center" nowrap>
+                        退款完成                        </td>
+                        <td align="center" nowrap>未处理</td>
+                        <td align="center" nowrap>
+                                                
+                        </td>
+                        <td nowrap align=center>
+                        <a href="tuikuanchuli.html">查看</a>
+                        </td>
+                    </tr>           
+                             
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		         </tbody>             </TABLE>
+          <TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%">
+                <TR>
+                    <TD><div class="digg"><div>  <span class="current">1</span><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/2.html">2</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/3.html">3</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/4.html">4</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/5.html">5</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/6.html">6</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/7.html">7</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/8.html">8</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/9.html">9</a><a class="num" href="/index.php/Admincp/User/moneys/umid/16/p/10.html">10</a> <a class="next" href="/index.php/Admincp/User/moneys/umid/16/p/2.html">下一页</a> </div></div></td>
+              </TR>
+ <TR>
+                    <TD colspan="11">
+                        <table width="100%" border="0">
+                            <tr>
+                                <td width="33%" nowrap>
+                                <INPUT id="select" value="选择所有" type=button name="select">
+                                <INPUT id="delete" value="删除所选" type="submit" name="delete" onClick="return confirm('是否要删除所选订单！');">
+                                　
+                                
+                                </td>
+                                <td width="67%" nowrap></td>
+                            </tr>
+                        </table>
+                    </td>
+                </TR>
+				
+
+          </TABLE>
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>

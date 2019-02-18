@@ -1,0 +1,112 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>后台管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/main-min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<div class="header">
+
+    <div class="dl-title">
+     <a href="/hangting/韩/www.yphting.com/index.html">韩汀首页</a>
+    </div>
+
+    <div class="dl-log">欢迎您，<span class="dl-log-user">root</span><a href="/chinapost/index.php?m=Public&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
+    </div>
+</div>
+<div class="content">
+    <div class="dl-main-nav">
+        <div class="dl-inform"><div class="dl-inform-title"><s class="dl-inform-icon dl-up"></s></div></div>
+        <ul id="J_Nav"  class="nav-list ks-clear">
+            <li class="nav-item dl-selected">
+            	<div class="nav-item-inner nav-home">后台首页</div></li>		
+            <li class="nav-item dl-selected">
+            	<div class="nav-item-inner nav-order">论坛管理</div></li>
+		<li class="nav-item dl-selected">
+            	<div class="nav-item-inner nav-goods">服务管理</div></li>
+            	<li class="nav-item dl-selected">
+            	<div class="nav-item-inner nav-cost">会员管理</div></li>
+            	<li class="nav-item dl-selected">
+            	<div class="nav-item-inner nav-certification">广告位排版</div></li>
+            	<li class="nav-item dl-selected">
+            	<div class="nav-item-inner nav-product">系统</div></li>
+            	<li class="nav-item dl-selected">
+            	<div class="nav-item-inner nav-distribution">修改密码</div></li>
+            	<li class="nav-item dl-selected">
+            	
+            	
+        </ul>
+    </div>
+    <ul id="J_NavContent" class="dl-tab-conten">
+
+    </ul>
+</div>
+<script type="text/javascript" src="assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="assets/js/bui-min.js"></script>
+<script type="text/javascript" src="assets/js/common/main-min.js"></script>
+<script type="text/javascript" src="assets/js/config-min.js"></script>
+<script>
+    BUI.use('common/main',function(){
+        var config = [{id:'1',homePage : '12',menu:[{text:'后台首页',
+        items:[{id:'12',text:'后台首页',href:'后台首页.html'}]}]},
+        {id:'7',homePage : '9',menu:[{text:'论坛管理',
+        items:[{id:'9',text:'帖子管理',href:'0.html'},
+        {id:'3',text:'帖子板块管理',href:'blog.html'},
+        {id:'4',text:'论坛投诉管理',href:'3.html'}
+        ]}]},{id:'2',homePage : '5',menu:[{text:'服务管理',
+        items:[{id:'5',text:'服务类别设置',href:'serv_cats.html'},
+        {id:'6',text:'服务审核管理',href:'services.html'},
+        {id:'8',text:'服务级别设置',href:'levels.html'},
+         {id:'16',text:'服务类型预约',href:'yuyue.html'},
+        {id:'11',text:'服务审核',href:'fuwushenhe.html'},
+        {id:'13',text:'退款管理',href:'refunds.html'},
+        {id:'14',text:'服务投诉',href:'fuwutousu.html'}
+        ]}]},{id:'10',homePage : '15',menu:[{text:'会员管理',
+        items:[{id:'15',text:'会员审核',href:'huiyuanshenhe.html'},
+        {id:'17',text:'商家管理',href:'shangjiaguanli.html'},
+        {id:'18',text:'商家入驻',href:'apply.html'},
+         {id:'34',text:'鉴定审核',href:'jiandingshenhe.html'},
+         {id:'38',text:'商家推荐',href:'shangjiatuijian.html'},
+        {id:'20',text:'商家托管',href:'shangjiatoguan.html'},
+        {id:'21',text:'评价管理',href:'pingjiaguanli.html'},
+        {id:'22',text:'金币记录',href:'jinbiguanli.html'},
+        {id:'23',text:'积分记录',href:'jifenguanli.html'},
+        {id:'24',text:'充值记录',href:'chongzhi.html'},
+        {id:'25',text:'提现记录',href:'14.html'},
+        {id:'26',text:'保证金详情',href:'16.html'},
+        {id:'27',text:'收藏排行',href:'shoucangpaihang.html'},
+        {id:'28',text:'服务收藏',href:'fuwushoucang.html'},
+        {id:'29',text:'BBS收藏',href:'BBSshoucang.html'},
+        {id:'31',text:'店铺收藏',href:'dianpushoucang.html'},
+        {id:'32',text:'会员站内信',href:'huiyuanzhanneixin.html'},
+        {id:'33',text:'留言反馈',href:'liuyanfankui.html'},
+        ]}]},{id:'19',homePage : '30',menu:[{text:'广告位排版',
+        items:[{id:'30',text:'广告位排版',href:'guanggaoweipaiban.html'}]}]},
+        {id:'44',homePage : '45',menu:[{text:'系统',
+        items:[{id:'45',text:'系统配置',href:'xitongbeizhi.html'},
+        {id:'46',text:'托管设置',href:'tuoguanshezhi.html'},
+        {id:'47',text:'职位管理',href:'zhiweiguanli.html'},
+        {id:'48',text:'商家费用备注',href:'feiyongbiezhu.html'},
+        {id:'49',text:'专业类别管理',href:'zhuanyeleibieguanli.html'},
+       /* {id:'50',text:'国家地址管理',href:'3.html'},*/
+        {id:'51',text:'银行管理',href:'yinhangguanli.html'},
+        {id:'52',text:'管理员管理',href:'guanliyuanguanli.html'},
+        {id:'53',text:'管理员日记',href:'guanliyuanrizhi.html'},
+        {id:'54',text:'系统站内信',href:'xitongzhanneixin.html'}
+        /*{id:'55',text:'身份查询系统',href:'3.html'}*/
+        ]}]},
+        {id:'36',homePage : '35',menu:[{text:'修改密码',
+        items:[{id:'35',text:'修改密码',href:'xiugaimimai.html'}]}]}];
+        new PageUtil.MainPage({
+            modulesConfig : config
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	服务审核<BR></H4>
+         <form method="post" class="form-inline" name="searchform" action="" style="display:;">
+          	<div class="form-group" >
+           <TABLE >
+                <TBODY>
+            <TR>
+                    <TD >类型:
+                        <select name="catid">
+                            <option value="0">所有的</option>
+                            <option value="4">微整形</option>
+                    <option value="165">——眼部整形</option><option value="161">——鼻部整形</option><option value="166">——脸部轮廓整形</option><option value="167">——胸部整形</option><option value="168">——抗衰老</option><option value="169">——形体整形</option><option value="170">——皮肤科</option><option value="171">——男性整形</option><option value="172">——牙科矫正</option><option value="5">留学中介</option>
+                    <option value="175">——韩国留学</option><option value="176">——日本留学</option><option value="6">韩语翻译</option>
+                    <option value="7">学习资源</option>
+                    <option value="152">——英语资料</option><option value="183">——毕业论文</option><option value="204">——校园资料</option><option value="153">——韩语资料</option><option value="217">sxd</option>
+                    <option value="218">——dd</option><option value="229">qwe</option>
+                    <option value="3">自驾游</option>
+                    <option value="203">——观光类</option>                        </select>
+						状态:
+                  <select name="status" id="status">
+					<option value="0">不限</option>
+					<option value="1">待审核</option><option value="2">审核成功</option><option value="3">未通过</option>                  </select>
+                        标题：
+                         <label for="subject"></label>
+                  <input type="text" name="subject" id="subject" style="height: 15px;margin-top: 5px;">  发布时间:
+                       <input type="date" value="" name="starttime" id="starttime"  class="Wdate" style="height: 15px;margin-top: 5px;"/>
+                      ——
+                      <input type="date" value="" name="endtime" id="endtime"  class="Wdate" style="height: 15px;margin-top: 5px;"/>				  
+                        <input value="搜索" type="submit" name=""></TD>
+                </TR
+        </TBODY></TABLE>
+
+
+                </div>
+        </form>
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+						   <th >&nbsp;</th>
+                    <th >ID</th>
+                    <TH >类型</TH>
+                    <TH >标题</TH>
+                    <TH >会员</TH>
+                    <TH >审核状态</TH>
+                    <TH >营业状态</TH>
+                    <TH >发布时间</TH>
+                    <TH >推荐状态</TH>
+                    <TH >排序</TH>
+                    <TH >&nbsp;</TH>
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+			   <tr>
+                        <td align="center"><input  value="742" type="checkbox"
+                                                   name="articleid[]"></td>
+                        <td align="center">742</td>
+                        <td align="center" nowrap>地陪观光</td>
+                        <td  nowrap>fdnndngnfn</td>
+                        <td  nowrap>万家灯火</td>
+                        <td  nowrap>审核成功</td>    
+                        <td>营业                        <td  nowrap>2019-01-21 13:25</td>
+                        <td>不推荐</td>
+                        <td  nowrap></td>
+                        <td nowrap align=center><a href="fuwushenhexinxi.html">修改</a></td>
+                    </tr>
+  <tr>
+                        <td align="center"><input  value="742" type="checkbox"
+                                                   name="articleid[]"></td>
+                        <td align="center">742</td>
+                        <td align="center" nowrap>地陪观光</td>
+                        <td  nowrap>fdnndngnfn</td>
+                        <td  nowrap>万家灯火</td>
+                        <td  nowrap>审核成功</td>    
+                        <td>营业                        <td  nowrap>2019-01-21 13:25</td>
+                        <td>不推荐</td>
+                        <td  nowrap></td>
+                        <td nowrap align=center><a href="fuwushenhexinxi.html">修改</a></td>
+                    </tr>
+  <tr>
+                        <td align="center"><input  value="742" type="checkbox"
+                                                   name="articleid[]"></td>
+                        <td align="center">742</td>
+                        <td align="center" nowrap>地陪观光</td>
+                        <td  nowrap>fdnndngnfn</td>
+                        <td  nowrap>万家灯火</td>
+                        <td  nowrap>审核成功</td>    
+                        <td>营业                        <td  nowrap>2019-01-21 13:25</td>
+                        <td>不推荐</td>
+                        <td  nowrap></td>
+                        <td nowrap align=center><a href="fuwushenhexinxi.html">修改</a></td>
+                    </tr>
+
+					</tbody>
+					<tfoot>
+						
+						
+ <TR>
+                    <TD colspan="11">
+                        <table width="100%" border="0">
+                            <tr>
+                                <td style="border:0px ;">
+                                    <INPUT id="select" value="选择所有" type=button name="select">
+                                    <INPUT id="delete" value="删除选择" type="submit" name="button">
+                                </td>
+
+                                <td style="border:0px ;">
+                                      &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp; 
+                                推荐状态：
+                               
+                                    <input type="radio" name="is_recommend" value="1" checked > 推荐
+                                    <input type="radio" name="is_recommend" value="0" > 不推荐　
+                                    <INPUT id="recommend" value="批量推荐" type="button" onclick='recommend1()' >   
+                                     <span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; </span>
+                                    审核状态:
+                                                                           <input type="radio" name="zt" value="0" checked />待审核　
+                                                                            <input type="radio" name="zt" value="1"  />审核成功　
+                                                                            <input type="radio" name="zt" value="2"  />未通过　                                   <INPUT  value=""  name="admin_reason"  id='admin_reason'  placeholder="若未通过审核，请填写未能通过审核原因"  size="40">
+                                    <INPUT id="verify" value="批量审核" type="button" onclick='javascript:batchVerify();' >
+                                    <span> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    营业状态：
+                                    <input type="radio" name="close" value="1" > 停业　
+                                    <input type="radio" name="close" value="0" checked> 营业　
+                                    <INPUT id="close" value="批量开关" type="button" onclick='javascript:batchClose();' >
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </TR>
+
+                      
+                             
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		                  
+           
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+    <link rel="stylesheet" type="text/css" href="Css/admin-style.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+	#vmCnt th,td{
+		text-align: center;
+	}
+	input,select{
+		height: 25px;
+		width: 170px;
+		font-size: 7px;
+	}
+	#admin_reason{
+		width: 300px;
+	}
+	#cv td{
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
+
+   
+    
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+<DIV id=container>
+    <DIV id=header>
+        <H4>
+        	服务类型预约<BR></H4>
+         <form method="post" class="form-inline" name="searchform" action="" style="display:;">
+          	<div class="form-group" >
+           <TABLE >
+                <TBODY>
+       <TR>
+                    <TD >
+                      会员名/商家名/订单号:
+                      <input name="title" type="text" value='' id="title" size="15" style="height: 15px;margin-top: 5px;">
+                      时间:
+                      <input type="date" value="" name="starttime" id="starttime"  class="Wdate" style="height: 15px;margin-top: 5px;"/>
+                      ——
+                      <input type="date" value="" name="endtime" id="endtime"  class="Wdate" style="height: 15px;margin-top: 5px;"/>				  
+                  服务类别:
+                  <select name="catid" id="catid">
+                    <option value="0">不限</option>
+                    <option value="4">微整形</option><option value="5">留学中介</option><option value="6">韩语翻译</option><option value="7">学习资源</option><option value="217">sxd</option><option value="229">qwe</option><option value="3">自驾游</option>                  </select>
+                  状态:
+                  <select name="status" id="status">
+					<option value="0">不限</option>
+					<option value="1" >待付款</option><option value="2" >待接单</option><option value="3" >待提供服务</option><option value="4" >待提供服务</option><option value="5" >已提供服务</option><option value="6" >服务完成</option><option value="7" >服务取消</option><option value="8" >未接单</option><option value="9" >已退款</option>                  </select>
+                  <input type="hidden" name="p" value="1" />
+                  <input value="搜索" type="submit">
+                  </TD>
+                </TR>
+        </TBODY></TABLE>
+
+
+                </div>
+        </form>
+    </DIV>
+    <DIV id="mainContent"><BR>
+    <div class="col-md-12" style="padding: 0px;">
+			<div class="table-responsive">
+				<table id="vmCnt" class="table table-hover alert-dismissable table-bordered " >
+					<thead>
+						<tr >
+						     <th >序号</th>
+                    <th>单号</th>
+                    <TH >会员</TH>
+                    <TH>商家</TH>
+                    <TH>服务类别</TH>
+                    <TH>服务名称</TH>
+                    <TH >积分</TH>
+                    <TH >下单时间</TH>
+                    <TH >订单状态</TH>
+                    <TH>支付状态</TH>
+                    <TH >支付时间</TH>
+                    <TH >备注</TH>
+                    <TH >&nbsp;</TH>
+
+						</tr>
+					</thead>
+					<tbody id="cv">
+			 <tr>
+                        <td align="center">
+                        1                        </td>
+                        <td align="center" valign="middle"><a href="yuyuedingdan.html">15480555551865</a></td>
+                        <td align="center" nowrap>
+                        惜忆                                                </td>
+                        <td align="center" nowrap>学海阁2</td>
+                        <td align="center" nowrap>文化观光</td>
+                        <td align="center" nowrap>小伙伴快来围观了23</td>
+                        <td align="center" nowrap>44.0</td>
+                        <td align="center" nowrap>2019-01-21 15:25</td>
+                        <td align="center" nowrap>待付款</td>
+                        <td align="center" nowrap>
+                                                未支付 
+                        </td>
+                        <td align="center" nowrap>未支付</td>
+                        <td align="center">
+                                                </td>
+                        <td nowrap align=center>
+                        <a href="yuyuedingdan.html">查看</a>
+                        </td>
+                    </tr>
+ <tr>
+                        <td align="center">
+                        1                        </td>
+                        <td align="center" valign="middle"><a href="yuyuedingdan.html">15480555551865</a></td>
+                        <td align="center" nowrap>
+                        惜忆                                                </td>
+                        <td align="center" nowrap>学海阁2</td>
+                        <td align="center" nowrap>文化观光</td>
+                        <td align="center" nowrap>小伙伴快来围观了23</td>
+                        <td align="center" nowrap>44.0</td>
+                        <td align="center" nowrap>2019-01-21 15:25</td>
+                        <td align="center" nowrap>待付款</td>
+                        <td align="center" nowrap>
+                                                未支付 
+                        </td>
+                        <td align="center" nowrap>未支付</td>
+                        <td align="center">
+                                                </td>
+                        <td nowrap align=center>
+                        <a href="yuyuedingdan.html">查看</a>
+                        </td>
+                    </tr>
+ <tr>
+                        <td align="center">
+                        1                        </td>
+                        <td align="center" valign="middle"><a href="yuyuedingdan.html">15480555551865</a></td>
+                        <td align="center" nowrap>
+                        惜忆                                                </td>
+                        <td align="center" nowrap>学海阁2</td>
+                        <td align="center" nowrap>文化观光</td>
+                        <td align="center" nowrap>小伙伴快来围观了23</td>
+                        <td align="center" nowrap>44.0</td>
+                        <td align="center" nowrap>2019-01-21 15:25</td>
+                        <td align="center" nowrap>待付款</td>
+                        <td align="center" nowrap>
+                                                未支付 
+                        </td>
+                        <td align="center" nowrap>未支付</td>
+                        <td align="center">
+                                                </td>
+                        <td nowrap align=center>
+                        <a href="yuyuedingdan.html">查看</a>
+                        </td>
+                    </tr>
+
+
+					</tbody>
+					<tfoot>
+						
+						
+
+                      
+                             
+
+					</tfoot>
+				</table>
+				
+			</div>
+		</div>
+		                        </TABLE>
+            <TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1 cellPadding=6 width="100%" bgColor=#ffffff>
+<TR>
+                    <TD colspan="11">合计： 615个订单，9590431362.0金币</td>
+                </TR>
+<TR>
+                    <TD colspan="11"><div class="digg"><div>  <span class="current">1</span><a class="num" href="/index.php/Admincp/Order/index/p/2.html">2</a><a class="num" href="/index.php/Admincp/Order/index/p/3.html">3</a><a class="num" href="/index.php/Admincp/Order/index/p/4.html">4</a><a class="num" href="/index.php/Admincp/Order/index/p/5.html">5</a><a class="num" href="/index.php/Admincp/Order/index/p/6.html">6</a><a class="num" href="/index.php/Admincp/Order/index/p/7.html">7</a><a class="num" href="/index.php/Admincp/Order/index/p/8.html">8</a><a class="num" href="/index.php/Admincp/Order/index/p/9.html">9</a><a class="num" href="/index.php/Admincp/Order/index/p/10.html">10</a><a class="num" href="/index.php/Admincp/Order/index/p/11.html">11</a> <a class="next" href="/index.php/Admincp/Order/index/p/2.html">下一页</a> <a class="end" href="/index.php/Admincp/Order/index/p/31.html">31</a></div></div></td>
+                </TR>
+                <TR style="display:none;">
+                    <TD colspan="11">
+                        <table width="100%" border="0">
+                            <tr>
+                                <td width="33%" nowrap>
+                                <INPUT id="select" value="选择所有" type=button name="select">
+                                <INPUT id="delete" value="删除所选" type="submit" name="delete" onClick="return confirm('是否要删除所选订单！');">
+                                　
+                                
+                                </td>
+                                <td width="67%" nowrap></td>
+                            </tr>
+                        </table>
+                    </td>
+                </TR>
+				
+            </TABLE>
+
+
+        <H4>&nbsp;</H4><!-- end #mainContent --></DIV>
+        <DIV id=footer>
+        <P>&nbsp;</P><!-- end #footer --></DIV><!-- end #container --></DIV></BODY>
+         <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js" ></script>
+<script src="Js/bootstrap.min.js"></script>
+</HTML>
