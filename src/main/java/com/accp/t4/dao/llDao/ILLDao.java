@@ -1,5 +1,5 @@
 package com.accp.t4.dao.llDao;
 
-public class aaaa {
-
+public interface ILLDao {
+	
 }
