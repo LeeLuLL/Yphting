@@ -15,7 +15,8 @@
 				<div class="b_box">
 					<div class="top_nav">
 						<a href="">首页</a><span class="ht_line"></span>
-						<a href="">商家入驻</a><span class="ht_line"></span>
+						<span>[[${session.USER.merchanttype}]]</span>
+						<a th:if="${session.USER.merchanttype==0?th:href='/view/sjrz:th:href='/view/sjrz-kdcg''}">商家入驻</a><span class="ht_line"></span>
 						<a href="">帮助中心</a><span class="ht_line"></span>
 						<a href="">关于韩汀</a><span class="ht_line"></span>
 						<a href="">联系我们</a>
@@ -634,87 +635,87 @@
 	<script type="text/javascript" th:src="@{/Public/js/sessionHeader.js}"></script>
 	<script type="text/javascript" th:src="@{/Public/js/headLeftNav.js}"></script>
 	<script type="text/javascript" th:inline="javascript">
-		jQuery(function(){
-			var slideshowSize = [[${homeSlideshowList.size()}]];	//轮播图图片集合长度
-			//初始化轮播图宽度
-			jQuery("#index_banner .owl-wrapper").css("width",slideshowSize*jQuery("#index_banner .owl-wrapper .owl-item").css("width").replace("px","")*2);
-			//保存轮播图切换位移3d值
-			var transX = parseInt(jQuery("#index_banner .owl-wrapper").css("transform").replace(/[^0-9\-,]/g,'').split(',')[4]);
-			//轮播图左右切换
-			jQuery(".owl-prev,.owl-next").click(function(){
-				var divWidth = parseInt(jQuery("#index_banner .owl-wrapper .owl-item").css("width").replace("px",""));
-				var size = (jQuery("#index_banner .owl-wrapper .owl-item").length-1)*divWidth;
-				if(jQuery(this).attr("class")=='owl-prev'){
-					if(transX==0){
-						transX = -size;
-						jQuery("#index_banner .owl-wrapper").css("transition","all 1000ms ease 0s");
-						jQuery("#index_banner .owl-wrapper").css("transform","translate3d("+transX+"px, 0px, 0px)");
-						jQuery(".owl-pagination .owl-page").eq(0-transX/divWidth).attr("class","owl-page active").siblings().attr("class","owl-page");
+// 		jQuery(function(){
+// 			var slideshowSize = 100;/* [[${homeSlideshowList.size()}]]; */	//轮播图图片集合长度
+// 			//初始化轮播图宽度
+// 			jQuery("#index_banner .owl-wrapper").css("width",slideshowSize*jQuery("#index_banner .owl-wrapper .owl-item").css("width").replace("px","")*2);
+// 			//保存轮播图切换位移3d值
+// 			var transX = parseInt(jQuery("#index_banner .owl-wrapper").css("transform").replace(/[^0-9\-,]/g,'').split(',')[4]);
+// 			//轮播图左右切换
+// 			jQuery(".owl-prev,.owl-next").click(function(){
+// 				var divWidth = parseInt(jQuery("#index_banner .owl-wrapper .owl-item").css("width").replace("px",""));
+// 				var size = (jQuery("#index_banner .owl-wrapper .owl-item").length-1)*divWidth;
+// 				if(jQuery(this).attr("class")=='owl-prev'){
+// 					if(transX==0){
+// 						transX = -size;
+// 						jQuery("#index_banner .owl-wrapper").css("transition","all 1000ms ease 0s");
+// 						jQuery("#index_banner .owl-wrapper").css("transform","translate3d("+transX+"px, 0px, 0px)");
+// 						jQuery(".owl-pagination .owl-page").eq(0-transX/divWidth).attr("class","owl-page active").siblings().attr("class","owl-page");
 						
-					}else{
-						transX+=divWidth;
-						jQuery("#index_banner .owl-wrapper").css("transition","all 300ms ease 0s");
-						jQuery("#index_banner .owl-wrapper").css("transform","translate3d("+transX+"px, 0px, 0px)");
-						jQuery(".owl-pagination .owl-page").eq(0-transX/divWidth).attr("class","owl-page active").siblings().attr("class","owl-page");
-					}
-				}else{
-					if(transX==-size){
-						transX = 0;
-						jQuery("#index_banner .owl-wrapper").css("transition","all 1000ms ease 0s");
-						jQuery("#index_banner .owl-wrapper").css("transform","translate3d("+transX+"px, 0px, 0px)");
-						jQuery(".owl-pagination .owl-page").eq(0-transX/divWidth).attr("class","owl-page active").siblings().attr("class","owl-page");
-					}else{
-						transX-=divWidth;
-						jQuery("#index_banner .owl-wrapper").css("transition","all 300ms ease 0s");
-						jQuery("#index_banner .owl-wrapper").css("transform","translate3d("+transX+"px, 0px, 0px)");
-						jQuery(".owl-pagination .owl-page").eq(0-transX/divWidth).attr("class","owl-page active").siblings().attr("class","owl-page");
-					}
-				}
-			});
-			//轮播图圆点切换
-			jQuery("#index_banner .owl-pagination .owl-page").live("click",function(){
-				var index = jQuery(this).index();
-				var divWidth = parseInt(jQuery("#index_banner .owl-wrapper .owl-item").css("width").replace("px",""));
-				jQuery(this).attr("class","owl-page active").siblings().attr("class","owl-page");
-				jQuery("#index_banner .owl-wrapper").css("transition","all 400ms ease 0s");
-				jQuery("#index_banner .owl-wrapper").css("transform","translate3d("+(-index*divWidth)+"px, 0px, 0px)");
-			});
-			//星级服务商家推荐点击类别切换
-			jQuery(".star_recommend_tab a").live("click",function(){
-				var index = jQuery(this).index();
-				jQuery(this).attr("class","cur").siblings().removeAttr("class");
-				jQuery(".star_recommend_show").eq(index).show().siblings(".star_recommend_show").hide();
-				jQuery(".star_recommend_show").eq(index).find("#star_recommend_part_0").css("opacity",1);
-			});
-			//星级服务商家和贴吧切换轮播
-			jQuery(".star_recommend_show .owl-pagination .owl-page, #study_box .owl-pagination .owl-page").live("click",function(){
-				var index = jQuery(this).index();
-				jQuery(this).attr("class","owl-page active").siblings().attr("class","owl-page");
-				jQuery(this).parent().parent().prev(".owl-wrapper-outer").find(".owl-wrapper").css("transform","translate3d("+(-index*1200)+"px, 0px, 0px)");
-			});
+// 					}else{
+// 						transX+=divWidth;
+// 						jQuery("#index_banner .owl-wrapper").css("transition","all 300ms ease 0s");
+// 						jQuery("#index_banner .owl-wrapper").css("transform","translate3d("+transX+"px, 0px, 0px)");
+// 						jQuery(".owl-pagination .owl-page").eq(0-transX/divWidth).attr("class","owl-page active").siblings().attr("class","owl-page");
+// 					}
+// 				}else{
+// 					if(transX==-size){
+// 						transX = 0;
+// 						jQuery("#index_banner .owl-wrapper").css("transition","all 1000ms ease 0s");
+// 						jQuery("#index_banner .owl-wrapper").css("transform","translate3d("+transX+"px, 0px, 0px)");
+// 						jQuery(".owl-pagination .owl-page").eq(0-transX/divWidth).attr("class","owl-page active").siblings().attr("class","owl-page");
+// 					}else{
+// 						transX-=divWidth;
+// 						jQuery("#index_banner .owl-wrapper").css("transition","all 300ms ease 0s");
+// 						jQuery("#index_banner .owl-wrapper").css("transform","translate3d("+transX+"px, 0px, 0px)");
+// 						jQuery(".owl-pagination .owl-page").eq(0-transX/divWidth).attr("class","owl-page active").siblings().attr("class","owl-page");
+// 					}
+// 				}
+// 			});
+// 			//轮播图圆点切换
+// 			jQuery("#index_banner .owl-pagination .owl-page").live("click",function(){
+// 				var index = jQuery(this).index();
+// 				var divWidth = parseInt(jQuery("#index_banner .owl-wrapper .owl-item").css("width").replace("px",""));
+// 				jQuery(this).attr("class","owl-page active").siblings().attr("class","owl-page");
+// 				jQuery("#index_banner .owl-wrapper").css("transition","all 400ms ease 0s");
+// 				jQuery("#index_banner .owl-wrapper").css("transform","translate3d("+(-index*divWidth)+"px, 0px, 0px)");
+// 			});
+// 			//星级服务商家推荐点击类别切换
+// 			jQuery(".star_recommend_tab a").live("click",function(){
+// 				var index = jQuery(this).index();
+// 				jQuery(this).attr("class","cur").siblings().removeAttr("class");
+// 				jQuery(".star_recommend_show").eq(index).show().siblings(".star_recommend_show").hide();
+// 				jQuery(".star_recommend_show").eq(index).find("#star_recommend_part_0").css("opacity",1);
+// 			});
+// 			//星级服务商家和贴吧切换轮播
+// 			jQuery(".star_recommend_show .owl-pagination .owl-page, #study_box .owl-pagination .owl-page").live("click",function(){
+// 				var index = jQuery(this).index();
+// 				jQuery(this).attr("class","owl-page active").siblings().attr("class","owl-page");
+// 				jQuery(this).parent().parent().prev(".owl-wrapper-outer").find(".owl-wrapper").css("transform","translate3d("+(-index*1200)+"px, 0px, 0px)");
+// 			});
 			
 			
-			//右下角固定导航栏
-			jQuery(".right_nav li a.rn_tel, a.rn_wx").hover(function(){
-				jQuery(this).next().show(300);
-			},function(){
-				jQuery(this).next().hide();
-			});
-			//如果滚动条距离页面顶部大于等于500px显示回到顶部按钮
-			jQuery(window).scroll(function() {
-				if(jQuery(window).scrollTop() >= 500) {
-					jQuery(".rn_top").fadeIn(300);
-				} else {
-					jQuery(".rn_top").fadeOut(300);
-				}
-			});
-			//点击回到顶部
-			jQuery(".rn_top").click(function() {
-				$('body,html').animate({
-					scrollTop: 0
-				}, 500);
-			});
-		})
+// 			//右下角固定导航栏
+// 			jQuery(".right_nav li a.rn_tel, a.rn_wx").hover(function(){
+// 				jQuery(this).next().show(300);
+// 			},function(){
+// 				jQuery(this).next().hide();
+// 			});
+// 			//如果滚动条距离页面顶部大于等于500px显示回到顶部按钮
+// 			jQuery(window).scroll(function() {
+// 				if(jQuery(window).scrollTop() >= 500) {
+// 					jQuery(".rn_top").fadeIn(300);
+// 				} else {
+// 					jQuery(".rn_top").fadeOut(300);
+// 				}
+// 			});
+// 			//点击回到顶部
+// 			jQuery(".rn_top").click(function() {
+// 				$('body,html').animate({
+// 					scrollTop: 0
+// 				}, 500);
+// 			});
+// 		})
 
 	</script>
 </html>

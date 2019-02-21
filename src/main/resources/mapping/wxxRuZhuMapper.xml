@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.accp.t4.dao.wxxDao.IRuZhuDao">
+	<!-- 查询服务类别 -->
+	<select id="selectServiceType" resultType="servicetype">
+		select * from
+		`servicetype` WHERE `stPid` = '0'
+	</select>
+
+	<!-- 查询地址 -->
+	<select id="selectSharea" resultType="sharea">
+		select * from `sharea`
+		<where>
+			<if test="pId==null">
+				`pid` = '0'
+			</if>
+			<if test="pId!=null">
+				`pid` = #{pId}
+			</if>
+		</where>
+	</select>
+
+	<!-- 查询服务语言 -->
+	<select id="selectLanguageType" resultType="languagetype">
+		select * from
+		`languagetype`
+	</select>
+
+	<!-- 查询擅长专业 -->
+	<select id="selectMajorType" resultType="majortype">
+		SELECT * FROM
+		`majortype`
+	</select>
+
+	<!-- 查询开店所需保证金 -->
+	<select id="selectBound" resultType="int">
+		SELECT `bond` FROM `system`
+	</select>
+
+	<!-- 商家入驻-填写资料 -->
+	<update id="merchantApply">
+		UPDATE `user`
+			<set>
+				<if test="obj.merchanttype!=null and obj.merchanttype!=''">
+					`merchanttype` = #{obj.merchanttype},
+				</if>
+				<if test="obj.firstserviceid!=null and obj.firstserviceid!=''">
+					`firstserviceid` = #{obj.firstserviceid},`firstServiceMoney` = 0,
+				</if>
+				<if test="obj.secondserviceid!=null and obj.secondserviceid!=''">
+					`secondserviceid` = #{obj.secondserviceid},`secondServiceMoney` = 0,
+				</if>
+				<if test="obj.hospitalname!=null and obj.hospitalname!=''">
+					`hospitalname` = #{obj.hospitalname},
+				</if>
+				<if test="obj.shopname!=null and obj.shopname!=''">
+					`shopName` = #{obj.shopname},
+				</if>
+				<if test="obj.userrealname!=null and obj.userrealname!=''">
+					`userrealname` = #{obj.userrealname},
+				</if>
+				<if test="obj.signature!=null and obj.signature!=''">
+					`signature` = #{obj.signature},
+				</if>
+				<if test="obj.shopimg!=null and obj.shopimg!=''">
+					`shopimg` = #{obj.shopimg},
+				</if>
+				<if test="obj.identitytype!=null and obj.identitytype!=''">
+					`identitytype` = #{obj.identitytype},
+				</if>
+				<if test="obj.identitynumder!=null and obj.identitynumder!=''">
+					`identitynumder` = #{obj.identitynumder},
+				</if>
+				<if
+					test="obj.identityrealname!=null and obj.identityrealname!=''">
+					`identityrealname` = #{obj.identityrealname},
+				</if>
+				<if test="obj.country!=null and obj.country!=''">
+					`country` = #{obj.country},
+				</if>
+				<if test="obj.provincialid!=null and obj.provincialid!=''">
+					`provincialid` = #{obj.provincialid},
+				</if>
+				<if test="obj.cityid!=null and obj.cityid!=''">
+					`cityid` = #{obj.cityid},
+				</if>
+				<if test="obj.countyid!=null and obj.countyid!=''">
+					`countyid` = #{obj.countyid},
+				</if>
+				<if test="obj.addetail!=null and obj.addetail!=''">
+					`addetail` = #{obj.addetail},
+				</if>
+				<if
+					test="obj.identitypositiveimg!=null and obj.identitypositiveimg!=''">
+					`identitypositiveimg` = #{obj.identitypositiveimg},
+				</if>
+				<if
+					test="obj.identitynegativeimg!=null and obj.identitynegativeimg!=''">
+					`identitynegativeimg` = #{obj.identitynegativeimg},
+				</if>
+				<if test="obj.identityhandimg!=null and obj.identityhandimg!=''">
+					`identityhandimg` = #{obj.identityhandimg},
+				</if>
+				<if
+					test="obj.languagenametext!=null and obj.languagenametext!=''">
+					`languagenametext` = #{obj.languagenametext},
+				</if>
+				<if test="obj.majornametext!=null and obj.majornametext!=''">
+					`majornametext` = #{obj.majornametext},
+				</if>
+				<if test="obj.livecityid!=null and obj.livecityid!=''">
+					`livecityid` = #{obj.livecityid},
+				</if>
+				<if test="obj.merchantemail!=null and obj.merchantemail!=''">
+					`merchantemail` = #{obj.merchantemail},
+				</if>
+				<if test="obj.merchantphone!=null and obj.merchantphone!=''">
+					`merchantphone` = #{obj.merchantphone},
+				</if>
+				<if test="obj.qq!=null and obj.qq!=''">
+					`qq` = #{obj.qq},
+				</if>
+				<if test="obj.wechat!=null and obj.wechat!=''">
+					`wechat` = #{obj.wechat},
+				</if>
+				<if test="obj.profession!=null and obj.profession!=''">
+					`profession` = #{obj.profession},
+				</if>
+				<if test="obj.height!=null and obj.height!=''">
+					`height` = #{obj.height},
+				</if>
+				<if test="obj.constellation!=null and obj.constellation!=''">
+					`constellation` = #{obj.constellation},
+				</if>
+				<if test="obj.age!=null and obj.age!=''">
+					`age` = #{obj.age},
+				</if>
+				<if
+					test="obj.selfintroduction!=null and obj.selfintroduction!=''">
+					`selfintroduction` = #{obj.selfintroduction},
+				</if>
+				`userMoney` = `userMoney` - #{bond},`guaranteeMoney` =
+				#{bond},`auditStatus` = 1,`merchantLevel` = 0,
+			</set>
+			<where>
+				`userID` = #{obj.userid}
+			</where>
+	</update>
+	
+	<!-- 添加金币流向记录 -->
+	<insert id="saveGoldNote">
+		insert into `goldnotes` values(0,#{gold.userID},'4',now(),#{gold.recordDescribe},#{gold.recordInAndOut},#{gold.auditStatus})
+	</insert>
+	
+	<!-- 发送系统消息 -->
+	<insert id="sendNews">
+		INSERT INTO `news` VALUES(0,NULL,#{news.addRessee},#{news.content},NOW(),'1','1',NULL)
+	</insert>
+</mapper>
