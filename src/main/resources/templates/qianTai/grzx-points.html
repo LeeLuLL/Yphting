@@ -106,7 +106,7 @@
 					</div>
 					<span class="fl">我的积分</span>
 					<ul class="fl pre_uul">
-						<li><span class="prus psi1">可用积分</span>0</li>
+						<li><span class="prus psi1">可用积分</span>[[${session.user.userintegral}]]</li>
 					</ul>
 				</div>
 
@@ -131,11 +131,10 @@
 
 				<!--page-->
 				<div class="page">
-				      <a href="">首页</a>
-                       <a href='' th:if="${JiFenPage.hasPreviousPage}">上一页</a>					 
-  					   <a href=""  th:if="${JiFenPage.hasNextPage}">下一页</a>
- 					   <a href="">末页</a>					
-					
+				      <a th:href='@{/grzx/jiFen(num=${JiFenPage.firstPage})}'>首页</a>
+                       <a th:href='@{/grzx/jiFen(num=${JiFenPage.prePage})}' th:if="${JiFenPage.hasPreviousPage}">上一页</a>					 
+  					   <a th:href='@{/grzx/jiFen(num=${JiFenPage.nextPage})}'  th:if="${JiFenPage.hasNextPage}">下一页</a>
+ 					   <a th:href='@{/grzx/jiFen(num=${JiFenPage.lastPage})}'>末页</a>					
 				</div>
 				<!--page end-->
 

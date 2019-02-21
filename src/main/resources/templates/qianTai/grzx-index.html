@@ -14,6 +14,10 @@
 	.font{
 		font-size:16px;
 		color:#82685C;
+		cursor: pointer;
+	}
+	.font:hover {
+		color:#ADB001;
 	}
 </style>
 </head>
@@ -26,7 +30,7 @@
 			<div class="b_box">
 				<div class="top_nav">
 					<a href="fw-sy.html">首页</a><span class="ht_line"></span> <a
-						href="/c/lsm/merchantEnterUrl">商家入驻</a><span class="ht_line"></span>
+						href="">商家入驻</a><span class="ht_line"></span>
 					<a href="javascript.void(0);">帮助中心</a><span class="ht_line"></span>
 					<a href="javascript.void(0);">关于韩汀</a><span class="ht_line"></span>
 					<a href="javascript.void(0);">联系我们</a>
@@ -72,7 +76,7 @@
 					<li><a href="/grzx/order?userId=24"><span class="msp2 community_sp csp7"></span>我的帖子</a>
 					</li>
 
-					<li><a href="/grzx-favs.html"><span class="msp2 pre_c3"></span>我的收藏</a>
+					<li><span onclick="location.href='/grzx/serviceCollection?num=1'" class='font'><span class="msp2 pre_c3"></span>我的收藏</span>
 					</li>
 					<li><span onclick="location.href='/grzx/money?num=1'" class='font'><span
 							class="msp2 pre_c4"></span>我的金币</span></li>
@@ -94,43 +98,44 @@
 			<div class="member_right site_msg_w">
 				<dl class="pre_udl">
 					<dt>
-						<img th:src="${user.userimgpath}" />
+						<img th:src="${session.user.userimgpath}" />
 					</dt>
 					<dd>
 						<div class="pre_c_name">
-							[[${user.username}]] <a href="/c/szy/user/queryGrzxInfo" class="edit_a">更改资料</a>
+							[[${session.user.username}]] <a href="/c/szy/user/queryGrzxInfo" class="edit_a">更改资料</a>
 						</div>
 						<ul class="pre_uul">
-							<li><span class="prus psi1">积分</span>[[${user.userintegral}]]</li>
-							<li><span class="prus psi2">金币</span>[[${user.usermoney}]]</li>
+							<li><span class="prus psi1">积分</span>[[${session.user.userintegral}]]</li>
+							<li><span class="prus psi2">金币</span>[[${session.user.usermoney}]]</li>
 						</ul>
 						<a href="javascript:void(0);" class="qdao" onclick="sign()"><span
 							class="qm_i"></span>签到送积分</a>
 					</dd>
 				</dl>
 				<ul class="pre_about_info">
-					<!-- <li><a th:href="@{/c/lhy/order/query/list(status=1)}">待付款<span class="pre_asp" th:text="${orderInfo.topay}">1</span></a></li> -->
-					<!-- <li><a th:href="@{/c/lhy/order/query/list(status=3)}">商家接单<span class="pre_asp" th:text="${orderInfo.receipt}">0</span></a></li> -->
-					<!-- <li><a th:href="@{/c/lhy/order/query/list(status=4)}">待确认<span class="pre_asp" th:text="${orderInfo.tbconfirmed}">0</span></a>
+					<li><a href="">待付款<span class="pre_asp" >0</span></a></li>
+					<li><a href="">商家接单<span class="pre_asp" >0</span></a></li>
+					<li><a href="">待确认<span class="pre_asp" >0</span></a>
 </li>
-					<li class="last"><a th:href="@{/c/lhy/order/query/list(status=5,commentstatus=1)}">待评价<span
-							class="pre_asp" th:text="${orderInfo.tbevaluated}">0</span></a></li> -->
+					<li class="last"><a href="">待评价<span
+							class="pre_asp" >0</span></a></li>
 				</ul>
 				<h2 class="pre_h2_title">最新预订了</h2>
 				<ul class="you_yd_news">
-					<!-- <li th:each="temp:${list}">
+					<li th:each="temp:${yuDing.list}">
 						<div class="you_yd_img">
-							<img th:src="${temp.service.servicecoverimg}" width="135" height="90"/>
+							<img th:src="${temp.serviceCoverImg}" width="135" height="90"/>
 						</div>
-						<a th:href="@{/c/lhy/order/query/detail(orderid=${temp.orderid})}" class="btn_a_yyd">查看详细</a>
+						
+						<a th:href="@{/grzx/order(orderId=${temp.orderID})}" class="btn_a_yyd">查看详细</a>
 						<div class="you_yd_text">
-							<div class="yd_xm_title" th:text="${temp.service.servicetitle}"></div>
-							<p th:text="${temp.service.servicefutitle}"></p>
+							<div class="yd_xm_title" th:text="${temp.serviceTitle}"></div>
+							<p th:text="${temp.serviceFuTitle}"></p>
 							<p>
-								<span class="num_1" th:text="${temp.service.serviceprice}"></span>
+								<span class="num_1" th:text="${temp.servicePrice}"></span>
 							</p>
 						</div>
-					</li> -->
+					</li>
 				</ul>
 
 			</div>

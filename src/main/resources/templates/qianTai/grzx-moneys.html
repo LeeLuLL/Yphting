@@ -93,7 +93,7 @@
 					</div>
 					<span class="fl">我的金币</span>
 					<ul class="fl pre_uul">
-						<li><span class="prus psi2">金币余额</span><span class="tsfont">4400</span></li>
+						<li><span class="prus psi2">金币余额</span><span class="tsfont">[[${session.user.usermoney}]]</span></li>
 					</ul>
 				</div>
 				<div class="my_money_w">
@@ -142,10 +142,10 @@
 
 					<!--page-->
 					<div class="page">
-					   <a href="">首页</a>
-                       <a href=''>上一页</a>					 
-  					   <a href="">下一页</a>
- 					   <a href="">末页</a>					
+					   <a th:href='@{/grzx/money(num=${moneyPage.firstPage})}'>首页</a>
+                       <a th:href='@{/grzx/money(num=${moneyPage.prePage})}' th:if="${moneyPage.hasPreviousPage}">上一页</a>					 
+  					   <a th:href='@{/grzx/money(num=${moneyPage.nextPage})}'  th:if="${moneyPage.hasNextPage}">下一页</a>
+ 					   <a th:href='@{/grzx/money(num=${moneyPage.lastPage})}'>末页</a>						
 					 </div>
 					<!--page end-->
 				</div>

@@ -4,7 +4,6 @@ package com.accp.t4.vo.llVO;
  * @author Administrator
  *
  */
-
 import java.util.Date;
 
 public class EvaluationVo {

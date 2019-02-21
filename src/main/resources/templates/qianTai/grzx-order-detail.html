@@ -43,7 +43,7 @@
 						}
 					</style>
 					<li class="cur" id="li2">
-						<a href="">个人中心</a><span class="my_nav_i"></span></li>
+						<a href="/grzx/user">个人中心</a><span class="my_nav_i"></span></li>
 					<li id="li3">
 						<a href="">账户设置</a><span class="my_nav_i"></span></li>
 					<li id="li4">
@@ -66,47 +66,47 @@
 				<div class="my_booking_service_top">
 					<div class="my_booking_left">
 						<p class="c_4 f14">预定服务状态</p>
-						<p class="big_font" th:if="${order.orderstatus==1}">待付款</p>
-						<p class="big_font" th:if="${order.orderstatus==2}">待接单</p>
-						<p class="big_font" th:if="${order.orderstatus==3}">待服务</p>
-						<p class="big_font" th:if="${order.orderstatus==4}">待确认</p>
-						<p class="big_font" th:if="${order.orderstatus==5}">服务完成</p>
-						<p class="big_font" th:if="${order.orderstatus==6}">服务取消</p>
-						<p class="big_font" th:if="${order.orderstatus==7}">未接单</p>
-						<p class="big_font" th:if="${order.orderstatus==8}">已退款</p>
-						<p class="f12 c_4" th:if="${order.orderstatus==1}">请尽快付款以便商家安排时间</p>
+						<p class="big_font" th:if="${order.orderStatus==1}">待付款</p>
+						<p class="big_font" th:if="${order.orderStatus==2}">待接单</p>
+						<p class="big_font" th:if="${order.orderStatus==3}">待服务</p>
+						<p class="big_font" th:if="${order.orderStatus==4}">待确认</p>
+						<p class="big_font" th:if="${order.orderStatus==5}">服务完成</p>
+						<p class="big_font" th:if="${order.orderStatus==6}">服务取消</p>
+						<p class="big_font" th:if="${order.orderStatus==7}">未接单</p>
+						<p class="big_font" th:if="${order.orderStatus==8}">已退款</p>
+						<p class="f12 c_4" th:if="${order.orderStatus==1}">请尽快付款以便商家安排时间</p>
 						<div class="btn_a_mt">
-							<a th:href="@{/c/lhy/order/pay(orderid=${order.orderid})}" class="btna_s1" th:if="${order.orderstatus==1}">支付金币</a>
-							<br th:if="${order.orderstatus==1}">
-							<a th:href="@{/c/lhy/order/ok(updateid=${order.orderid})}" class="btna_s1" th:if="${order.orderstatus==4}">确认完成</a>
-							<br th:if="${order.orderstatus==4}">
-							<a th:href="${order.documentpath}" download="" class="btna_s3 mt5" th:if="${order.orderstatus==5&&order.filesatus==2}">下载</a>
-							<br th:if="${order.orderstatus==5&&order.filesatus==2}"/>
-							<a href="" class="btna_s3" th:if="${order.orderstatus==5&&order.commentstatus==1}">评价</a>
-							<br th:if="${order.orderstatus==5&&order.commentstatus==1}"/>
-							<a th:href="@{/c/lhy/order/cancel(updateid=${order.orderid})}" onclick="" th:if="${order.orderstatus==1}">取消服务</a>
-							<a href="" onclick="" th:if="${order.orderstatus==5&&order.refundstatus==0}">申请退款</a>
+							<a href="" class="btna_s1" th:if="${order.orderStatus==1}">支付金币</a>
+							<br th:if="${order.orderStatus==1}">
+							<a href="" class="btna_s1" th:if="${order.orderStatus==4}">确认完成</a>
+							<br th:if="${order.orderStatus==4}">
+							<a href="" download="" class="btna_s3 mt5" th:if="${order.orderStatus==5&&order.filesatus==2}">下载</a>
+							<br th:if="${order.orderStatus==5&&order.filesatus==2}"/>
+							<a href="" class="btna_s3" th:if="${order.orderStatus==5&&order.commentstatus==1}">评价</a>
+							<br th:if="${order.orderStatus==5&&order.commentstatus==1}"/>
+							<a href="" onclick="" th:if="${order.orderStatus==1}">取消服务</a>
+							<a href="" onclick="" th:if="${order.orderStatus==5&&order.refundstatus==0}">申请退款</a>
 						</div>
-						<div class="btn_a_mt" th:if="${order.orderstatus==2||order.orderstatus==3}">-</div>
+						<div class="btn_a_mt" th:if="${order.orderStatus==2||order.orderStatus==3}">-</div>
 						<!--按钮另一种颜色样式为btna_noc-->
 					</div>
 					<div class="my_booking_right">
 						<div class="my_book_spress"><span class="my_book_press_line"></span></div>
 						<ul class="my_booking_service_press_ul my_booking_4">
-							<li th:class="${order.orderstatus>=1?'cur':''}">
+							<li th:class="${order.orderStatus>=1?'cur':''}">
 								<span class="mbsp_sp"><span class="mbsp1"></span></span>
 								<p class="mbsp_text">提交预约</p>
 							</li>
-							<li th:class="${order.orderstatus>=2?'cur':''}">
+							<li th:class="${order.orderStatus>=2?'cur':''}">
 								<span class="mbsp_sp"><span class="mbsp2"></span></span>
 								<p class="mbsp_text">支付预约</p>
 							</li>
-							<li th:class="${order.orderstatus>=4?'cur':''}">
+							<li th:class="${order.orderStatus>=4?'cur':''}">
 								<span class="mbsp_sp"><span class="mbsp4 mbsp4_2"></span></span>
 								<p class="mbsp_text">下载资料</p>
 							</li>
 
-							<li th:class="|${order.orderstatus>=5?'cur':''} last|">
+							<li th:class="|${order.orderStatus>=5?'cur':''} last|">
 								<span class="mbsp_sp"><span class="mbsp6"></span></span>
 								<p class="mbsp_text">服务完成</p>
 							</li>
@@ -118,38 +118,38 @@
 					<ul class="my_booking_cont_ul">
 						<li>
 							<p class="c_4 f12">订单编号</p>
-							<p class="mt5" th:text="${order.orderid}"></p>
+							<p class="mt5" th:text="${order.orderID}"></p>
 							<p class="c_4 f12">下单时间</p>
-							<p class="mt5" th:text="${#dates.format(order.ordertime,'yyyy-MM-dd')}"></p>
-							<p class="c_4 f12" th:if="${order.paymenttime!=null}">付款时间</p>
-							<p class="mt5" th:if="${order.paymenttime!=null}" th:text="${#dates.format(order.paymenttime,'yyyy-MM-dd')}"></p>
-							<p class="c_4 f12" th:if="${order.receipttime!=null}">接单时间</p>
-							<p class="mt5" th:if="${order.receipttime!=null}" th:text="${#dates.format(order.receipttime,'yyyy-MM-dd')}"></p>
-							<p class="c_4 f12" th:if="${order.provideservicestime!=null}">提供服务时间</p>
-							<p class="mt5" th:if="${order.provideservicestime!=null}" th:text="${#dates.format(order.provideservicestime,'yyyy-MM-dd')}"></p>
-							<p class="c_4 f12" th:if="${order.completetime!=null}">完成时间</p>
-							<p class="mt5" th:if="${order.completetime!=null}" th:text="${#dates.format(order.completetime,'yyyy-MM-dd')}"></p>
+							<p class="mt5" th:text="${#dates.format(order.orderTime,'yyyy-MM-dd')}"></p>
+							<p class="c_4 f12" th:if="${order.paymentTime!=null}">付款时间</p>
+							<p class="mt5" th:if="${order.paymentTime!=null}" th:text="${#dates.format(order.paymentTime,'yyyy-MM-dd')}"></p>
+							<p class="c_4 f12" th:if="${order.receiptTime!=null}">接单时间</p>
+							<p class="mt5" th:if="${order.receiptTime!=null}" th:text="${#dates.format(order.receiptTime,'yyyy-MM-dd')}"></p>
+							<p class="c_4 f12" th:if="${order.provideServicesTime!=null}">提供服务时间</p>
+							<p class="mt5" th:if="${order.provideServicesTime!=null}" th:text="${#dates.format(order.provideServicesTime,'yyyy-MM-dd')}"></p>
+							<p class="c_4 f12" th:if="${order.completeTime!=null}">完成时间</p>
+							<p class="mt5" th:if="${order.completeTime!=null}" th:text="${#dates.format(order.completeTime,'yyyy-MM-dd')}"></p>
 							<p class="c_4 f12">商家</p>
 							<p class="mt10">
-								<a target="_blank" href="" th:text="${order.service.user.shopname}"></a>
+								<a target="_blank" href="" th:text="${order.shopName}"></a>
 							</p>
 							<p class="c_4 f12">总金币</p>
-							<div class="num_1 f16" th:text="${order.smallplan}">1</div>
+							<div class="num_1 f16" th:text="${order.smallPlan}">1</div>
 						</li>
 						<li>
 							<p class="c_4 f12">类别</p>
-							<p class="mt5" th:text="${order.service.serviceType.stname}"></p>
+							<p class="mt5" th:text="${order.stName}"></p>
 						</li>
 						<li>
 							<p class="c_4 f12">所预定服务</p>
 							<dl class="my_booking_img_text">
-								<dt><img th:src="${order.service.servicecoverimg}" alt="" width="135"></dt>
+								<dt><img th:src="${order.serviceCoverImg}" alt="服务图片" width="135"></dt>
 								<dd>
 									<p>
-										<a href="" target="_blank" th:text="${order.service.servicetitle}"></a>
+										<a href="" target="_blank" th:text="${order.serviceTitle}"></a>
 									</p>
 									<p></p>
-									<div class="num_1 num_2_s f14" th:text="${order.service.serviceprice}"></div>
+									<div class="num_1 num_2_s f14" th:text="${order.servicePrice}"></div>
 								</dd>
 							</dl>
 						</li>

@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.accp.t4.dao.llDao.IGRZXDao;
+import com.accp.t4.entity.llEntity.Services;
 import com.accp.t4.vo.llVO.EvaluationVo;
 import com.accp.t4.vo.llVO.Goldnotes;
 import com.accp.t4.vo.llVO.Integral;
@@ -35,9 +36,9 @@ public class GRZXBiz {
 	 * @param userId
 	 * @return
 	 */
-	public PageInfo<OrderVO> selectOrder(Integer num,Integer userId){
+	public PageInfo<OrderVO> selectOrder(Integer num,Integer userId,String data,String orderId){
 		PageHelper.startPage(num, 4);
-		return new PageInfo<OrderVO>(dao.selectOrder(userId));
+		return new PageInfo<OrderVO>(dao.selectOrder(userId,data,orderId));
 	}
 	/**
 	 * 查询金币流
@@ -46,7 +47,7 @@ public class GRZXBiz {
 	 * @return
 	 */
 	public PageInfo<Goldnotes> selectMoney(Integer num,Integer userId){
-		PageHelper.startPage(num, 4);
+		PageHelper.startPage(num, 6);
 		return new PageInfo<Goldnotes>(dao.selectMoney(userId));
 	}
 	/**
@@ -56,7 +57,7 @@ public class GRZXBiz {
 	 * @return
 	 */
 	public PageInfo<Integral> selectJiFen(Integer num,Integer userId){
-		PageHelper.startPage(num, 4);
+		PageHelper.startPage(num, 6);
 		return new PageInfo<Integral>(dao.selectJiFen(userId));
 	}
 	/**
@@ -78,5 +79,15 @@ public class GRZXBiz {
 	public PageInfo<EvaluationVo> selectEvaluation(Integer num,Integer userId){
 		PageHelper.startPage(num, 4);
 		return new PageInfo<EvaluationVo>(dao.selectEvaluation(userId));
+	}
+	/**
+	 * 我的收藏------收藏服务
+	 * @param num
+	 * @param userId  用户ID
+	 * @return
+	 */
+	public PageInfo<Services> selectServiceCollection(Integer num,Integer userId){
+		PageHelper.startPage(num, 4);
+		return new PageInfo<Services>(dao.selectServiceCollection(userId));
 	}
 }

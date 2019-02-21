@@ -167,7 +167,7 @@
 										<span class="c_4">预订编号</span><span th:text="${temp.orderID}"></span>
 									</div>
 									<p>
-										<a th:if="${temp.orderStatus!=6&&temp.orderStatus!=7}" href="">查看详细</a>
+										<a th:if="${temp.orderStatus!=6&&temp.orderStatus!=7}" th:href="@{/grzx/order(orderId=${temp.orderID})}">查看详细</a>
 										<span th:if="${temp.orderStatus>1&&temp.orderStatus!=6}" class="ht_line2"></span>
 										<a th:if="${temp.orderStatus>1&&temp.orderStatus!=6}" href="" rel="303">站内信商家</a>
 									</p>
@@ -234,7 +234,7 @@
 							<a class="page_next" th:if="${orderPage.hasPreviousPage}" href="">上一页</a>
 							<a class="page_next nextdisabled" th:if="${!orderPage.hasPreviousPage}" href="javascript:;">上一页</a>
 
-							<a th:each="temp:${orderPage.navigatepageNums}" th:class="${temp==pageInfo.pageNum?'cur':'num'}" th:text="${temp}" th:href="@{}"></a>
+							<a th:each="temp:${orderPage.navigatepageNums}" th:class="${temp==orderPage.pageNum?'cur':'num'}" th:text="${temp}" href=""></a>
 
 							<a class="page_next" th:if="${orderPage.hasNextPage}" href="">下一页</a>
 							<a class="page_next nextdisabled" th:if="${!orderPage.hasNextPage}" href="javascript:;">下一页</a>

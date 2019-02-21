@@ -7,8 +7,8 @@ public class OrderVO {
 	private Integer userID;
 	private String userName;
 	private Integer serviceID;
-	private Integer merchantID;
-	private String merchantName;
+	private Integer merchantID;		//商家Id
+	private String merchantName;	//商家名称
 	private Integer businessState;
 	private Date orderTime;
 	private Date paymentTime;
@@ -25,6 +25,10 @@ public class OrderVO {
 	private Integer filesatus;
 	private Integer commentstatus;
 	private Integer refundstatus;
+	private String shopName;
+	private Date receiptTime;
+	private Date provideServicesTime;
+	private Date completeTime;
 	public String getOrderID() {
 		return orderID;
 	}
@@ -161,6 +165,31 @@ public class OrderVO {
 	}
 	public void setRefundstatus(Integer refundstatus) {
 		this.refundstatus = refundstatus;
+	}
+	
+	public String getShopName() {
+		return shopName;
+	}
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
+	}
+	public Date getReceiptTime() {
+		return receiptTime;
+	}
+	public void setReceiptTime(Date receiptTime) {
+		this.receiptTime = receiptTime;
+	}
+	public Date getProvideServicesTime() {
+		return provideServicesTime;
+	}
+	public void setProvideServicesTime(Date provideServicesTime) {
+		this.provideServicesTime = provideServicesTime;
+	}
+	public Date getCompleteTime() {
+		return completeTime;
+	}
+	public void setCompleteTime(Date completeTime) {
+		this.completeTime = completeTime;
 	}
 	public OrderVO() {
 		super();

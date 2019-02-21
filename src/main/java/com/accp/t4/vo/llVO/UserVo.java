@@ -46,8 +46,4 @@ public class UserVo {
 	public UserVo() {
 		super();
 	}
-	
-	
-	
-	
 }
