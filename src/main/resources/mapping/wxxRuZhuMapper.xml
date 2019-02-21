@@ -139,9 +139,14 @@
 				<if test="obj.age!=null and obj.age!=''">
 					`age` = #{obj.age},
 				</if>
-				<if
-					test="obj.selfintroduction!=null and obj.selfintroduction!=''">
+				<if test="obj.selfintroduction!=null and obj.selfintroduction!=''">
 					`selfintroduction` = #{obj.selfintroduction},
+				</if>
+				<if test="obj.experience!=null and obj.experience!=''">
+					`experience` = #{obj.experience},
+				</if>
+				<if test="obj.experiencestatus!=null and obj.experiencestatus!=''">
+					`experienceStatus` = #{obj.experiencestatus},
 				</if>
 				`userMoney` = `userMoney` - #{bond},`guaranteeMoney` =
 				#{bond},`auditStatus` = 1,`merchantLevel` = 0,

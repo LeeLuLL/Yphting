@@ -166,20 +166,20 @@
 					<span class="c_x">*</span>店铺保证金
 				</dt>
 				<span class="shop_margin">500金币</span>
-				<span> <input type="button" id="mfty" value="免费体验"
-					onclick=" $('#free').toggle();$('#notfree').toggle();$('#isfree').val(1);$('#nofreesubmit').toggle();$('#freesubmit').toggle();" />
+				<span> <input type="button" id="mfty" value="免费体验" name="bzj"
+					onclick="$('#isfree').val('正式入驻'); $('#free').toggle();$('#notfree').toggle();$('#isfree').val(1);$('#nofreesubmit').toggle();$('#freesubmit').toggle();" />
 				</span>
 				</dd>
 			</dl>
-			<input type="hidden" value="0" id="isfree" name="isfree" />
+			<input type="hidden" value="" id="isfree" name="bzj" />
 			<dl class="info_form_dl" id="free" style="display: none;">
 				<dt>
 					<span class="c_x"></span>免费体验
 				</dt>
 				<dd>
 					<span class="shop_margin">6个月</span> <span> <input
-						type="button" id="zsru" value="正式入驻"
-						onclick=" $('#free').toggle();$('#notfree').toggle();$('#isfree').val(0);$('#nofreesubmit').toggle();$('#freesubmit').toggle();" />
+						type="button" id="zsru" value="正式入驻" name="bzj"
+						onclick="$('#isfree').val('免费体验'); $('#free').toggle();$('#notfree').toggle();$('#isfree').val(0);$('#nofreesubmit').toggle();$('#freesubmit').toggle();" />
 					</span>
 				</dd>
 			</dl>
