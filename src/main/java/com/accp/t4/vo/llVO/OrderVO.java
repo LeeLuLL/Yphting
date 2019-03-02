@@ -29,6 +29,11 @@ public class OrderVO {
 	private Date receiptTime;
 	private Date provideServicesTime;
 	private Date completeTime;
+	
+	private Date scheduledStartTime;
+	private Date scheduledEndTime;
+	
+	private Integer stid;
 	public String getOrderID() {
 		return orderID;
 	}
@@ -193,6 +198,38 @@ public class OrderVO {
 	}
 	public OrderVO() {
 		super();
+	}
+	
+	public Date getScheduledStartTime() {
+		return scheduledStartTime;
+	}
+	public void setScheduledStartTime(Date scheduledStartTime) {
+		this.scheduledStartTime = scheduledStartTime;
+	}
+	public Date getScheduledEndTime() {
+		return scheduledEndTime;
+	}
+	public void setScheduledEndTime(Date scheduledEndTime) {
+		this.scheduledEndTime = scheduledEndTime;
+	}
+	
+	public Integer getStid() {
+		return stid;
+	}
+	public void setStid(Integer stid) {
+		this.stid = stid;
+	}
+	@Override
+	public String toString() {
+		return "OrderVO [orderID=" + orderID + ", userID=" + userID + ", userName=" + userName + ", serviceID="
+				+ serviceID + ", merchantID=" + merchantID + ", merchantName=" + merchantName + ", businessState="
+				+ businessState + ", orderTime=" + orderTime + ", paymentTime=" + paymentTime + ", stName=" + stName
+				+ ", totalPrice=" + totalPrice + ", population=" + population + ", number=" + number + ", smallPlan="
+				+ smallPlan + ", orderStatus=" + orderStatus + ", serviceCoverImg=" + serviceCoverImg
+				+ ", serviceFuTitle=" + serviceFuTitle + ", serviceTitle=" + serviceTitle + ", servicePrice="
+				+ servicePrice + ", filesatus=" + filesatus + ", commentstatus=" + commentstatus + ", refundstatus="
+				+ refundstatus + ", shopName=" + shopName + ", receiptTime=" + receiptTime + ", provideServicesTime="
+				+ provideServicesTime + ", completeTime=" + completeTime + "]";
 	}
 	
 }

@@ -40,17 +40,15 @@
 					<a href="javascript.void(0);">退出</a> <span class="ht_line"></span>
 					<a href="javascript.void(0);"><img src="Public/images/e_i.png"
 						alt="" /></a>
-
 				</div>
 			</div>
 		</div>
-
 		<div class="b_box nav_header community_header">
 			<a class="logo my_logo" href="javascript.void(0);">御品韩汀</a>
 			<ul class="member_nav_ul">
-				<li id="li1"><a href="">商家中心</a><span
+				<li id="li1"><a href="/sjzx/index">商家中心</a><span
 					class="my_nav_i"></span></li>
-				<li class="cur" id="li2"><a href="/grzx/user?userId=24">个人中心</a><span
+				<li class="cur" id="li2"><a th:href="@{/grzx/index(userId=${session.user.userid})}">个人中心</a><span
 					class="my_nav_i"></span></li>
 				<li id="li3"><a href="javascript.void(0);">账户设置</a><span
 					class="my_nav_i"></span></li>
@@ -69,7 +67,7 @@
 			<div class="member_left">
 				<h1 class="member_left_title">个人中心</h1>
 				<ul class="member_system_ul">
-					<li><span onclick="location.href='/grzx/order'" class='font'><span
+					<li><span onclick="location.href='/grzx/orders'" class='font'><span
 							class="msp2 pre_c1"></span>我预订的服务</span></li>
 					<li><a href="grzx-downloads.html"><span
 							class="msp2 pre_c2"></span>我的下载</a></li>
@@ -127,7 +125,7 @@
 							<img th:src="${temp.serviceCoverImg}" width="135" height="90"/>
 						</div>
 						
-						<a th:href="@{/grzx/order(orderId=${temp.orderID})}" class="btn_a_yyd">查看详细</a>
+						<a th:href="@{/grzx/orderDetail(orderId=${temp.orderID})}" class="btn_a_yyd">查看详细</a>
 						<div class="you_yd_text">
 							<div class="yd_xm_title" th:text="${temp.serviceTitle}"></div>
 							<p th:text="${temp.serviceFuTitle}"></p>

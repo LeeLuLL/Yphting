@@ -9,16 +9,9 @@ import com.accp.t4.vo.llVO.Goldnotes;
 import com.accp.t4.vo.llVO.Integral;
 import com.accp.t4.vo.llVO.MerchantVo;
 import com.accp.t4.vo.llVO.OrderVO;
-import com.accp.t4.vo.llVO.Refund;
-import com.accp.t4.vo.llVO.UserVo;
 
 public interface IGRZXDao {
-	/**
-	 * 查询用户信息
-	 * @param userId
-	 * @return
-	 */
-	public UserVo selectUser(@Param("userId")Integer userId);
+	
 	/**
 	 * 查询预订的订单
 	 * @param userId  用户Id
@@ -26,7 +19,14 @@ public interface IGRZXDao {
 	 * @param orderId 订单Id -------查询详情
 	 * @return
 	 */
-	public List<OrderVO> selectOrder(@Param("userId")Integer userId,@Param("data") String date,@Param("orderId") String orderId);
+	public List<OrderVO> selectOrder(@Param("userId")Integer userId,@Param("data") String date,@Param("merchantID") Integer merchantID);
+	/**
+	 * 查询单个订单
+	 * @param orderId
+	 * @return
+	 */
+	public OrderVO getOrder(@Param("orderId") String orderId);
+	
 	/**
 	 * 查询金币
 	 * @param userId
@@ -44,7 +44,14 @@ public interface IGRZXDao {
 	 * @param userId
 	 * @return
 	 */
-	public List<Refund> selectRefunds(@Param("userId")Integer userId);
+	//public List<Refund> selectRefunds(@Param("userId")Integer userId);
+	/**
+	 * 查询退款详情
+	 * @param refundId
+	 * @return
+	 */
+	//public Refund selectRefundDetail(@Param("refundId") Integer refundId);
+	
 	/**
 	 * 我的评价
 	 * @param userId

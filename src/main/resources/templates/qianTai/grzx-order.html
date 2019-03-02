@@ -53,13 +53,12 @@
 						.layui-layer-btn .layui-layer-btn0 {
 							background: #4c1b98;
 						}
-						
 						.layui-layer-btn .layui-layer-btn0:hover {
 							background: #340d6f;
 						}
 					</style>
 					<li class="cur" id="li2">
-						<a href="/grzx/user">个人中心</a><span class="my_nav_i"></span></li>
+						<a th:href="@{/grzx/index(userId=${session.user.userid})}">个人中心</a><span class="my_nav_i"></span></li>
 					<li id="li3">
 						<a href="">账户设置</a><span class="my_nav_i"></span></li>
 					<li id="li4">
@@ -167,7 +166,7 @@
 										<span class="c_4">预订编号</span><span th:text="${temp.orderID}"></span>
 									</div>
 									<p>
-										<a th:if="${temp.orderStatus!=6&&temp.orderStatus!=7}" th:href="@{/grzx/order(orderId=${temp.orderID})}">查看详细</a>
+										<a th:if="${temp.orderStatus!=6&&temp.orderStatus!=7}" th:href="@{/grzx/orderDetail(orderId=${temp.orderID})}">查看详细</a>
 										<span th:if="${temp.orderStatus>1&&temp.orderStatus!=6}" class="ht_line2"></span>
 										<a th:if="${temp.orderStatus>1&&temp.orderStatus!=6}" href="" rel="303">站内信商家</a>
 									</p>
@@ -193,26 +192,30 @@
 									<span th:if="${temp.orderStatus==2}">待接单</span>
 									<span th:if="${temp.orderStatus==3}">待服务</span>
 									<span th:if="${temp.orderStatus==4}">待确认</span>
-									<span th:if="${temp.orderStatus==5}">服务完成</span>
+									<span th:if="${temp.orderStatus==5 and temp.refundstatus==0}">服务完成</span>
+									<span th:if="${temp.orderStatus==5 and temp.refundstatus==1}">申请退款中</span>
+									<span th:if="${temp.orderStatus==5 and temp.refundstatus==2}">商家不同意退款</span>
+									<span th:if="${temp.orderStatus==5 and temp.refundstatus==3}">申请管理员介入</span>
+									<span th:if="${temp.orderStatus==5 and temp.refundstatus==4}">管理员拒绝退款</span>
 									<span th:if="${temp.orderStatus==6}">服务取消</span>
 									<span th:if="${temp.orderStatus==7}">未接单</span>
 									<span th:if="${temp.orderStatus==8}">已退款</span>
 								</li>
 								<li class="cel_l5">
-									<a href="" class="btna_s1" th:if="${temp.orderStatus==1}">支付金币</a>
+									<a th:href="@{/grzx/grzx-order-pay(orderId=${temp.orderID})}" class="btna_s1" th:if="${temp.orderStatus==1}">支付金币</a>
 									<br th:if="${temp.orderStatus==1}" />
-									<a href="" class="btna_s1" th:if="${temp.orderStatus==4}">确认完成</a>
+									<a th:href="@{/ll/c/orderOK(orderId=${temp.orderID})}" onclick="return window.confirm('确定服务已完成吗？')" class="btna_s1" th:if="${temp.orderStatus==4}">确认完成</a>
 									<br th:if="${temp.orderStatus==4}"/>
 									<a href="${temp.documentpath}" download="" class="btna_s3 mt5" th:if="${temp.filesatus==2}">下载</a>
 									<br th:if="${temp.filesatus==2}"/>
-									<a href="" class="btna_s3" th:if="${temp.commentstatus==1}">评价</a>
+									<a th:href="@{/ll/c/toEvaluate(orderId=${temp.orderID})}" class="btna_s3" th:if="${temp.commentstatus==1}">评价</a>
 									<br th:if="${temp.commentstatus==1}"/>
 									<span class="c_4" th:if="${temp.commentstatus==2}">已评价</span>
 									<br th:if="${temp.commentstatus==2}"/>
 									<span class="c_4" th:if="${temp.commentstatus==3}">双方已评</span>
 									<br th:if="${temp.commentstatus==3}"/>
-									<a href="" onclick="" th:if="${temp.orderStatus==1}">取消服务</a>
-									<a href="">申请退款</a>
+									<a th:href="@{/ll/c/cancelOrder(orderId=${temp.orderID})}" onclick="return window.confirm('确认要取消服务吗？')" th:if="${temp.orderStatus==1}">取消服务</a>
+									<a th:href="@{/ll/c/toRefund(orderId=${temp.orderID})}"  th:if="${temp.orderStatus==3 or temp.orderStatus==5 and temp.refundstatus==0}">申请退款</a>
 									<a class="btna_s2" href="" th:if="${temp.refundstatus>0}">查看退款详情</a>
 								</li>
 							</ul>
@@ -319,9 +322,9 @@
 			</li>
 		</ul>
 
-		<!-- <script type="text/javascript">
+		<script type="text/javascript">
 			$("#zt" + "[[${param.status}]]").addClass("cur");
-		</script> -->
+		</script>
 	</body>
 <script type="text/javascript" src="/Public/js/sessionHeader.js"></script>
 <script type="text/javascript" src="/Public/js/grzx-interlinkage.js"></script>

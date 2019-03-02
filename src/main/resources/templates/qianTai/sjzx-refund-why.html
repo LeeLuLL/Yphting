@@ -36,13 +36,12 @@
 		<div class="b_box nav_header community_header">
 			<a class="logo my_logo" href="">御品韩汀</a>
 			<ul class="member_nav_ul">
-				<li class="cur" id="li1"><a href="">商家中心</a><span
+				<li class="cur" id="li1"><a href="/sjzx/index">商家中心</a><span
 					class="my_nav_i"></span></li>
 				<style type="text/css">
 				.layui-layer-btn .layui-layer-btn0 {
 					background: #4c1b98;
 				}
-				
 				.layui-layer-btn .layui-layer-btn0:hover {
 					background: #340d6f;
 				}
@@ -82,8 +81,9 @@
 			<!--member right-->
 			<div class="member_right sj_right_box">
 				<div class="member_system_r_top mt10">您不同意退款申请</div>
-				<form method="post" id="formpost" action="/c/lhy/refund/no">
-					<input type="hidden" name="orderid" th:value="${orderid}">
+				<form method="post" id="formpost" action="/sjzx/noRefund">
+					<input type="hidden" name="orderid" th:value="${refund.orders.orderid}">
+					<input type="hidden" name="refundid" th:value="${refund.refundid}"/>
 					<ul class="member_zl_ul noagree_ul">
 						<li><span class="m_zl_sp">不同意的原因</span>
 							<div class="m_zl_r">

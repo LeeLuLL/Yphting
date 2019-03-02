@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.accp.t4.dao.llDao.IRefundDao">
+	<!-- 退款 -->
+	<resultMap type="RefundVO" id="refundMap">
+		<id column="refundID" property="refundid"/>
+		<result column="orderID" property="orderid"/>
+		<result column="userID" property="userid"/>
+		<association property="orders" column="orderID" select="order"></association>
+		<association property="user" column="userID" select="refundUser"></association>
+	</resultMap>
+	<resultMap type="OrdersVo" id="OrderMap">
+		<id column="orderID" property="orderid"/>
+		<association property="services" column="serviceID" select="getServices"></association>
+	</resultMap>
+	<resultMap type="ServicesVo" id="ServicesMap">
+		<id column="serviceID" property="serviceid"/>
+		<association property="user" column="userID" select="getUser"></association>
+	</resultMap>
+	<select id="refundUser" resultType="com.accp.t4.entity.llEntity.User">
+		select * from `user` where `userID`=#{0}
+	</select>
+	<select id="getUser" resultType="com.accp.t4.entity.llEntity.User">
+		select * from `user` where `userID`=#{0}
+	</select>
+	<select id="getServices" resultMap="ServicesMap">
+		select * from `services` where `serviceID`=#{0}
+	</select>
+	<select id="order" resultMap="OrderMap">
+		SELECT * FROM `orders` WHERE `orderID`=#{0}
+	</select>
+	<select id="selectRefunds" resultMap="refundMap">
+		select * from `refund` 
+		left join `orders` on `orders`.`orderID`=`refund`.`orderID`
+		left join `services` on `services`.`serviceID`=`orders`.`serviceID`
+		<where>
+			<if test="userId!=null">
+				and `orders`.`userID`=#{userId}
+			</if>
+			<if test="merchantId!=null">
+				and `services`.`userID`=#{merchantId}
+			</if>
+		</where>
+		order by `applicationTime` desc
+	</select>
+	<!-- 退款详情 -->
+	<select id="selectRefundDetail" resultMap="refundMap">
+		select * from `refund` 
+		left join `orders` on `orders`.`orderID`=`refund`.`orderID`
+		left join `services` on `services`.`serviceID`=`orders`.`serviceID`
+		<where>
+			<if test="refundId!=null">
+				and `refundID`=#{refundId}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 修改退款信息 -->
+	<update id="updateRefund">
+		update `refund` 
+		<set>
+			<if test="refund.point!=null">
+				`point`=#{refund.point},
+			</if>
+			<if test="refund.actualrefundmoney!=null">
+				`ActualRefundMoney`=#{refund.actualrefundmoney},
+			</if>
+			<if test="refund.businessremarks!=null">
+				`businessRemarks`=#{refund.businessremarks},
+			</if>
+			<if test="refund.audittime!=null">
+				`auditTime`=#{refund.audittime},
+			</if>
+			<if test="refund.auditstatus!=null">
+				`auditStatus`=#{refund.auditstatus},
+			</if>
+			<if test="refund.adminremarks!=null">
+				`adminRemarks`=#{refund.adminremarks},
+			</if>
+			<if test="refund.admintime!=null">
+				`adminTime`=#{refund.admintime},
+			</if>
+			<if test="refund.adminstatus!=null">
+				`adminStatus`=#{refund.adminstatus}
+			</if>
+		</set>
+		where `refundID`=#{refund.refundid}
+	</update>
+	
+</mapper>

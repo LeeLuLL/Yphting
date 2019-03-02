@@ -32,7 +32,7 @@
 				<a class="logo my_logo" href="">御品韩汀</a>
 				<ul class="member_nav_ul">
 					<li id="li1">
-						<a href="">商家中心</a><span class="my_nav_i"></span></li>
+						<a th:href="@{/sjzx/index(userId=${session.user.userid})}">商家中心</a><span class="my_nav_i"></span></li>
 					<style type="text/css">
 						.layui-layer-btn .layui-layer-btn0 {
 							background: #4c1b98;
@@ -43,7 +43,7 @@
 						}
 					</style>
 					<li class="cur" id="li2">
-						<a href="/grzx/user">个人中心</a><span class="my_nav_i"></span></li>
+						<a th:href="@{/grzx/index(userId=${session.user.userid})}">个人中心</a><span class="my_nav_i"></span></li>
 					<li id="li3">
 						<a href="">账户设置</a><span class="my_nav_i"></span></li>
 					<li id="li4">

@@ -35,10 +35,10 @@
     <div class="b_box nav_header community_header">
 		<a class="logo my_logo" href="#">御品韩汀</a>
 		<ul class="member_nav_ul">
-        	<li class="cur" id="li1"><a href="#">商家中心</a><span class="my_nav_i"></span></li>
+        	<li class="cur" id="li1"><a href="/sjzx/index">商家中心</a><span class="my_nav_i"></span></li>
 <style type="text/css">
 .layui-layer-btn .layui-layer-btn0{ background:#4c1b98; }
-.layui-layer-btn .layui-layer-btn0:hover{ background:#340d6f;}
+.layui-layer-..btn .layui-layer-btn0:hover{ background:#340d6f;}
 
 </style>        	<li  id="li2"><a href="#">个人中心</a><span class="my_nav_i"></span></li>
             <li  id="li3"><a href="#">账户设置</a><span class="my_nav_i"></span></li>
@@ -96,17 +96,16 @@
             <tr  th:each="temp,iterState:${PAGE_INFO.list}">
 				<td>
 					<input   type="hidden"  th:value="${temp.servicecoverimg}"   id="fmt">
-					<img alt="" th:src="${temp.servicecoverimg}" style="width: 50px;height: 50px;">
+					<img alt="..." th:src="${temp.servicecoverimg}" style="width: 50px;height: 50px;">
 					<span th:text="${temp.servicetitle}" id="servicetitle" ></span>
 					<!-- <span th:text="${temp.servicefutitle}" id="servicefutile"></span> -->
 				</td>
-				
 				<td >
 						<span  th:text="${#dates.format(temp.servicestartdate,'yyyy-MM-dd')} "></span>至
 						<span th:text="${#dates.format(temp.serviceenddate,'yyyy-MM-dd')}" ></span>
 				</td>
 				<td th:text="${temp.serviceprice}" id="serviceprice"></td>	
-				<td  th:text="${temp.number}"></td>	
+				<!-- <td  th:text="${temp.number}"></td> -->	
 				<td>
 		
 					 <div th:switch="${temp.auditstatus}">
@@ -114,7 +113,6 @@
 						<span th:case="2" >审批通过</span>
 						<span th:case="3" >未通过</span>
 					</div>
-				
 				</td>
 				<td  th:text="${#dates.format(temp.releasetime,'yyyy-MM-dd')}"></td>
 				<!-- 动态url:th:href="@{/c/removeInfo(id=${temp.mid},name=admin)}"  -->
@@ -133,18 +131,18 @@
 				<tr>
 						<td colspan="7" align="center">
 							
-								<a    th:href="@{getServices(pageNum=1,pageSize=${PAGE_INFO.pageSize})}" >首页</a>
+								<a th:href="@{/sjzx/sjzx-services(num=${PAGE_INFO.firstPage})}" >首页</a>
 								&nbsp;&nbsp;
 								
 								<span th:if="${PAGE_INFO.isHasPreviousPage()}" >
-								<a   th:href="@{getServices(pageNum=${PAGE_INFO.prePage},pageSize=${PAGE_INFO.pageSize})}">上一页</a>
+								<a th:href="@{/sjzx/sjzx-services(num=${PAGE_INFO.prePage})}">上一页</a>
 								</span>
 									&nbsp;&nbsp;
 								<span th:if="${PAGE_INFO.isHasNextPage()}" >
 								
-									<a th:href="@{getServices(pageNum=${PAGE_INFO.nextPage},pageSize=${PAGE_INFO.pageSize})}">下一页</a>
+									<a th:href="@{/sjzx/sjzx-services(num=${PAGE_INFO.nextPage})}">下一页</a>
 								</span>
-								&nbsp;&nbsp; <a th:href="@{getServices(pageNum=${PAGE_INFO.lastPage},pageSize=${PAGE_INFO.pageSize})}">末页</a>							
+								&nbsp;&nbsp; <a th:href="@{/sjzx/sjzx-services(num=${PAGE_INFO.lastPage})}">末页</a>							
 								&nbsp;&nbsp; &nbsp;&nbsp;第[[${PAGE_INFO.pageNum}]]页/共[[${PAGE_INFO.lastPage}]]页&nbsp;&nbsp;共[[${PAGE_INFO.total}]]条记录
 							
 						</td>

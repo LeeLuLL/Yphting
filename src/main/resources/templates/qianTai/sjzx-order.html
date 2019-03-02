@@ -59,10 +59,10 @@ span  .time2 {
 		<div class="b_box nav_header community_header">
 			<a class="logo my_logo" href="#">御品韩汀</a>
 			<ul class="member_nav_ul">
-				<li class="cur" id="li1"><a href="#">商家中心</a><span
+				<li class="cur" id="li1"><a href="/sjzx/index">商家中心</a><span
 					class="my_nav_i"></span></li>
 		
-				<li id="li2"><a href="#">个人中心</a><span class="my_nav_i"></span></li>
+				<li id="li2"><a th:href="@{/grzx/index(userId=${session.user.userid})}">个人中心</a><span class="my_nav_i"></span></li>
 				<li id="li3"><a href="#">账户设置</a><span class="my_nav_i"></span></li>
 				<li id="li4"><a href="#">消息</a><span class="my_nav_i"></span></li>
 
@@ -129,77 +129,77 @@ span  .time2 {
 				<div class="booking_list " th:each="temp,iter :${pageInfo.list}">
 					<div class="book_top business_top">
 						<ul class="book_top_ul">
-							<li><span class="c_4">下单日期</span>[[${#dates.format(temp.ordertime, 'yyyy-MM-dd')}]]</li>
-							<li><span class="c_4">预订编号</span><span>[[${temp.orderid}]]</span></li>
+							<li><span class="c_4">下单日期</span>[[${#dates.format(temp.orderTime, 'yyyy-MM-dd')}]]</li>
+							<li><span class="c_4">预订编号</span><span>[[${temp.orderID}]]</span></li>
 						</ul>
 					</div>
 					<div class="book_bt business_bt">
-						<ul class="book_bt_ul" th:id="${temp.userid}">
+						<ul class="book_bt_ul" th:id="${temp.userID}">
 							<li class="cel_l1"><img
-								th:src="${temp.ser.servicecoverimg}" alt="留学中介测试标题" /></li>
+								th:src="${temp.serviceCoverImg}" alt="留学中介测试标题" /></li>
 							<li class="cel_l2">
 								<div class="yd_xm_title">
-									<a href="javascript:void(0)" target="_blank">[[${temp.ser.servicetitle}]]</a>
+									<a href="javascript:void(0)" target="_blank">[[${temp.serviceTitle}]]</a>
 								</div>
 								<p>
-									<span class="num_1 num_1_s">[[${temp.ser.serviceprice}]]</span>
+									<span class="num_1 num_1_s">[[${temp.servicePrice}]]</span>
 								</p>
-								<p name="stid">[[${temp.ser.stid}]]</p>
+								<p name="stid">[[${temp.stName}]]</p>
 							
 								
 							</li>
 							<li class="cel_l3">
 								<span th:if="${temp.number>0}">[[${temp.number}]]</span>
-								<span th:if="${temp.number==null}">[[${#dates.format(temp.scheduledstarttime,'yyyy-MM-dd')}]]-
-								[[${#dates.format(temp.scheduledendtime,'yyyy-MM-dd')}]]
+								<span th:if="${temp.number==null}">[[${#dates.format(temp.scheduledStartTime,'yyyy-MM-dd')}]]-
+								[[${#dates.format(temp.scheduledEndTime,'yyyy-MM-dd')}]]
 								</span>
 								
 							</li>
-							<li class="cel_l4 shopname">[[${temp.u.username}]]
+							<li class="cel_l4 shopname">[[${temp.userName}]]
 								<br />
 							<a href="javascript:;" onclick="showmsg(this)" rel="345"
-								class="btna_s2" th:if="${temp.orderstatus!=1}">站内信用户</a>
+								class="btna_s2" th:if="${temp.orderStatus!=1}">站内信用户</a>
 							</li>
-							<li class="cel_l5"><span class="num_1 num_1_s">[[${temp.smallplan}]]</span></li>
+							<li class="cel_l5"><span class="num_1 num_1_s">[[${temp.smallPlan}]]</span></li>
 							<li class="cel_l6">
-								<span th:if="${temp.orderstatus==1}">待付款</span>
-								<span th:if="${temp.orderstatus==2}">待接单</span>
-								<span th:if="${temp.orderstatus==3}">待提供服务</span>
-								<span th:if="${temp.orderstatus==4}">已提供服务</span>
-								<span th:if="${temp.orderstatus==5 and  temp.commentstatus==1 and temp.refundstatus==0}">待评价</span>
-								<span th:if="${temp.orderstatus==5 and  temp.commentstatus==2 and temp.refundstatus==0}">已评价</span>
-								<span th:if="${temp.orderstatus==5 and  temp.commentstatus==3 and temp.refundstatus==0}">双方已评</span>
-								<span th:if="${temp.orderstatus==5 and  temp.refundstatus==1}">退款申请中</span>
-								<span th:if="${temp.orderstatus==5 and  temp.refundstatus==2}">不同意</span>
-								<span th:if="${temp.orderstatus==5 and  temp.refundstatus==3}">管理员介入</span>
-								<span th:if="${temp.orderstatus==5 and  temp.refundstatus==4}">管理员拒绝</span>
-								<span th:if="${temp.orderstatus==5 and  temp.refundstatus==5}">退款完成</span>
-								<span th:if="${temp.orderstatus==5 and  temp.refundstatus==6}">退款取消</span>
-								<span th:if="${temp.orderstatus==6}">服务取消</span>
-								<span th:if="${temp.orderstatus==7}">未接单</span>
-								<span th:if="${temp.orderstatus==8}">已退款</span>
+								<span th:if="${temp.orderStatus==1}">待付款</span>
+								<span th:if="${temp.orderStatus==2}">待接单</span>
+								<span th:if="${temp.orderStatus==3}">待提供服务</span>
+								<span th:if="${temp.orderStatus==4}">已提供服务</span>
+								<span th:if="${temp.orderStatus==5 and  temp.commentstatus==1 and temp.refundstatus==0}">待评价</span>
+								<span th:if="${temp.orderStatus==5 and  temp.commentstatus==2 and temp.refundstatus==0}">已评价</span>
+								<span th:if="${temp.orderStatus==5 and  temp.commentstatus==3 and temp.refundstatus==0}">双方已评</span>
+								<span th:if="${temp.orderStatus==5 and  temp.refundstatus==1}">退款申请中</span>
+								<span th:if="${temp.orderStatus==5 and  temp.refundstatus==2}">不同意</span>
+								<span th:if="${temp.orderStatus==5 and  temp.refundstatus==3}">管理员介入</span>
+								<span th:if="${temp.orderStatus==5 and  temp.refundstatus==4}">管理员拒绝</span>
+								<span th:if="${temp.orderStatus==5 and  temp.refundstatus==5}">退款完成</span>
+								<span th:if="${temp.orderStatus==5 and  temp.refundstatus==6}">退款取消</span>
+								<span th:if="${temp.orderStatus==6}">服务取消</span>
+								<span th:if="${temp.orderStatus==7}">未接单</span>
+								<span th:if="${temp.orderStatus==8}">已退款</span>
 							<br />
-								<a  href="javascript:void(0)"  th:href="@{/c/szy/order/queryAOrder(orderID=${temp.orderid})}" class="btna_s2">查看详细</a>
+								<a th:href="@{/sjzx/sjrz-order-deatil(orderId=${temp.orderID})}"  class="btna_s2">查看详细</a>
 							</li>
 							<li class="cel_l7">
-							<span th:if="${temp.orderstatus==1}">-</span>
-							<span th:if="${temp.orderstatus==2}">
-								<a href="javascript:void(0)" class="btna_s2" name="caozuo">接单</a><br />
-								<a href="javascript:void(0)" class="btna_s2" name="caozuo">取消订单</a><br />
+							<span th:if="${temp.orderStatus==1}">-</span>
+							<span th:if="${temp.orderStatus==2}">
+								<a th:href="@{/sjzx/updateOrder(orderId=${temp.orderID},orderStatus=3)}" onclick="return window.confirm('确认要接单吗？')" class="btna_s2" name="caozuo">接单</a><br />
+								<a th:href="@{/sjzx/updateOrder(orderId=${temp.orderID},orderStatus=6)}" onclick="return window.confirm('确认取消订单吗？')" class="btna_s2" name="caozuo">取消订单</a><br />
 							</span>
-							<span th:if="${temp.orderstatus==3}">
-								<a href="javascript:void(0)" class="btna_s2" name="caozuo">提供服务</a><br />
+							<span th:if="${temp.orderStatus==3}">
+								<a th:href="@{/sjzx/updateOrder(orderId=${temp.orderID},orderStatus=4)}" onclick="return window.confirm('确认提供服务吗？')" class="btna_s2" name="caozuo">提供服务</a><br />
 							</span>
-							<span th:if="${temp.orderstatus==4}">-</span>
-							<span th:if="${temp.orderstatus==5}">
-									<a th:href="@{/c/lhy/refund/sjdetail(orderid=${temp.orderid})}" th:if="${temp.refundstatus!=0}" class="btna_s2">查看退款详情<br /></a>
+							<span th:if="${temp.orderStatus==4}">-</span>
+							<span th:if="${temp.orderStatus==5}">
+									<a th:href="@{/c/lhy/refund/sjdetail(orderid=${temp.orderID})}" th:if="${temp.refundstatus!=0}" class="btna_s2">查看退款详情<br /></a>
 									<span class="c_4" th:if="${temp.commentstatus==1}">待评价</span>
 									<span class="c_4" th:if="${temp.commentstatus==2}">已评价</span>
 									<span class="c_4" th:if="${temp.commentstatus==3}">双方已评</span>
 							</span>
-							<span th:if="${temp.orderstatus==6}">-</span>
-							<span th:if="${temp.orderstatus==7}">-</span>
-							<span th:if="${temp.orderstatus==8}">-</span>
+							<span th:if="${temp.orderStatus==6}">-</span>
+							<span th:if="${temp.orderStatus==7}">-</span>
+							<span th:if="${temp.orderStatus==8}">-</span>
 							
 							</li>
 						</ul>
@@ -210,12 +210,12 @@ span  .time2 {
 				<!--page-->
 					<div class="page" th:if="${pageInfo.total>0}">
 						<div class='nav'>
-							<a class="page_next" th:if="${pageInfo.hasPreviousPage}" th:href="@{/c/szy/order/queryAllOrder(orderStatus=0,refundstatus=-1,pageNum=${pageInfo.prePage},pageSize=5,orderID='')}">上一页</a>
-							<a class="page_next nextdisabled" th:if="${!pageInfo.hasPreviousPage}" href="javascript:;">上一页</a>
+							<a class="page_next" th:if="${pageInfo.hasPreviousPage}" th:href="@{/sjzx/sjzx-order(num=${pageInfo.prePage})}">上一页</a>
+							<a class="page_next nextdisabled" th:if="${!pageInfo.hasPreviousPage}" href="javascript:void(0)">上一页</a>
 
-							<a th:each="temp:${pageInfo.navigatepageNums}" th:class="${temp==pageInfo.pageNum?'cur':'num'}" th:text="${temp}" th:href="@{/c/szy/order/queryAllOrder(orderStatus=0,refundstatus=-1,pageNum=${temp},pageSize=5,orderID='')}"></a>
+							<a th:each="temp:${pageInfo.navigatepageNums}" th:class="${temp==pageInfo.pageNum?'cur':'num'}" th:text="${temp}" th:href="@{/sjzx/sjzx-order(num=${temp})}"></a>
 
-							<a class="page_next" th:if="${pageInfo.hasNextPage}" th:href="@{/c/szy/order/queryAllOrder(orderStatus=0,refundstatus=-1,pageNum=${pageInfo.nextPage},pageSize=5,orderID='')}">下一页</a>
+							<a class="page_next" th:if="${pageInfo.hasNextPage}" th:href="@{/sjzx/sjzx-order(num=${pageInfo.nextPage})}">下一页</a>
 							<a class="page_next nextdisabled" th:if="${!pageInfo.hasNextPage}" href="javascript:;">下一页</a>
 						</div>
 					</div>
@@ -307,18 +307,18 @@ span  .time2 {
 			p.html(data.stname);
 		})
 	})
-	$.getJSON("/c/szy/order/queryCountOrder",function(data){
+	/* $.getJSON("/c/szy/order/queryCountOrder",function(data){
 		var jiedan=0;var fuwu=0;var dwc=0;var tuikan=0;var wancheng=0;
 		$.each(data,function(i,obj){
-			if(obj.orderstatus==2){
+			if(obj.orderStatus==2){
 				jiedan=jiedan+1;
-			}else if(obj.orderstatus==3){
+			}else if(obj.orderStatus==3){
 				fuwu=fuwu+1;
-			}else if(obj.orderstatus==4){
+			}else if(obj.orderStatus==4){
 				dwc=dwc+1;
-			}else if(obj.orderstatus==5&&obj.refundstatus==0){
+			}else if(obj.orderStatus==5&&obj.refundstatus==0){
 				wancheng=wancheng+1;
-			}else if(obj.orderstatus==5&&obj.refundstatus>0){
+			}else if(obj.orderStatus==5&&obj.refundstatus>0){
 				tuikan=tuikan+1;
 			}
 		})
@@ -344,7 +344,7 @@ span  .time2 {
 		var orderID=$(this).parents("div").prev().find("ul li:eq(1) span:eq(1)").html();
 		var userID=$(this).parents("ul").attr("id");
 		location.href="/c/szy/order/updateOrders?orderStatus="+orderStatus+"&orderID="+orderID+"&userID="+userID;
-	})
+	}) */
 	$("#typeul li a").click(function(){
 		var orderStatus=$(this).attr("id");
 		if(orderStatus.trim()==9){

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.accp.t4.dao.llDao.IOrderDao">
+	<!-- 修改订单 信息 -->
+	<update id="updateOrder">
+		UPDATE `orders` 
+		<set>
+			<if test="order.orderstatus!=null">
+				orderstatus=#{order.orderstatus},
+			</if>
+			<if test="order.paymenttime!=null">
+				paymenttime=#{order.paymenttime},
+			</if>
+			<if test="order.commentstatus!=null">
+				commentstatus=#{order.commentstatus},
+			</if>
+			<if test="order.refundstatus!=null">
+				refundstatus=#{order.refundstatus},
+			</if>
+			<if test="order.orderstatus==3">
+				receiptTime=NOW(),
+			</if>
+			<if test="order.orderstatus==4">
+				provideServicesTime=NOW(),
+			</if>
+		</set>
+		WHERE `orderID`=#{order.orderid}
+	</update>
+	<!-- 添加金币记录 -->
+	<insert id="addGoldnotes" useGeneratedKeys="true"
+		keyProperty="recordid" parameterType="com.accp.t4.entity.llEntity.Goldnotes">
+		INSERT INTO
+		goldNotes(userID,recordDate,recordDescribe,recordInAndOut,auditStatus,acquisitionmode)
+		VALUES(#{goldnotes.userid},now()
+		,#{goldnotes.recorddescribe},#{goldnotes.recordinandout},#{goldnotes.auditstatus},5)
+	</insert>
+	<!-- 修改用户金币 -->
+	<update id="updateUserMoney">
+		UPDATE `user` SET `userMoney`=`userMoney`+#{money} WHERE `userID`=#{userId}
+	</update>
+	<!-- 申请退款 -->
+	<insert id="addRefund">
+		insert
+		refund(point,orderid,userid,refundimg,applyrefundmoney,applicationtime,refundreason,refundexplain,auditstatus,adminstatus)
+		values(#{refund.point},#{refund.orderid},#{refund.userid},#{refund.refundimg},#{refund.applyrefundmoney},#{refund.applicationtime},#{refund.refundreason},#{refund.refundexplain},#{refund.auditstatus},#{refund.adminstatus})
+	</insert>
+	<!-- 评价 -->
+	<insert id="saveEvaluate">
+		insert
+		evaluationservice(serviceid,userid,serviceappraisecontent,serviceappraisedate,serviceappraiselevel)
+		values(#{evaluate.serviceid},#{evaluate.userid},#{evaluate.serviceappraisecontent},#{evaluate.serviceappraisedate},#{evaluate.serviceappraiselevel})
+	</insert>
+</mapper>

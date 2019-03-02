@@ -43,7 +43,7 @@
 						}
 					</style>
 					<li class="cur" id="li2">
-						<a href="">个人中心</a><span class="my_nav_i"></span></li>
+						<a href="/grzx/index">个人中心</a><span class="my_nav_i"></span></li>
 					<li id="li3">
 						<a href="">账户设置</a><span class="my_nav_i"></span></li>
 					<li id="li4">
@@ -101,11 +101,11 @@
 					<div class="member_system_r_top mt10">申请退款</div>
 					<p class="request_refund c_4">
 						<span class="c_9">* 温馨提示：</span> 本次售后服务将由 商家<a href=""
-							class="c_9 mlr10" th:text="${order.service.user.shopname}"></a>为您提供
+							class="c_9 mlr10" th:text="${order.shopName}"></a>为您提供
 					</p>
 					<form method="post" id="formmsg"
-						action="/c/lhy/order/refund/ok" enctype="multipart/form-data">
-						<input type="hidden" name="orderid" th:value="${order.orderid}">
+						action="/ll/c/refundOK" enctype="multipart/form-data">
+						<input type="hidden" name="orderid" th:value="${order.orderID}">
 						<ul class="member_zl_ul">
 							<li><span class="m_zl_sp">退款原因</span>
 								<div class="m_zl_r">
@@ -118,7 +118,7 @@
 							</li>
 							<li><span class="m_zl_sp">退款金币</span>
 								<div class="m_zl_r">
-									<input type="text" th:placeholder="|最大${order.smallplan}|" name="applyrefundmoney"
+									<input type="text" th:placeholder="|最大${order.smallPlan}|" name="applyrefundmoney"
 										class="input_c w350">
 								</div>
 							</li>
@@ -137,7 +137,7 @@
 										.png格式照片，大小不超过5M。
 									</p>
 									<div id="pics">
-										<input type="file" name="file" id="file" style="display:none;">
+										<input type="file" name="file" id="file" >
 									</div>
 									<div id="picss">
 										<span></span>
@@ -189,8 +189,8 @@
 					);
 
 					function refund(){
-						if($("[name=applyrefundmoney]").val()>[[${order.smallplan}]]){
-							alert("金额不能超过"+[[${order.smallplan}]]);
+						if($("[name=applyrefundmoney]").val()>[[${order.smallPlan}]]){
+							alert("金额不能超过"+[[${order.smallPlan}]]);
 							return;
 						}
 						$('#formmsg').submit();

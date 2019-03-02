@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.accp.t4.dao.llDao.IGRZXDao">
+	<!-- 预订服务 -->
+	<select id="selectOrder" resultType="OrderVO">
+		SELECT
+		`orderID`,`orders`.`userID`,b.`userName`,`orders`.`serviceID`,`services`.`userID`
+		merchantID,a.`userName` merchantName,a.`businessState`,
+		`orderTime`,`paymentTime`,`stName`,`totalPrice`,`population`,`number`,`smallPlan`,`orderStatus`,`serviceFuTitle`,`serviceTitle`,
+		`servicePrice`,`filesatus`,`commentstatus`,`refundstatus`,a.`shopName`,`receiptTime`,`provideServicesTime`,`completeTime`,`scheduledStartTime`,`scheduledEndTime`
+		,`services`.`stid`
+		FROM `orders`
+		INNER JOIN `services` ON
+		`services`.`serviceID`=`orders`.`serviceID`
+		INNER JOIN `user` a ON
+		a.`userID`=`services`.`userID`
+		INNER JOIN `user` b ON b.`userID`=`orders`.`userID`
+		INNER JOIN `servicetype`
+		ON `servicetype`.`stid`=`services`.`stid`
+		<where>
+			<if test="userId!=null">
+				and `orders`.`userID`=#{userId}			<!-- 用户预订的服务 -->
+			</if>
+			<if test="merchantID!=null">
+				and `services`.`userID` =#{merchantID}		
+			</if>
+			<if test="data!=null">
+				and DATEDIFF(NOW(),`orderTime`) &lt; 7
+			</if>
+		</where>
+		ORDER BY `orderTime` DESC
+	</select>
+	<!-- 查询订单详情 -->
+	<select id="getOrder" resultType="OrderVO">
+		SELECT
+		`orderID`,`orders`.`userID`,b.`userName`,`orders`.`serviceID`,`services`.`userID`
+		merchantID,a.`userName` merchantName,a.`businessState`,
+		`orderTime`,`paymentTime`,`stName`,`totalPrice`,`population`,`number`,`smallPlan`,`orderStatus`,`serviceFuTitle`,`serviceTitle`,
+		`servicePrice`,`filesatus`,`commentstatus`,`refundstatus`,a.`shopName`,`receiptTime`,`provideServicesTime`,`completeTime`,`completeTime`,`scheduledStartTime`,`scheduledEndTime`
+		,`services`.`stid`
+		FROM `orders`
+		INNER JOIN `services` ON
+		`services`.`serviceID`=`orders`.`serviceID`
+		INNER JOIN `user` a ON
+		a.`userID`=`services`.`userID`
+		INNER JOIN `user` b ON b.`userID`=`orders`.`userID`
+		INNER JOIN `servicetype`
+		ON `servicetype`.`stid`=`services`.`stid`
+		WHERE `orderID`=#{orderId}
+	</select>
+	<!-- 我的金币 -->
+	<select id="selectMoney" resultType="Goldnotes">
+		SELECT
+		`recordID`,`userID`,`acquisitionMode`,`recordDate`,`recordDescribe`,`recordInAndOut`,`auditStatus`
+		FROM `goldnotes`
+		WHERE `userID`=#{userId}
+		ORDER BY `recordDate` DESC
+	</select>
+	<!-- 我的积分 -->
+	<select id="selectJiFen" resultType="Integral">
+		SELECT * FROM
+		`integralrecord` WHERE `userID`=#{userId}
+	</select>
+	<!-- 我的退款 -->
+	<!-- <select id="selectRefunds" resultType="Refund">
+		SELECT
+		`refundID`,`refund`.`orderID`,`serviceTitle`,`applyRefundMoney`,`ActualRefundMoney`,`applicationTime`,`refundstatus`,`user`.`userImgPath`,`userName`
+		,`refundReason`,`refundExplain`,`businessRemarks`,`refund`.`auditTime`,`refund`.`auditStatus`,`shopName`,`adminRemarks`,`adminTime`,`adminStatus`
+		,`refundImg`,`serviceCoverImg`,`serviceFuTitle`,`servicePrice`,`orderTime`,`smallPlan`
+		FROM `refund`
+		INNER JOIN `orders` ON `orders`.`orderID`=
+		`refund`.`orderID`
+		INNER JOIN `services` ON
+		`services`.`serviceID`=`orders`.`serviceID`
+		INNER JOIN `user` ON
+		`user`.`userID`=`services`.`userID`
+		WHERE `refund`.`userID`=#{userId}
+	</select> -->
+	<!-- 退款详情 -->
+	<!-- <select id="selectRefundDetail" resultType="Refund">
+		SELECT
+		`refundID`,`refund`.`orderID`,`serviceTitle`,`applyRefundMoney`,`ActualRefundMoney`,`applicationTime`,`refundstatus`,`user`.`userImgPath`,`userName`
+		,`refundReason`,`refundExplain`,`businessRemarks`,`refund`.`auditTime`,`refund`.`auditStatus`,`shopName`,`adminRemarks`,`adminTime`,`adminStatus`
+		,`refundImg`,`serviceCoverImg`,`serviceFuTitle`,`servicePrice`,`orderTime`,`smallPlan`
+		FROM `refund`
+		INNER JOIN `orders` ON `orders`.`orderID`=
+		`refund`.`orderID`
+		INNER JOIN `services` ON
+		`services`.`serviceID`=`orders`.`serviceID`
+		INNER JOIN `user` ON
+		`user`.`userID`=`services`.`userID`
+		<where>
+			<if test="refundId!=null">
+				AND `refundID`=#{refundId}
+			</if>
+		</where>
+	</select> -->
+	<!-- 评价 -->
+	<select id="selectEvaluation" resultType="EvaluationVo">
+		SELECT
+		`serviceAppraiseID`,`evaluationservice`.`serviceID`,`evaluationservice`.`userID`,`serviceAppraiseContent`,`serviceAppraiseDate`,`serviceAppraiseLevel`,`serviceAppraisePID`
+		,
+		`serviceTitle`,`serviceFuTitle`,`serviceCoverImg`
+		FROM
+		`evaluationservice`
+		INNER JOIN `services` ON
+		`services`.`serviceID`=`evaluationservice`.`serviceID`
+		INNER JOIN
+		`user` ON `user`.`userID`=`evaluationservice`.`userID`
+		WHERE
+		`evaluationservice`.`userID`=#{userId}
+		ORDER BY `serviceAppraiseDate`
+		DESC
+	</select>
+	<!-- 收藏服务 -->
+	<select id="selectServiceCollection"
+		resultType="com.accp.t4.entity.llEntity.Services">
+		SELECT * FROM `services` WHERE serviceId IN
+		(SELECT serviceId FROM ServiceCollection WHERE userId=#{userId})
+	</select>
+	<!-- 收藏商家 -->
+	<resultMap type="MerchantVo" id="MerchantMap">
+
+	</resultMap>
+	<select id="selectMerchantCollection" resultMap="MerchantMap">
+
+	</select>
+
+</mapper>

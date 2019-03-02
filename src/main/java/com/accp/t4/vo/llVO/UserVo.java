@@ -1,49 +1,44 @@
 package com.accp.t4.vo.llVO;
 
-public class UserVo {
-	private Integer userid;
-	private String userimgpath;
-	private String username;
-	private String userrealname;
-	private double usermoney;
-	private Integer userintegral;
-	public Integer getUserid() {
-		return userid;
+import com.accp.t4.entity.llEntity.User;
+
+public class UserVo extends User{
+
+	@Override
+	public String toString() {
+		return "UserVo [getSelfintroduction()=" + getSelfintroduction() + ", getReason()=" + getReason()
+				+ ", getUserid()=" + getUserid() + ", getUserimgpath()=" + getUserimgpath() + ", getUsername()="
+				+ getUsername() + ", getUserrealname()=" + getUserrealname() + ", getUsersex()=" + getUsersex()
+				+ ", getUserphone()=" + getUserphone() + ", getContactmailbox()=" + getContactmailbox()
+				+ ", getUsermoney()=" + getUsermoney() + ", getUserintegral()=" + getUserintegral() + ", getCountry()="
+				+ getCountry() + ", getProvincialid()=" + getProvincialid() + ", getCityid()=" + getCityid()
+				+ ", getCountyid()=" + getCountyid() + ", getAddetail()=" + getAddetail() + ", getMerchanttype()="
+				+ getMerchanttype() + ", getMerchantregistrationtime()=" + getMerchantregistrationtime()
+				+ ", getFirstserviceid()=" + getFirstserviceid() + ", getSecondserviceid()=" + getSecondserviceid()
+				+ ", getFirstservicemoney()=" + getFirstservicemoney() + ", getSecondservicemoney()="
+				+ getSecondservicemoney() + ", getHospitalname()=" + getHospitalname() + ", getShopname()="
+				+ getShopname() + ", getSignature()=" + getSignature() + ", getGuaranteemoney()=" + getGuaranteemoney()
+				+ ", getShopimg()=" + getShopimg() + ", getIdentitytype()=" + getIdentitytype()
+				+ ", getIdentitynumder()=" + getIdentitynumder() + ", getIdentityrealname()=" + getIdentityrealname()
+				+ ", getIdentitypositiveimg()=" + getIdentitypositiveimg() + ", getIdentitynegativeimg()="
+				+ getIdentitynegativeimg() + ", getIdentityhandimg()=" + getIdentityhandimg()
+				+ ", getLanguagenametext()=" + getLanguagenametext() + ", getMajornametext()=" + getMajornametext()
+				+ ", getLivecityid()=" + getLivecityid() + ", getMerchantemail()=" + getMerchantemail()
+				+ ", getMerchantphone()=" + getMerchantphone() + ", getMerchantlevel()=" + getMerchantlevel()
+				+ ", getMerchantexp()=" + getMerchantexp() + ", getQq()=" + getQq() + ", getWechat()=" + getWechat()
+				+ ", getProfession()=" + getProfession() + ", getHeight()=" + getHeight() + ", getConstellation()="
+				+ getConstellation() + ", getAge()=" + getAge() + ", getCollectcount()=" + getCollectcount()
+				+ ", getOrdercount()=" + getOrdercount() + ", getBrowsenumber()=" + getBrowsenumber()
+				+ ", getTrusteeship()=" + getTrusteeship() + ", getTrusteeshipstarttime()=" + getTrusteeshipstarttime()
+				+ ", getTrusteeshipmonth()=" + getTrusteeshipmonth() + ", getBusinessstate()=" + getBusinessstate()
+				+ ", getExperience()=" + getExperience() + ", getExperiencestatus()=" + getExperiencestatus()
+				+ ", getAuditstatus()=" + getAuditstatus() + ", getAudittime()=" + getAudittime()
+				+ ", getAuthentication()=" + getAuthentication() + ", getAuthenticationer()=" + getAuthenticationer()
+				+ ", getCreditscore()=" + getCreditscore() + ", getStateboolean()=" + getStateboolean()
+				+ ", getMailboxverification()=" + getMailboxverification() + ", getRegisterip()=" + getRegisterip()
+				+ ", getLastentry()=" + getLastentry() + ", getUserregistrationtime()=" + getUserregistrationtime()
+				+ ", getRecententry()=" + getRecententry() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
 	}
-	public void setUserid(Integer userid) {
-		this.userid = userid;
-	}
-	public String getUserimgpath() {
-		return userimgpath;
-	}
-	public void setUserimgpath(String userimgpath) {
-		this.userimgpath = userimgpath;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getUserrealname() {
-		return userrealname;
-	}
-	public void setUserrealname(String userrealname) {
-		this.userrealname = userrealname;
-	}
-	public double getUsermoney() {
-		return usermoney;
-	}
-	public void setUsermoney(double usermoney) {
-		this.usermoney = usermoney;
-	}
-	public Integer getUserintegral() {
-		return userintegral;
-	}
-	public void setUserintegral(Integer userintegral) {
-		this.userintegral = userintegral;
-	}
-	public UserVo() {
-		super();
-	}
+	
 }

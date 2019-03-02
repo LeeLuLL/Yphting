@@ -36,7 +36,7 @@
 		<div class="b_box nav_header community_header">
 			<a class="logo my_logo" href="">御品韩汀</a>
 			<ul class="member_nav_ul">
-				<li class="cur" id="li1"><a href="">商家中心</a><span
+				<li class="cur" id="li1"><a href="/sjzx/index">商家中心</a><span
 					class="my_nav_i"></span></li>
 				<style type="text/css">
 				.layui-layer-btn .layui-layer-btn0 {
@@ -47,7 +47,7 @@
 					background: #340d6f;
 				}
 				</style>
-				<li id="li2"><a href="">个人中心</a><span class="my_nav_i"></span></li>
+				<li id="li2"><a th:href="@{/grzx/index(userId=${session.user.userid})}">个人中心</a><span class="my_nav_i"></span></li>
 				<li id="li3"><a href="">账户设置</a><span class="my_nav_i"></span></li>
 				<li id="li4"><a href="">消息</a><span class="my_nav_i"></span></li>
 
@@ -99,25 +99,25 @@
 						</tr>
 						<tr th:each="temp:${pageInfo.list}">
 							<td>[[${temp.refundid}]]</td>
-							<td>[[${temp.order.orderid}]]<br> <a href=""
-								class="btna_s2 line_2o">[[${temp.order.service.servicetitle}]]</a></td>
-							<td align="center" class="shopname"><a href="">[[${temp.order.service.user.username}]]</a><br>
+							<td>[[${temp.orders.orderid}]]<br> <a href=""
+								class="btna_s2 line_2o">[[${temp.orders.services.servicetitle}]]</a></td>
+							<td align="center" class="shopname"><a href="">[[${temp.orders.services.user.username}]]</a><br>
 								<a href="" rel="318" class="btna_s2 send_site_email_btna">站内信</a></td>
 							<td>[[${temp.applyrefundmoney}]]</td>
 							<td>[[${temp.actualrefundmoney}]]</td>
 							<td>[[${#dates.format(temp.applicationtime,'yyyy-MM-dd')}]]</td>
-							<td nowrap="" th:if="${temp.order.refundstatus==1}">退款申请中</td>
-							<td nowrap="" th:if="${temp.order.refundstatus==2}">不同意</td>
-							<td nowrap="" th:if="${temp.order.refundstatus==3}">申请管理员介入</td>
-							<td nowrap="" th:if="${temp.order.refundstatus==4}">管理员拒绝</td>
-							<td nowrap="" th:if="${temp.order.refundstatus==5}">退款完成</td>
-							<td nowrap="" th:if="${temp.order.refundstatus==6}">退款取消</td>
-							<td nowrap="" align="center"><a
-								th:if="${temp.order.refundstatus==1}" th:href="|javascript:refundOk('${temp.order.orderid}');|" class="btna_s2">同意</a>
-								<br th:if="${temp.order.refundstatus==1}"> <a
-								th:if="${temp.order.refundstatus==1}" th:href="@{/c/lhy/refund/why(orderid=${temp.order.orderid})}" class="btna_s2">不同意</a>
-								<br th:if="${temp.order.refundstatus==1}"> <a th:href="@{/c/lhy/refund/sjdetail(orderid=${temp.order.orderid})}"
-								class="btna_s2">查看详细</a></td>
+							<td nowrap="" th:if="${temp.orders.refundstatus==1}">退款申请中</td>
+							<td nowrap="" th:if="${temp.orders.refundstatus==2}">不同意</td>
+							<td nowrap="" th:if="${temp.orders.refundstatus==3}">申请管理员介入</td>
+							<td nowrap="" th:if="${temp.orders.refundstatus==4}">管理员拒绝</td>
+							<td nowrap="" th:if="${temp.orders.refundstatus==5}">退款完成</td>
+							<td nowrap="" th:if="${temp.orders.refundstatus==6}">退款取消</td>
+							<td nowrap="" align="center">
+								<a th:if="${temp.orders.refundstatus==1}" th:href="@{/sjzx/refundOk(refundId=${temp.refundid})}" onclick="return window.confirm('确认同意退款吗？')" class="btna_s2">同意</a>
+								<br th:if="${temp.orders.refundstatus==1}"> 
+								<a th:if="${temp.orders.refundstatus==1}" th:href="@{/sjzx/sjzx-refund-why(refundId=${temp.refundid})}" class="btna_s2">不同意</a>
+								<br th:if="${temp.orders.refundstatus==1}"> 
+								<a th:href="@{/sjzx/sjzx-refund-detail(refundId=${temp.refundid})}" class="btna_s2">查看详细</a></td>
 						</tr>
 					</tbody>
 				</table>

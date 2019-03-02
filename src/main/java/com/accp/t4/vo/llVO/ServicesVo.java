@@ -1,37 +1,19 @@
 package com.accp.t4.vo.llVO;
 
-public class ServicesVo {
+import com.accp.t4.entity.llEntity.Services;
+import com.accp.t4.entity.llEntity.User;
+
+public class ServicesVo extends Services{
  
-    private String serviceCoverImg;
-    private String serviceFuTitle;
-    private Integer servicePrice;
-    
+	private User user;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+   
 	
-	public String getServiceCoverImg() {
-		return serviceCoverImg;
-	}
-	public void setServiceCoverImg(String serviceCoverImg) {
-		this.serviceCoverImg = serviceCoverImg;
-	}
-	public String getServiceFuTitle() {
-		return serviceFuTitle;
-	}
-	public void setServiceFuTitle(String serviceFuTitle) {
-		this.serviceFuTitle = serviceFuTitle;
-	}
-	public Integer getServicePrice() {
-		return servicePrice;
-	}
-	public void setServicePrice(Integer servicePrice) {
-		this.servicePrice = servicePrice;
-	}
-	public ServicesVo( String serviceCoverImg,String serviceFuTitle, Integer servicePrice) {
-		super();
-		this.serviceCoverImg = serviceCoverImg;
-		this.serviceFuTitle = serviceFuTitle;
-		this.servicePrice = servicePrice;
-	}
-	public ServicesVo() {
-		super();
-	} 
 }

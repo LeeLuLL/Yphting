@@ -93,7 +93,7 @@ function beforeCall(form, status){
     <div class="b_box nav_header community_header">
 		<a class="logo my_logo" href="/index.php/Home/Index/index.html">御品韩汀</a>
 		<ul class="member_nav_ul">
-        	<li class="cur" id="li1"><a href="/index.php/Home/Seller/index.html">商家中心</a><span class="my_nav_i"></span></li>
+        	<li class="cur" id="li1"><a href="/sjzx/index">商家中心</a><span class="my_nav_i"></span></li>
 <style type="text/css">
 .layui-layer-btn .layui-layer-btn0{ background:#4c1b98; }
 .layui-layer-btn .layui-layer-btn0:hover{ background:#340d6f;}
@@ -157,7 +157,7 @@ $(function(){
 		
         <!--member right-->
         <div class="member_right sj_right_box">
-			<form method="post"  id="formmsg" onSubmit="return chkform();" action="zg/c/addlxzjjd" enctype="multipart/form-data">
+			<form method="post"  id="formmsg" onSubmit="return chkform();" action="/sjzx/addApply" enctype="multipart/form-data">
 				<input type="hidden" name="stid" value="3" />
 
 				<div class="member_system_r_top pl15 mt20">
@@ -188,7 +188,7 @@ $(function(){
 				<dl class="info_form_dl info_form_dl2">
 					<dt class="two_h_dt"><span class="c_x">*</span>身份证／<br />登入证号码：</dt>
 					<dd>
-						<select class="sel_f sel_f2 sel_b3 mrr1" name="documentType">
+						<select class="sel_f sel_f2 sel_b3 mrr1" name="documenttype">
 							<option value="1" >身份证号码</option>
 							<option value="2" >登入证号码</option>
 						</select>
@@ -210,10 +210,10 @@ $(function(){
 							<label><input type="radio" name="office" id="office_has2" value="false" class="radio_input validate[required]" onclick="$('.office_div').hide()" />无</label>
 						</div>
 						<div class="office_div">
-							<input  class="input_c inf_inc validate[required]"  type="text" name="officeCountry" >国家<br><br>
-						<input  class="input_c inf_inc validate[required]"  type="text" name="officeProvince">省<br><br>
-						<input  class="input_c inf_inc validate[required]"  type="text" name="officeCity">市<br><br>
-						<input type="text" name="officeDetailed" class="input_c inf_inc validate[required]" value="" />详细地址<br><br>
+							<input  class="input_c inf_inc validate[required]"  type="text" name="officecountry" >国家<br><br>
+						<input  class="input_c inf_inc validate[required]"  type="text" name="officeprovince">省<br><br>
+						<input  class="input_c inf_inc validate[required]"  type="text" name="officecity">市<br><br>
+						<input type="text" name="officedetailed" class="input_c inf_inc validate[required]" value="" />详细地址<br><br>
 						</div>
 					</dd>
 				</dl>																<dl class="info_form_dl info_form_dl2">
@@ -229,12 +229,12 @@ $(function(){
 				</dl>				<dl class="info_form_dl info_form_dl2">
 					<dt>留学中介官网网址：</dt>
 					<dd>
-						<input type="text" class="input_c inf_inc validate[custom[url]]" name="officialNetworkURL" placeholder="http://" value="" />
+						<input type="text" class="input_c inf_inc validate[custom[url]]" name="officialnetworkurl" placeholder="http://" value="" />
 					</dd>
 				</dl>
 													<dl class="info_form_dl info_form_dl2">
 										<dt>在韩工作时间：</dt>					<dd>
-						<select class="sel_f sel_f2 sel_b3 " name="inKorea">
+						<select class="sel_f sel_f2 sel_b3 " name="inkorea">
 							<option value="">请选择</option>
 							<option value="1～2年" >1～2年</option><option value="3～4年" >3～4年</option><option value="5～6年" >5～6年</option><option value="6年以上" >6年以上</option>						</select>
 					</dd>
@@ -255,12 +255,11 @@ $(function(){
 					<dt><span class="c_x">*</span>在韩住址：</dt>
 					<dd>
 						<input  class="input_c inf_inc validate[required]"  type="text" name="country" >国家<br><br>
-						<input  class="input_c inf_inc validate[required]"  type="text" name="provincialID">省<br><br>
-						<input  class="input_c inf_inc validate[required]"  type="text" name="cityID">市<br><br>
+						<input  class="input_c inf_inc validate[required]"  type="text" name="provincialid">省<br><br>
+						<input  class="input_c inf_inc validate[required]"  type="text" name="cityid">市<br><br>
 						<input type="text" name="detailed" class="input_c inf_inc validate[required]" value="" />详细地址<br><br>
 					</dd>
 				</dl>
-	
 							<dl class="info_form_dl info_form_dl2">
 					<dt class="mopa">相关证明文件：</dt>
 					<dd>

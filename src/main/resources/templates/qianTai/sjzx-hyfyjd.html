@@ -159,7 +159,7 @@ $(function(){
 		
         <!--member right-->
         <div class="member_right sj_right_box">
-			<form method="post"  id="formmsg" onSubmit="return chkform();"  action="zg/c/addhyfyjd" enctype="multipart/form-data">
+			<form method="post"  id="formmsg" onSubmit="return chkform();" action="/sjzx/addApply" enctype="multipart/form-data">
 				<input type="hidden" name="stid" value="4" />
 			
 				<div class="member_system_r_top pl15 mt20">
@@ -190,7 +190,7 @@ $(function(){
 				<dl class="info_form_dl info_form_dl2">
 					<dt class="two_h_dt"><span class="c_x">*</span>身份证／<br />登入证号码：</dt>
 					<dd>
-						<select class="sel_f sel_f2 sel_b3 mrr1" name="documentType">
+						<select class="sel_f sel_f2 sel_b3 mrr1" name="documenttype">
 							<option value="1" >身份证号码</option>
 							<option value="2" >登入证号码</option>
 						</select>
@@ -200,12 +200,12 @@ $(function(){
 											<dl class="info_form_dl info_form_dl2">
 					<dt><span class="c_x">*</span>翻译资质：</dt>
 					<dd>
-						<select class="mt5 sel_f sel_f2 sel_b3 validate[required]" name="translateType">
+						<select class="mt5 sel_f sel_f2 sel_b3 validate[required]" name="translatetype">
 							<option value="">请选择</option>
 							<option value="1" >证书</option><option value="2" >语言成绩</option>
 						</select>
 						<p class="c_4 pat1 dx_text zc_info">格式要求：支持.jpg .jpeg .bmp .gif .png格式照片，大小不超过5M。</p>
-						<input  type="file" name="translate" id="translatesa" style="display: none">
+						<input  type="file" name="transLate" id="translatesa" style="display: none">
 						<img src="">
 						<div class="sel_file_d">
 							<span><a href="javascript:void(0);"  class="sel_file_a"  onclick="translatesa.click();">上传图片</a></span>
@@ -222,10 +222,10 @@ $(function(){
 							<label><input type="radio" name="office" id="office_has2" value="false" class="radio_input validate[required]" onclick="$('.office_div').hide()" />无</label>
 						</div>
 						<div class="office_div">
-							<input  class="input_c inf_inc validate[required]"  type="text" name="officeCountry" >国家<br><br>
-						<input  class="input_c inf_inc validate[required]"  type="text" name="officeProvince">省<br><br>
-						<input  class="input_c inf_inc validate[required]"  type="text" name="officeCity">市<br><br>
-						<input type="text" name="officeDetailed" class="input_c inf_inc validate[required]" value="" />详细地址<br><br>
+							<input class="input_c inf_inc validate[required]"  type="text" name="officecountry" >国家<br><br>
+						<input  class="input_c inf_inc validate[required]"  type="text" name="officeprovince">省<br><br>
+						<input  class="input_c inf_inc validate[required]"  type="text" name="officecity">市<br><br>
+						<input type="text" name="officedetailed" class="input_c inf_inc validate[required]" value="" />详细地址<br><br>
 						</div>
 					</dd>
 				</dl>																<dl class="info_form_dl info_form_dl2">
@@ -242,11 +242,11 @@ $(function(){
 									<dl class="info_form_dl info_form_dl2">
 					<dt>网址：</dt>
 					<dd>
-						<input type="text" class="input_c inf_inc validate[custom[url]]" name="translateWebsite" value="" />
+						<input type="text" class="input_c inf_inc validate[custom[url]]" name="translatewebsite" value="" />
 					</dd>
 				</dl>				<dl class="info_form_dl info_form_dl2">
 										<dt>在韩工作时间：</dt>					<dd>
-						<select class="sel_f sel_f2 sel_b3 " name="inKorea">
+						<select class="sel_f sel_f2 sel_b3 " name="inkorea">
 							<option value="">请选择</option>
 							<option value="1～2年" >1～2年</option><option value="3～4年" >3～4年</option><option value="5～6年" >5～6年</option><option value="6年以上" >6年以上</option>						</select>
 					</dd>
@@ -267,8 +267,8 @@ $(function(){
 					<dt><span class="c_x">*</span>在韩住址：</dt>
 					<dd>
 						<input  class="input_c inf_inc validate[required]"  type="text" name="country" >国家<br><br>
-						<input  class="input_c inf_inc validate[required]"  type="text" name="provincialID">省<br><br>
-						<input  class="input_c inf_inc validate[required]"  type="text" name="cityID">市<br><br>
+						<input  class="input_c inf_inc validate[required]"  type="text" name="provincialid">省<br><br>
+						<input  class="input_c inf_inc validate[required]"  type="text" name="cityid">市<br><br>
 						<input type="text" name="detailed" class="input_c inf_inc validate[required]" value="" />详细地址<br><br>
 					</dd>
 				</dl>

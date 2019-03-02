@@ -39,7 +39,7 @@
 					background: #340d6f;
 				}
 				</style>
-				<li class="cur" id="li2"><a href="">个人中心</a><span
+				<li class="cur" id="li2"><a th:href="@{/grzx/index(userId=${session.user.userid})}">个人中心</a><span
 					class="my_nav_i"></span></li>
 				<li id="li3"><a href="">账户设置</a><span class="my_nav_i"></span></li>
 				<li id="li4"><a href="">消息</a><span class="my_nav_i"></span></li>
@@ -58,25 +58,24 @@
 				<a href="">个人中心</a><span class="s_sp_v">-</span><a href="">我的退款</a><span
 					class="s_sp_v">-</span>退款编号[[${refund.refundid}]]
 			</div>
-
 			<div class="refund_press">
 				<div class="refund_press_line">
 					<div class="refund_press_w"
-						th:style="${order.refundstatus==5?'width:100%':''}"></div>
+						th:style="${refund.orders.refundstatus==5?'width:100%':''}"></div>
 					<div class="press_step pst1">
 						<span class="step had_step"></span>
 						<p class="f14">买家提交申请</p>
 						<p class="f12 c_4">服务单已申请成功，待商家处理中</p>
 					</div>
 					<div class="press_step pst2">
-						<span th:class="|step ${order.refundstatus==5?'had_step':''}|"></span>
+						<span th:class="|step ${refund.orders.refundstatus==5?'had_step':''}|"></span>
 						<p class="f14 c_4">商家 处理退款申请</p>
 						<p th:if="${refund.auditstatus==1}" class="f12 c_4">待商家处理</p>
 						<p th:if="${refund.auditstatus==2}" class="f12 c_4">商家同意退款</p>
 						<p th:if="${refund.auditstatus==3}" class="f12 c_4">商家不同意退款</p>
 					</div>
 					<div class="press_step pst3">
-						<span th:class="|step ${order.refundstatus==5?'had_step':''}|"></span>
+						<span th:class="|step ${refund.orders.refundstatus==5?'had_step':''}|"></span>
 						<p class="f14 c_4">完成</p>
 					</div>
 				</div>
@@ -86,20 +85,20 @@
 				<dd>
 					<div class="negotiation_records_d">
 						<div class="fr my_tkr">
-							<a th:if="${order.refundstatus==2}" th:href="@{/c/lhy/refund/applyadmin(orderid=${order.orderid})}" class="btna_s2 send_site_email_btna">申请管理员介入</a>
-							<span th:if="${order.refundstatus==2}">|</span>
+							<a th:if="${refund.orders.refundstatus==2}" th:href="@{/grzx/applyAdmin(refundId=${refund.refundid},orderId=${refund.orders.orderid})}" onclick="return window.confirm('确认要申请管理员介入吗？')" class="btna_s2 send_site_email_btna">申请管理员介入</a>
+							<span th:if="${refund.orders.refundstatus==2}">|</span>
 							<a href="" class="btna_s2 send_site_email_btna">站内信商家</a>
 						</div>
 						协商记录
 					</div>
 					<ul class="refund_record_ul">
 						<li>
-							<div th:if="${order.refundstatus==1}" class="refund_title">状态：退款申请中</div>
-							<div th:if="${order.refundstatus==2}" class="refund_title">状态：不同意</div>
-							<div th:if="${order.refundstatus==3}" class="refund_title">状态：申请管理员介入</div>
-							<div th:if="${order.refundstatus==4}" class="refund_title">状态：管理员拒绝</div>
-							<div th:if="${order.refundstatus==5}" class="refund_title">状态：退款完成</div>
-							<div th:if="${order.refundstatus==6}" class="refund_title">状态：退款取消</div>
+							<div th:if="${refund.orders.refundstatus==1}" class="refund_title">状态：退款申请中</div>
+							<div th:if="${refund.orders.refundstatus==2}" class="refund_title">状态：不同意</div>
+							<div th:if="${refund.orders.refundstatus==3}" class="refund_title">状态：申请管理员介入</div>
+							<div th:if="${refund.orders.refundstatus==4}" class="refund_title">状态：管理员拒绝</div>
+							<div th:if="${refund.orders.refundstatus==5}" class="refund_title">状态：退款完成</div>
+							<div th:if="${refund.orders.refundstatus==6}" class="refund_title">状态：退款取消</div>
 						</li>
 						<li th:if="${refund.adminstatus>1}">
 							<div class="refund_title">
@@ -109,23 +108,23 @@
 								退款金额：[[${refund.actualrefundmoney}]]金币<br>退款说明：[[${refund.adminremarks}]]
 							</p>
 						</li>
-						<li th:if="${refund.auditstatus>1}">
-							<div th:if="${refund.auditstatus==2}"
+						<li th:if="${refund.adminstatus>1}">
+							<div th:if="${refund.adminstatus==2}"
 								class="refund_title">
 								商家<a href="" class="btna_s2 mlr10"
-									th:text="${order.service.user.shopname}"></a>[[${#dates.format(refund.audittime,'yyyy-MM-dd')}]]
+									th:text="${refund.shopName}"></a>[[${#dates.format(refund.audittime,'yyyy-MM-dd')}]]
 							</div>
-							<p th:if="${refund.auditstatus==2}" class="refund_p">
-								商家（[[${order.service.user.shopname}]]）同意退款部分金币<br>退款金额：[[${refund.actualrefundmoney}]]
+							<p th:if="${refund.auditStatus==2}" class="refund_p">
+								商家（[[${refund.shopName}]]）同意退款部分金币<br>退款金额：[[${refund.actualrefundmoney}]]
 								金币<br>退款说明：[[${refund.businessremarks}]]
 							</p>
-							<div th:if="${refund.auditstatus==3}"
+							<div th:if="${refund.orders.auditStatus==3}"
 								class="refund_title">
 								商家<a href="" class="btna_s2 mlr10"
-									th:text="${order.service.user.shopname}"></a>[[${#dates.format(refund.audittime,'yyyy-MM-dd')}]]
+									th:text="${refund.orders.services.user.shopname}"></a>[[${#dates.format(refund.audittime,'yyyy-MM-dd')}]]
 							</div>
 							<p th:if="${refund.auditstatus==3}" class="refund_p">
-								商家（[[${order.service.user.shopname}]]）不同意退款部分金币<br>退款金额：0金币<br>退款说明：[[${refund.businessremarks}]]
+								商家（[[${refund.orders.services.user.shopname}]]）不同意退款部分金币<br>退款金额：0金币<br>退款说明：[[${refund.businessremarks}]]
 							</p>
 						</li>
 						<li class="last">
@@ -134,28 +133,28 @@
 									th:text="${refund.user.username}"></a>[[${#dates.format(refund.applicationtime,'yyyy-MM-dd')}]]
 							</div>
 							<p class="refund_p">
-								买家（[[${refund.user.username}]]）于[[${#dates.format(refund.applicationtime,'yyyy-MM-dd')}]]创建了退款申请<br>申请金额：[[${refund.applyrefundmoney}]]
+								买家（[[${session.user.username}]]）于[[${#dates.format(refund.applicationtime,'yyyy-MM-dd')}]]创建了退款申请<br>申请金额：[[${refund.applyrefundmoney}]]
 								金币<br>退款原因：[[${refund.refundreason}]]<br>退款说明：[[${refund.refundexplain}]]
 							</p>
 							<div class="tk_img_d" th:if="${refund.refundimg!=null}">
-								<a href=""><img th:src="${refund.refundimg}" width="150"></a>
+								<a href=""><img th:src="${refund.refundimg}" alt="...." width="150"></a>
 							</div>
 						</li>
 					</ul>
 				</dd>
 				<dt>
 					<div class="post_comment_img">
-						<img th:src="${order.service.servicecoverimg}">
+						<img th:src="${refund.orders.services.servicecoverimg}">
 					</div>
-					<p class="p_cment_title" th:text="${order.service.servicetitle}"></p>
-					<p class="p_cment_title" th:text="${order.service.servicefutitle}"></p>
-					<p class="num_1 f14 mt10" th:text="${order.service.serviceprice}"></p>
+					<p class="p_cment_title" th:text="${refund.orders.services.servicetitle}"></p>
+					<p class="p_cment_title" th:text="${refund.orders.services.servicefutitle}"></p>
+					<p class="num_1 f14 mt10" th:text="${refund.orders.services.serviceprice}"></p>
 					<p class="p_cment_time">
-						<span class="c_4">预定日期</span>[[${#dates.format(order.ordertime,'yyyy-MM-dd')}]]
+						<span class="c_4">预定日期</span>[[${#dates.format(refund.orders.ordertime,'yyyy-MM-dd')}]]
 					</p>
 					<div class="p_cment_time">
 						<span class="c_4">总计</span>
-						<p class="num_1 f14 mt10" th:text="${order.smallplan}"></p>
+						<p class="num_1 f14 mt10" th:text="${refund.orders.smallplan}"></p>
 					</div>
 				</dt>
 			</dl>

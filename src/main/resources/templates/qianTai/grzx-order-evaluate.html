@@ -59,7 +59,7 @@
 						}
 					</style>
 					<li class="cur" id="li2">
-						<a href="">个人中心</a><span class="my_nav_i"></span></li>
+						<a href="/grzx/index">个人中心</a><span class="my_nav_i"></span></li>
 					<li id="li3">
 						<a href="">账户设置</a><span class="my_nav_i"></span></li>
 					<li id="li4">
@@ -70,8 +70,8 @@
 		<!--header end-->
 
 		<div class="bg_c4 pt1">
-			<form name="form1" action="/c/lhy/order/evaluate/ok" method="post">
-				<input type="hidden" th:value="${order.orderid}" name="orderid">
+			<form name="form1" action="/ll/c/evaluateOK" method="post">
+				<input type="hidden" th:value="${order.orderID}" name="orderId">
 				<div class="b_box">
 					<div class="sv_path border_c">
 						<div class="fr c_4">
@@ -83,13 +83,13 @@
 					<dl class="post_comment_dl">
 						<dt>
 							<div class="post_comment_img">
-								<img th:src="${order.service.servicecoverimg}">
+								<img th:src="${order.serviceCoverImg}">
 							</div>
-							<p class="p_cment_title" th:text="${order.service.servicetitle}"></p>
-							<p class="p_cment_title" th:text="${order.service.servicefutitle}"></p>
-							<p class="num_1 f14 mt10" th:text="${order.service.serviceprice}"></p>
+							<p class="p_cment_title" th:text="${order.serviceTitle}"></p>
+							<p class="p_cment_title" th:text="${order.serviceFuTitle}"></p>
+							<p class="num_1 f14 mt10" th:text="${order.servicePrice}"></p>
 							<p class="p_cment_time">
-								<span class="c_4">预定日期</span> <span class="c_4" th:text="${#dates.format(order.ordertime,'yyyy-MM-dd')}"></span>
+								<span class="c_4">预定日期</span> <span class="c_4" th:text="${#dates.format(order.orderTime,'yyyy-MM-dd')}"></span>
 							</p>
 						</dt>
 						<dd>

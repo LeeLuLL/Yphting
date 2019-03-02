@@ -42,14 +42,15 @@
 				<h3 class="yd_sev_h3 nopl">支付信息</h3>
 				<div class="fa_zf_part">
 					<div class="fa_zf_r">
-						需要支付<span class="jy_num" th:text="${order.smallplan}"></span>
+						需要支付<span class="jy_num" th:text="${order.smallPlan}"></span>
 					</div>
-					现金币余额<span class="jy_num now_num" th:text="${user.usermoney}"></span>
+					现金币余额<span class="jy_num now_num" th:text="${session.user.usermoney}"></span>
 				</div>
 				<div class="fa_xz">
 					<div class="fa_zf_r">
-						<a th:if="${user.usermoney>=order.smallplan}" th:href="@{/c/lhy/order/pay/ok(orderid=${order.orderid})}" class="btn_jy_a f22" id="payment_btn">支付金币</a>
-						<a th:if="${user.usermoney<order.smallplan}" href="/zsp/c/getLogisticsById" class="btn_jy_a f22" id="payment_btn">充值</a>
+					<!-- th:href="@{/c/order/pay(orderId=${order.orderID})}"   -->
+						<a th:if="${session.user.usermoney>=order.smallPlan}"  th:href="@{/ll/c/order/pay(orderId=${order.orderID})}"  onclick="return window.confirm('确认要支付吗？')" class="btn_jy_a f22" id="payment_btn">支付金币</a>
+						<a th:if="${session.user.usermoney<order.smallPlan}" href="/zsp/c/getLogisticsById" class="btn_jy_a f22" id="payment_btn">充值</a>
 					</div>
 				</div>
 			</div>
@@ -107,4 +108,6 @@
 <script type="text/javascript" src="/Public/js/grzx-interlinkage.js"></script>
 <script type="text/javascript" src="/Public/js/headLeftNav.js"></script>
 <script type="text/javascript" src="/Public/js/grzx-href.js"></script>
+<script type="text/javascript">
+</script>
 </html>

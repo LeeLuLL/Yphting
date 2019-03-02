@@ -32,10 +32,10 @@
 		<div class="b_box nav_header community_header">
 			<a class="logo my_logo" href="#">御品韩汀</a>
 			<ul class="member_nav_ul">
-				<li class="cur" id="li1"><a href="#">商家中心</a><span
+				<li class="cur" id="li1"><a href="/sjzx/index">商家中心</a><span
 					class="my_nav_i"></span></li>
 		
-				<li id="li2"><a href="#">个人中心</a><span class="my_nav_i"></span></li>
+				<li id="li2"><a href="/grzx/index">个人中心</a><span class="my_nav_i"></span></li>
 				<li id="li3"><a href="#">账户设置</a><span class="my_nav_i"></span></li>
 				<li id="li4"><a href="#">消息</a><span class="my_nav_i"></span></li>
 
@@ -51,14 +51,15 @@
 	<div class="b_box">
     	<div class="sv_path border_c sv_nbor">
         	<div class="fr c_4"><a href="/index.php/Home/About/trading.html" class="btna_s2 f14">交易须知</a></div>
-            <a href="/index.php/Home/Seller/index.html">商家中心</a><span class="s_sp_v">-</span><a href="/index.php/Home/Seller/order.html">我收到的预定</a>
+            <a href="/sjzx/index">商家中心</a><span class="s_sp_v">-</span><a href="/sjzx/sjzx-order?num=1">我收到的预定</a>
         </div>
 		<div class="business_order_nav">
 			<ul class="business_order_nav_ul">
+			<!-- class="cur" -->
 				<li ><a href="javascript:void(0);">用户提交预约</a></li>
-				<li class="cur"><a href="javascript:void(0);">商家接单</a></li>				
+				<li ><a href="javascript:void(0);">商家接单</a></li>				
 				<li ><a href="javascript:void(0);">提供服务</a></li>	
-				<li ><a href="javascript:void(0);">完成服务</a></li>
+				<li ><a href="javascript:void(0);">完成服务[[${order.orderStatus}]]</a></li>
 				<li ><a href="javascript:void(0);">评价</a></li>
 			</ul>			
 		</div>
@@ -66,22 +67,22 @@
         <div class="business_order_box">
 			<p class="f14 mt10">
 				<span class="c_4">预定服务状态</span>
-				<span th:if="${order.orderstatus==1}"  class="big_font d_ff">待付款</span>
-				<span th:if="${order.orderstatus==2}"  class="big_font d_ff">待接单</span>
-				<span th:if="${order.orderstatus==3}"  class="big_font d_ff">待提供服务</span>
-				<span th:if="${order.orderstatus==4}"  class="big_font d_ff">已提供服务</span>
-				<span th:if="${order.orderstatus==5 and  order.commentstatus==1 and order.refundstatus==0}"  class="big_font d_ff">待评价</span>
-				<span th:if="${order.orderstatus==5 and  order.commentstatus==2 and order.refundstatus==0}"  class="big_font d_ff">已评价</span>
-				<span th:if="${order.orderstatus==5 and  order.commentstatus==3 and order.refundstatus==0}"  class="big_font d_ff">双方已评</span>
-				<span th:if="${order.orderstatus==5 and  order.refundstatus==1}"  class="big_font d_ff">退款申请中</span>
-				<span th:if="${order.orderstatus==5 and  order.refundstatus==2}"  class="big_font d_ff">不同意</span>
-				<span th:if="${order.orderstatus==5 and  order.refundstatus==3}"  class="big_font d_ff">管理员介入</span>
-				<span th:if="${order.orderstatus==5 and  order.refundstatus==4}"  class="big_font d_ff">管理员拒绝</span>
-				<span th:if="${order.orderstatus==5 and  order.refundstatus==5}"  class="big_font d_ff">退款完成</span>
-				<span th:if="${order.orderstatus==5 and  order.refundstatus==5}"  class="big_font d_ff">退款取消</span>
-				<span th:if="${order.orderstatus==6}"  class="big_font d_ff">服务取消</span>
-				<span th:if="${order.orderstatus==7}"  class="big_font d_ff">未接单</span>
-				<span th:if="${order.orderstatus==8}"  class="big_font d_ff">已退款</span>
+				<span th:if="${order.orderStatus==1}"  class="big_font d_ff">待付款</span>
+				<span th:if="${order.orderStatus==2}"  class="big_font d_ff">待接单</span>
+				<span th:if="${order.orderStatus==3}"  class="big_font d_ff">待提供服务</span>
+				<span th:if="${order.orderStatus==4}"  class="big_font d_ff">已提供服务</span>
+				<span th:if="${order.orderStatus==5 and  order.commentstatus==1 and order.refundstatus==0}"  class="big_font d_ff">待评价</span>
+				<span th:if="${order.orderStatus==5 and  order.commentstatus==2 and order.refundstatus==0}"  class="big_font d_ff">已评价</span>
+				<span th:if="${order.orderStatus==5 and  order.commentstatus==3 and order.refundstatus==0}"  class="big_font d_ff">双方已评</span>
+				<span th:if="${order.orderStatus==5 and  order.refundstatus==1}"  class="big_font d_ff">退款申请中</span>
+				<span th:if="${order.orderStatus==5 and  order.refundstatus==2}"  class="big_font d_ff">不同意</span>
+				<span th:if="${order.orderStatus==5 and  order.refundstatus==3}"  class="big_font d_ff">管理员介入</span>
+				<span th:if="${order.orderStatus==5 and  order.refundstatus==4}"  class="big_font d_ff">管理员拒绝</span>
+				<span th:if="${order.orderStatus==5 and  order.refundstatus==5}"  class="big_font d_ff">退款完成</span>
+				<span th:if="${order.orderStatus==5 and  order.refundstatus==5}"  class="big_font d_ff">退款取消</span>
+				<span th:if="${order.orderStatus==6}"  class="big_font d_ff">服务取消</span>
+				<span th:if="${order.orderStatus==7}"  class="big_font d_ff">未接单</span>
+				<span th:if="${order.orderStatus==8}"  class="big_font d_ff">已退款</span>
 
 			</p>
 			
@@ -92,42 +93,42 @@
         	<ul class="my_booking_cont_ul">
             	<li>
                     <p class="c_4 f12">订单编号</p>
-                    <p class="mt5" th:text="${order.orderid}">15405168087435</p>
+                    <p class="mt5" th:text="${order.orderID}">15405168087435</p>
 					<p class="c_4 f12">下单时间</p>
-                    <p class="mt5" th:if="${order.ordertime}!=null">[[${#dates.format(order.ordertime,'yyyy-MM-dd hh:mm')}]]</p>
-                    <p class="c_4 f12" th:if="${order.paymenttime}!=null">付款时间</p>
-                    <p class="mt5" th:if="${order.paymenttime}!=null">[[${#dates.format(order.paymenttime,'yyyy-MM-dd hh:mm')}]]</p>
-                    <p class="c_4 f12" th:if="${order.receipttime}!=null">接单时间</p>
-                    <p class="mt5" th:if="${order.receipttime}!=null">[[${#dates.format(order.receipttime,'yyyy-MM-dd hh:mm')}]]</p>
-                    <p class="c_4 f12" th:if="${order.provideservicestime}!=null">提供服务时间</p>
-                    <p class="mt5" th:if="${order.provideservicestime}!=null">[[${#dates.format(order.provideservicestime,'yyyy-MM-dd hh:mm')}]]</p>
-                    <p class="c_4 f12" th:if="${order.completetime}!=null">完成服务时间</p>
-                    <p class="mt5" th:if="${order.completetime}!=null">[[${#dates.format(order.completetime,'yyyy-MM-dd hh:mm')}]]</p>
+                    <p class="mt5" th:if="${order.orderTime}!=null">[[${#dates.format(order.orderTime,'yyyy-MM-dd hh:mm')}]]</p>
+                    <p class="c_4 f12" th:if="${order.paymentTime}!=null">付款时间</p>
+                    <p class="mt5" th:if="${order.paymentTime}!=null">[[${#dates.format(order.paymentTime,'yyyy-MM-dd hh:mm')}]]</p>
+                    <p class="c_4 f12" th:if="${order.receiptTime}!=null">接单时间</p>
+                    <p class="mt5" th:if="${order.receiptTime}!=null">[[${#dates.format(order.receiptTime,'yyyy-MM-dd hh:mm')}]]</p>
+                    <p class="c_4 f12" th:if="${order.provideServicesTime}!=null">提供服务时间</p>
+                    <p class="mt5" th:if="${order.provideServicesTime}!=null">[[${#dates.format(order.provideServicesTime,'yyyy-MM-dd hh:mm')}]]</p>
+                    <p class="c_4 f12" th:if="${order.completeTime}!=null">完成服务时间</p>
+                    <p class="mt5" th:if="${order.completeTime}!=null">[[${#dates.format(order.completeTime,'yyyy-MM-dd hh:mm')}]]</p>
 					<p class="c_4 f12">预定用户</p>
-                    <p class="mt5"><a target="_blank" href="javascript:void(0)">[[${order.u.username}]]</a></p>
+                    <p class="mt5"><a target="_blank" href="javascript:void(0)">[[${order.userName}]]</a></p>
                     <p class="c_4 f12">总金币</p>
-                    <div class="num_1 f16 mt5">[[${order.smallplan}]]</div>
+                    <div class="num_1 f16 mt5">[[${order.smallPlan}]]</div>
 					<p class="c_4 f12">实收到金币(扣除服务费10%）</p>
-                    <div class="num_1 f16">[[${order.smallplan*0.9}]]</div>
+                    <div class="num_1 f16">[[${order.smallPlan*0.9}]]</div>
                 </li>
                 <li>
                 	<p class="c_4 f12">类别</p>
-                    <p class="mt5" name="ser">[[${order.ser.stid}]]</p>
+                    <p class="mt5" name="ser">[[${order.stName}]]</p>
                     <p  th:if="${order.number>0}" class="c_4 f12">数量</p>
                   	<span th:if="${order.number>0}" class="mt5">[[${order.number}]]</span>
                   	 <p  th:if="${order.number}==null" class="c_4 f12">预定日期</p>
-					<span th:if="${order.number}==null" class="mt5">[[${#dates.format(order.scheduledstarttime,'yyyy-MM-dd')}]]-
-						[[${#dates.format(order.scheduledendtime,'yyyy-MM-dd')}]]
+					<span th:if="${order.number}==null" class="mt5">[[${#dates.format(order.scheduledStartTime,'yyyy-MM-dd')}]]-
+						[[${#dates.format(order.scheduledEndTime,'yyyy-MM-dd')}]]
 					</span>				                
                 </li>
                 <li>
                 	<p class="c_4 f12">所预定服务</p>
                     <dl class="my_booking_img_text">
-                    	<dt><img  th:src="${order.ser.servicecoverimg}"  width="135" /></dt>
+                    	<dt><img  th:src="${order.serviceCoverImg}"  width="135" /></dt>
                         <dd>
-                        	<p><a href="javascript:void(0)" target="_blank">[[${order.ser.servicetitle}]]</a></p>
+                        	<p><a href="javascript:void(0)" target="_blank">[[${order.serviceTitle}]]</a></p>
                             <p></p>
-                            <div class="num_1 num_2_s f14">[[${order.ser.serviceprice}]]</div>
+                            <div class="num_1 num_2_s f14">[[${order.servicePrice}]]</div>
                         </dd>
                     </dl>
                 </li>
@@ -188,9 +189,15 @@
 <script type="text/javascript" src="/Public/js/headLeftNav.js"></script>
 <script type="text/javascript" src="/Public/js/grzx-interlinkage.js"></script>
 <script type="text/javascript" th:inline="javascript">
-var stid=[[${order.ser.stid}]];
+var stid=[[${order.stid}]];
 $.getJSON("/c/szy/order/querySerType",{"stid":stid},function(data){
 	$("[name=ser]").html(data.stname);
 })
+
+var orderStatus=[[${order.orderStatus}]];
+$(".business_order_nav_ul li:lt("+(orderStatus)+")").addClass("cur");
+
+
+
 </script>
 </html>

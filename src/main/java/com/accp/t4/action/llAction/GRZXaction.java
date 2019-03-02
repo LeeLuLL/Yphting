@@ -9,7 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.accp.t4.biz.llBiz.GRZXBiz;
+import com.accp.t4.biz.llBiz.OrderBiz;
+import com.accp.t4.biz.llBiz.RefundBiz;
+import com.accp.t4.biz.llBiz.UserBiz;
+import com.accp.t4.entity.llEntity.Orders;
+import com.accp.t4.entity.llEntity.Refund;
 import com.accp.t4.vo.llVO.OrderVO;
+import com.accp.t4.vo.llVO.UserVo;
 import com.github.pagehelper.PageInfo;
 
 @Controller
@@ -18,11 +24,22 @@ public class GRZXaction {
 	@Autowired
 	private GRZXBiz biz;
 	
-	@GetMapping("user")
-	public String selectUser(Model model,HttpSession session) {
+	@Autowired
+	private UserBiz userBiz;
+	
+	@Autowired
+	private RefundBiz refundBiz;
+	
+	@Autowired
+	private OrderBiz orderBiz;
+	
+	@GetMapping("index")
+	public String selectUser(Model model,HttpSession session,Integer userId) {
 		//model.addAttribute("user", biz.selectUser(24));
-		session.setAttribute("user", biz.selectUser(24));
-		model.addAttribute("yuDing", biz.selectOrder(1, 24,"1",null));//最新预订
+		if(userId==null)
+			userId=24;
+		session.setAttribute("user", userBiz.selectUser(userId));
+		model.addAttribute("yuDing", biz.selectOrder(1, userId,"1",null));//最新预订
 		return "qianTai/grzx-index";
 	}
 	/**
@@ -31,17 +48,17 @@ public class GRZXaction {
 	 * @param orderId
 	 * @return
 	 */
-	@GetMapping("order")
-	public String selectOrder(Model model,String orderId) {
-		PageInfo<OrderVO> orderPage= biz.selectOrder(1, 24,null,orderId);
-		if(orderId==null) {
-			model.addAttribute("orderPage", orderPage);
-			return "qianTai/grzx-order";    //我预订的服务
-		}else {
-			OrderVO order = orderPage.getList().get(0);
-			model.addAttribute("order", order);
-			return "qianTai/grzx-order-detail";   //预订详情
-		}
+	@GetMapping("orders")
+	public String selectOrders(Model model,HttpSession session) {
+		UserVo userVo=(UserVo)session.getAttribute("user");
+		PageInfo<OrderVO> orderPage= biz.selectOrder(1, userVo.getUserid(),null,null);
+		model.addAttribute("orderPage", orderPage);
+		return "qianTai/grzx-order";    //我预订的服务
+	}
+	@GetMapping("orderDetail")
+	public String getOrder(Model model,String orderId) {
+		model.addAttribute("order", biz.getOrder(orderId));
+		return "qianTai/grzx-order-detail";
 	}
 	/**
 	 * 我的金币
@@ -50,8 +67,9 @@ public class GRZXaction {
 	 * @return
 	 */
 	@GetMapping("money")
-	public String selectMoney(Model model,Integer num) {
-		model.addAttribute("moneyPage",biz.selectMoney(num, 24));
+	public String selectMoney(Model model,Integer num,HttpSession session) {
+		UserVo userVo=(UserVo)session.getAttribute("user");
+		model.addAttribute("moneyPage",biz.selectMoney(num, userVo.getUserid()));
 		return "qianTai/grzx-moneys";
 	}
 	/**
@@ -61,8 +79,9 @@ public class GRZXaction {
 	 * @return
 	 */
 	@GetMapping("jiFen")
-	public String selectJiFen(Model model,Integer num) {
-		model.addAttribute("JiFenPage",biz.selectJiFen(num, 24));
+	public String selectJiFen(Model model,Integer num,HttpSession session) {
+		UserVo userVo=(UserVo)session.getAttribute("user");
+		model.addAttribute("JiFenPage",biz.selectJiFen(num, userVo.getUserid()));
 		return "qianTai/grzx-points";
 	}
 	/**
@@ -72,9 +91,22 @@ public class GRZXaction {
 	 * @return
 	 */
 	@GetMapping("refunds")
-	public String selectRefunds(Model model,Integer num) {
-		model.addAttribute("RefundPage",biz.selectRefund(num, 24));
+	public String selectRefunds(Model model,Integer num,HttpSession session) {
+		UserVo userVo=(UserVo)session.getAttribute("user");
+		model.addAttribute("RefundPage", refundBiz.selectRefunds(num, userVo.getUserid(), null));
+		/*model.addAttribute("RefundPage",biz.selectRefund(num, userVo.getUserid()));*/
 		return "qianTai/grzx-refund";
+	}
+	/**
+	 * 退款详情
+	 * @param model
+	 * @param refundId
+	 * @return
+	 */
+	@GetMapping("refundDetail")
+	public String refundDetail(Model model,Integer refundId) {
+		model.addAttribute("refund", refundBiz.selectRefundDetail(refundId));
+		return "qianTai/grzx-refund-detail";
 	}
 	/**
 	 * 我的评价
@@ -83,8 +115,9 @@ public class GRZXaction {
 	 * @return
 	 */
 	@GetMapping("Evaluation")
-	public String selectEvaluation(Model model,Integer num) {
-		model.addAttribute("PingJiaPage",biz.selectEvaluation(num, 25));
+	public String selectEvaluation(Model model,Integer num,HttpSession session) {
+		Integer userId=((UserVo)session.getAttribute("user")).getUserid();
+		model.addAttribute("PingJiaPage",biz.selectEvaluation(num,userId));
 		return "qianTai/grzx-comments";
 	}
 	/**
@@ -94,8 +127,32 @@ public class GRZXaction {
 	 * @return
 	 */
 	@GetMapping("serviceCollection")
-	public String ServiceCollection(Model model,Integer num) {
-		model.addAttribute("fuWuCollectionPage", biz.selectServiceCollection(num, 24));
+	public String ServiceCollection(Model model,Integer num,HttpSession session) {
+		UserVo userVo=(UserVo)session.getAttribute("user");
+		model.addAttribute("fuWuCollectionPage", biz.selectServiceCollection(num,userVo.getUserid()));
 		return "qianTai/grzx-favs";
 	}
+	/**
+	 * 支付金币
+	 * @return
+	 */
+	@GetMapping("grzx-order-pay")
+	public String toPay(Model model,String orderId) {
+		model.addAttribute("order", biz.getOrder(orderId));
+		return "qianTai/grzx-order-pay";
+	}
+	
+	@GetMapping("applyAdmin")
+	public String applyAdmin(Integer refundId,String orderId) {
+		Refund refund = new Refund();
+		refund.setRefundid(refundId);
+		refund.setPoint(2);
+		refundBiz.updateRefund(refund);
+		Orders order = new Orders();
+		order.setOrderid(orderId);
+		order.setRefundstatus(3);
+		orderBiz.updateOrderDetail(order);
+		return "redirect:/grzx/refunds?num=1";
+	}
+	
 }

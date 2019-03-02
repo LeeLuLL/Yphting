@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.accp.t4.dao.llDao.ISJZXDao">
+	<select id="selectServices" resultType="com.accp.t4.entity.llEntity.Services">
+		SELECT * FROM `services` WHERE `userID`=#{userId}
+	</select>
+	
+	<!-- <resultMap type="AppraisalapplyVO" id="applyMap">
+		<association property="user" column="userID" select="getUser"></association>
+		<association property="st" column="stid" select="getServiceType"></association>
+	</resultMap>
+	<select resultType="com.accp.t4.entity.llEntity.Servicetype" id="getServiceType">
+		SELECT * FROM `servicetype` WHERE `stid`=#{0}
+	</select>
+	<select id="getUser" resultType="com.accp.t4.entity.llEntity.User">
+		SELECT * FROM `user` WHERE `userID` = #{0}
+	</select> -->
+	<!--查询 鉴定申请 -->
+	<select id="selectAppraisalapplys" resultMap="AppraisalapplyMap">
+		SELECT serviceType.stid,serviceType.stName,appraisalapply.* FROM `serviceType` 
+				LEFT JOIN appraisalapply ON userID=#{userId} AND serviceType.`stid`=appraisalapply.`stid`
+				WHERE serviceType.stid IN(#{oneid},#{twoid})
+	</select>
+	<resultMap type="com.accp.t4.vo.llVO.UserAppVo" id="AppraisalapplyMap">
+			<result   column="stid"   property="stid"/>	
+			<result   column="stName"   property="stname"/>	
+			<result   column="submitTime"   property="submittime"/>	
+			<result   column="auditTime"   property="audittime"/>	
+			<result   column="auditStatus"   property="auditstatus"/>	
+	</resultMap>
+	
+	<!-- 添加鉴定申请 -->
+	<insert id="addApply">
+				INSERT INTO `appraisalapply`
+				(`userID`,`stid`,`name`,`sex`,`height`,`constellation`,`age`,`visaType`,`documentType`,`certificates`,`experience`,
+				`vehicle`, `guideCard`,`inKorea`,`phone`,`email`,`country`,`provincialID`,`cityID`,`detailed`,`hospitalLicense`,
+				`cooperativeHospital`,`cooperativeHospitalURL`,`hospitalPhone`,`translateType`,`translate`,`office`,`officeCountry`,
+				`officeProvince`,`officeCity`,`officeDetailed`,`koreaLicense`,`translateWebsite`,`studyMajor`,`schoolReport`,`officialNetworkURL`,
+				`submitTime`,`auditTime`,`adminOpinion`,`auditStatus`)
+				VALUES
+				(#{pojo.userid},#{pojo.stid},#{pojo.name},#{pojo.sex},#{pojo.height},#{pojo.constellation},#{pojo.age},#{pojo.visatype},#{pojo.documenttype},
+				#{pojo.certificates},#{pojo.experience},#{pojo.vehicle},#{pojo.guidecard},#{pojo.inkorea},#{pojo.phone},#{pojo.email},#{pojo.country},
+				#{pojo.provincialid},#{pojo.cityid},#{pojo.detailed},#{pojo.hospitallicense},#{pojo.cooperativehospital},#{pojo.cooperativehospitalurl},
+				#{pojo.hospitalphone},#{pojo.translatetype},#{pojo.translate},#{pojo.office},#{pojo.officecountry},#{pojo.officeprovince},#{pojo.officecity},
+				#{pojo.officedetailed},#{pojo.korealicense},#{pojo.translatewebsite},#{pojo.studymajor},#{pojo.schoolreport},#{pojo.officialnetworkurl},
+				#{pojo.submittime},#{pojo.audittime},#{pojo.adminopinion},#{pojo.auditstatus});
+		</insert>
+</mapper>

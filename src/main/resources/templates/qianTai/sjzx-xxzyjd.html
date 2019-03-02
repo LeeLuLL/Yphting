@@ -93,7 +93,7 @@ function beforeCall(form, status){
     <div class="b_box nav_header community_header">
 		<a class="logo my_logo" href="/index.php/Home/Index/index.html">御品韩汀</a>
 		<ul class="member_nav_ul">
-        	<li class="cur" id="li1"><a href="/index.php/Home/Seller/index.html">商家中心</a><span class="my_nav_i"></span></li>
+        	<li class="cur" id="li1"><a href="sjzx/index">商家中心</a><span class="my_nav_i"></span></li>
 <style type="text/css">
 .layui-layer-btn .layui-layer-btn0{ background:#4c1b98; }
 .layui-layer-btn .layui-layer-btn0:hover{ background:#340d6f;}
@@ -157,7 +157,7 @@ $(function(){
 		
         <!--member right-->
         <div class="member_right sj_right_box">
-			<form method="post"  id="formmsg" onSubmit="return chkform();" action="zg/c/addxxzyjd" enctype="multipart/form-data">
+			<form method="post"  id="formmsg" onSubmit="return chkform();" action="/sjzx/addApply" enctype="multipart/form-data">
 				<input type="hidden" name="stid" value="5" />
 				
 				<div class="member_system_r_top pl15 mt20">
@@ -188,7 +188,7 @@ $(function(){
 				<dl class="info_form_dl info_form_dl2">
 					<dt class="two_h_dt"><span class="c_x">*</span>身份证／<br />登入证号码：</dt>
 					<dd>
-						<select class="sel_f sel_f2 sel_b3 mrr1" name="documentType">
+						<select class="sel_f sel_f2 sel_b3 mrr1" name="documenttype">
 							<option value="1" >身份证号码</option>
 							<option value="2" >登入证号码</option>
 						</select>
@@ -198,7 +198,7 @@ $(function(){
 							<dl class="info_form_dl info_form_dl2">
 					<dt><span class="c_x">*</span>所学专业：</dt>
 					<dd>
-						<select class="sel_f sel_f2 sel_b3 validate[required]" name="studyMajor">
+						<select class="sel_f sel_f2 sel_b3 validate[required]" name="studymajor">
 							<option value="">专业选择</option>
 							<option value="视觉设计" >视觉设计</option><option value="人口学" >人口学</option><option value="人类学" >人类学</option><option value="社会学" >社会学</option><option value="旅游学" >旅游学</option><option value="经营管理" >经营管理</option><option value="其它" >其它</option><option value="国语国文" >国语国文</option><option value="经济学" >经济学</option><option value="酒店观光" >酒店观光</option><option value="生活科学" >生活科学</option><option value="理科" >理科</option><option value="工科" >工科</option><option value="电子信息学" >电子信息学</option><option value="应用科学" >应用科学</option><option value="生命科学" >生命科学</option><option value="国际学部" >国际学部</option><option value="艺术设计学" >艺术设计学</option><option value="体育学" >体育学</option><option value="测试专业1" >测试专业1</option>						</select>
 					</dd>

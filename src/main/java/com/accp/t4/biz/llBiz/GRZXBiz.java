@@ -12,8 +12,6 @@ import com.accp.t4.vo.llVO.EvaluationVo;
 import com.accp.t4.vo.llVO.Goldnotes;
 import com.accp.t4.vo.llVO.Integral;
 import com.accp.t4.vo.llVO.OrderVO;
-import com.accp.t4.vo.llVO.Refund;
-import com.accp.t4.vo.llVO.UserVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
@@ -22,24 +20,26 @@ import com.github.pagehelper.PageInfo;
 public class GRZXBiz {
 	@Autowired
 	private IGRZXDao dao;
-	/**
-	 * 查询用户
-	 * @param userId
-	 * @return
-	 */
-	public UserVo selectUser(Integer userId) {
-		return dao.selectUser(userId);
-	}
+	
 	/**
 	 * 查询预订服务
 	 * @param num
 	 * @param userId
 	 * @return
 	 */
-	public PageInfo<OrderVO> selectOrder(Integer num,Integer userId,String data,String orderId){
+	public PageInfo<OrderVO> selectOrder(Integer num,Integer userId,String data,Integer merchantID){
 		PageHelper.startPage(num, 4);
-		return new PageInfo<OrderVO>(dao.selectOrder(userId,data,orderId));
+		return new PageInfo<OrderVO>(dao.selectOrder(userId,data,merchantID));
 	}
+	/**
+	 * 查询订单详情
+	 * @param orderId
+	 * @return
+	 */
+	public OrderVO getOrder(String orderId) {
+		return dao.getOrder(orderId);
+	}
+	
 	/**
 	 * 查询金币流
 	 * @param num
@@ -47,7 +47,7 @@ public class GRZXBiz {
 	 * @return
 	 */
 	public PageInfo<Goldnotes> selectMoney(Integer num,Integer userId){
-		PageHelper.startPage(num, 6);
+		PageHelper.startPage(num, 4);
 		return new PageInfo<Goldnotes>(dao.selectMoney(userId));
 	}
 	/**
@@ -57,7 +57,7 @@ public class GRZXBiz {
 	 * @return
 	 */
 	public PageInfo<Integral> selectJiFen(Integer num,Integer userId){
-		PageHelper.startPage(num, 6);
+		PageHelper.startPage(num, 4);
 		return new PageInfo<Integral>(dao.selectJiFen(userId));
 	}
 	/**
@@ -66,10 +66,18 @@ public class GRZXBiz {
 	 * @param userId
 	 * @return
 	 */
-	public PageInfo<Refund> selectRefund(Integer num,Integer userId){
+	/*public PageInfo<Refund> selectRefund(Integer num,Integer userId){
 		PageHelper.startPage(num, 4);
 		return new PageInfo<Refund>(dao.selectRefunds(userId));
-	}
+	}*/
+	/**
+	 * 退款详情
+	 * @param refundId
+	 * @return
+	 */
+/*	public Refund getRefundDetail(Integer refundId) {
+		return dao.selectRefundDetail(refundId);
+	}*/
 	/**
 	 * 我的评价
 	 * @param num
