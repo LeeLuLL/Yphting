@@ -14,7 +14,7 @@ public class Goldnotes {
     private String recorddescribe;
 
     private Float recordinandout;
-
+   
     private Integer auditstatus;
 
     public Integer getRecordid() {

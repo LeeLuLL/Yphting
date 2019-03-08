@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -9,6 +8,19 @@
 <script src="/Public/js/jquery-1.8.3.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="/Public/css/common.css" />
+	
+	<style type="text/css">
+		.red{
+			color:red;
+			font-weight: bold;
+			/* background:red; */
+		}
+		.green{
+			font-weight: bold;
+			color:green;
+			/* background:green; */
+		}
+	</style>
 </head>
 <iframe name="topost" id="topost" style="display: none;"></iframe>
 
@@ -85,7 +97,7 @@
 			<div class="member_right site_msg_w">
 				<div class="member_system_r_top top_nor2">
 					<div class="search_right_box my_t_r">
-						<a href="/zsp/c/getLogisticsById" class="btna_s3">充值</a><a
+						<a href="/grzx/getLogisticsById" class="btna_s3">充值</a><a
 							href="/zsp/c/getListBankType" class="btna_s3">提现</a>
 					</div>
 					<span class="fl">我的金币</span>
@@ -125,7 +137,7 @@
 							<tr th:each="temp,iterState:${moneyPage.list}">
  								<td th:text="${#dates.format(temp.recordDate,'yyyy-MM-dd HH:mm:ss')}">2000-12-13</td><!--  hh:mm:ss -->
  								<td th:text="${temp.recordDescribe}"></td>
-								<td th:text="${temp.recordInAndOut}">记录描述</td>
+								<td th:text="${temp.recordInAndOut}" th:class="${temp.recordInAndOut>0?'red':'green'}">记录描述</td>
 								<td th:if="${temp.auditStatus==1}">待审核</td>
 								<td th:if="${temp.auditStatus==2}">审核成功</td>
 								<td th:if="${temp.auditStatus==3}">审核失败</td>

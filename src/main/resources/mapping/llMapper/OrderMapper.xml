@@ -54,4 +54,11 @@
 		evaluationservice(serviceid,userid,serviceappraisecontent,serviceappraisedate,serviceappraiselevel)
 		values(#{evaluate.serviceid},#{evaluate.userid},#{evaluate.serviceappraisecontent},#{evaluate.serviceappraisedate},#{evaluate.serviceappraiselevel})
 	</insert>
+	<!-- 修改金币记录状态 -->
+	<update id="updateGoldnotes">
+		UPDATE goldnoTes SET auditStatus=#{auditStatus} WHERE recordId=#{recordId}
+	</update>
+	<select id="getGoldnotesId" resultType="int">
+		SELECT MAX(`recordID`) FROM `goldnotes`
+	</select>
 </mapper>

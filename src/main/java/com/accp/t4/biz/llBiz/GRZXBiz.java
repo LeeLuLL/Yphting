@@ -47,7 +47,7 @@ public class GRZXBiz {
 	 * @return
 	 */
 	public PageInfo<Goldnotes> selectMoney(Integer num,Integer userId){
-		PageHelper.startPage(num, 4);
+		PageHelper.startPage(num, 5);
 		return new PageInfo<Goldnotes>(dao.selectMoney(userId));
 	}
 	/**

@@ -39,5 +39,17 @@ public interface IOrderDao {
 	 * @return
 	 */
 	public int saveEvaluate(@Param("evaluate")Evaluationservice evaluate);
+	/**
+	 * 修改金币记录状态
+	 * @param recordId
+	 * @param auditStatus
+	 * @return
+	 */
+	public int updateGoldnotes(@Param("recordId")Integer recordId,@Param("auditStatus")Integer auditStatus);
+	/**
+	 * 获得金币记录表最新记录的Id
+	 * @return
+	 */
+	public int getGoldnotesId();
 	
 }

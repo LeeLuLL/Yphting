@@ -107,5 +107,19 @@ public class OrderBiz {
 	public int updateUserMoney(double money,Integer userId) {
 		return orderDao.updateUserMoney(money, userId);
 	}
+	/**
+	 * 修改金币记录状态
+	 * @param recordId
+	 * @param auditStatus
+	 * @return
+	 */
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = false)
+	public int updateGoldnotes(Integer recordId,Integer auditStatus) {
+		return orderDao.updateGoldnotes(recordId, auditStatus);
+	}
+	
+	public int getGoldnotesId() {
+		return orderDao.getGoldnotesId();
+	}
 	
 }

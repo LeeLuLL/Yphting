@@ -14,6 +14,7 @@ import com.accp.t4.biz.llBiz.RefundBiz;
 import com.accp.t4.biz.llBiz.UserBiz;
 import com.accp.t4.entity.llEntity.Orders;
 import com.accp.t4.entity.llEntity.Refund;
+import com.accp.t4.entity.llEntity.User;
 import com.accp.t4.vo.llVO.OrderVO;
 import com.accp.t4.vo.llVO.UserVo;
 import com.github.pagehelper.PageInfo;
@@ -69,6 +70,8 @@ public class GRZXaction {
 	@GetMapping("money")
 	public String selectMoney(Model model,Integer num,HttpSession session) {
 		UserVo userVo=(UserVo)session.getAttribute("user");
+		UserVo user = userBiz.selectUser(userVo.getUserid());
+		session.setAttribute("user", user);
 		model.addAttribute("moneyPage",biz.selectMoney(num, userVo.getUserid()));
 		return "qianTai/grzx-moneys";
 	}
@@ -154,5 +157,23 @@ public class GRZXaction {
 		orderBiz.updateOrderDetail(order);
 		return "redirect:/grzx/refunds?num=1";
 	}
+	
+	/**
+	 * 金币充值
+	 * @param model
+	 * @param session
+	 * @return
+	 */
+	@GetMapping("getLogisticsById")
+    public String getLogisticsById(Model model, HttpSession session) {
+		Integer userId=((UserVo)session.getAttribute("user")).getUserid();
+		User user = userBiz.selectUser(userId);
+		if(user.getUsermoney()==null) {
+			user.setUsermoney((float) 0.0);
+		}
+		model.addAttribute("USER",user);
+    	return "qianTai/jinb-index";
+    }
+	
 	
 }
