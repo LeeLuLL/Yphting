@@ -24,8 +24,8 @@ public class RuZhuBiz {
 	private IRuZhuDao dao;
 	
 	//查询服务类别
-	public List<ServiceType> selectServiceType(){
-		return dao.selectServiceType();
+	public List<ServiceType> selectServiceType(String stPid){
+		return dao.selectServiceType(stPid);
 	}
 	
 	//查询地址

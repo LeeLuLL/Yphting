@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/Public/js/Jcrop/css/jquery.Jcrop.css" type="text/css" />
+<title>Insert title here</title>
+<style type="text/css"> 
+/* 控制预览区域大小*/
+#preview-pane .preview-container {
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+}
+#targetDiv{
+  width: 400px;
+  height: 400px;
+  background-color:#f7fdff;
+}
+</style> 
+</head>
+<body>
+<!-- 	<form id="ulform" action="/c/wxx/uploadPic" enctype="multipart/form-data" method="post">   -->
+<!--     <input type="file" name="pic" id="file" value="选择图片" />   -->
+<!--     <input type="submit" value="点击上传" />   -->
+<!-- </form> -->
+<!-- <div style="width: 500px; height: 500px;"> -->
+<!-- 	<img style="margin-top:20px;" src="../uploadpic/上传文件名称.jpg"/>" id="target" alt="" /> -->
+<!-- </div> -->
+<!-- 预览： -->
+<div style="width:200px;height:200px;overflow:hidden; border:1px solid gray;">
+   <img id="preview" width="200px" height="200px" />
+</div>	
+<!-- 原图： -->
+   <img src="/uploadpic/QQ截图20180110141207.png" id="target" alt="" />
+   
+   
+<form action="/c/wxx/cutPic" method="post">
+	点击
+	<input type="hidden" name="x" id="x"/>
+	<input type="hidden" name="y" id="y"/>
+	<input type="hidden" name="width" id="width"/>
+	<input type="hidden" name="height" id="height"/>
+	<input type="hidden" name="imgName" id="imgName"/>
+	<input type="hidden" name="imgType" id="imgType"/>
+	<input type="submit" value="确定" />
+	，设置完成。
+</form>
+</body>
+<script src="/Public/js/jquery-1.8.3.min.js"></script>
+<script src="/Public/js/jquery.form.js"></script>
+<script src="/Public/js/Jcrop/js/jquery.Jcrop.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var x;
+	var y;
+	var width;
+	var height;
+	var name = $("#target").attr("src");
+	var imgName = name.substring(name.lastIndexOf("/")+1);
+	var imgType = name.substring(name.lastIndexOf(".")+1);
+	$("#imgName").val(imgName);
+	$("#imgType").val(imgType);
+	alert(imgType);
+	alert(imgName);
+	$(function(){
+		var jcrop_api, boundx, boundy;
+		//使原图具有裁剪功能
+		$('#target').Jcrop({
+			onChange: updatePreview,
+			onSelect: updatePreview,
+			aspectRatio: 1
+		},function(){
+			// Use the API to get the real image size
+			var bounds = this.getBounds();
+			boundx = bounds[0];
+			boundy = bounds[1];
+			// Store the API in the jcrop_api variable
+			jcrop_api = this;
+		});
+		//裁剪过程中，每改变裁剪大小执行该函数
+		function updatePreview(c){
+			if (parseInt(c.w) > 0){	
+				$('#preview').css({
+					width: Math.round(200 / c.w * boundx) + 'px',  	//200 为预览div的宽和高
+					height: Math.round(200 / c.h * boundy) + 'px',
+					marginLeft: '-' + Math.round(200 / c.w * c.x) + 'px',
+					marginTop: '-' + Math.round(200 / c.h * c.y) + 'px'
+				});
+				$('#width').val(c.w);  //c.w 裁剪区域的宽
+				$('#height').val(c.h); //c.h 裁剪区域的高
+				$('#x').val(c.x);  //c.x 裁剪区域左上角顶点相对于图片左上角顶点的x坐标
+				$('#y').val(c.y);  //c.y 裁剪区域顶点的y坐标
+			}
+		  };
+	});
+  </script>
+</html>

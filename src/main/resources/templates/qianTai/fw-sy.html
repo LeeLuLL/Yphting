@@ -54,518 +54,518 @@
 		<!--header end-->
 
 		<!--banner-->
-		<div id="index_banner" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
-			<div class="owl-wrapper-outer">
-				<div class="owl-wrapper" style=" left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px);">
-					th:each="temp,iter : ${homeSlideshowList}" th:style="|width:${temp.whObj.width}px; height:${temp.whObj.height}px;|"
-					<div class="owl-item" >
-						<div class="item">
-							th:href="${temp.apcurl}"
-							th:src="${temp.aimgpath}" th:alt="${temp.atitle}"
-							<a ><img  class="w100"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="owl-controls clickable">
-				<div class="owl-pagination">
-					<div class="owl-page active"><span class=""></span></div>
-					<div class="owl-page"><span class=""></span></div>
-					<div class="owl-page"><span class=""></span></div>
-				</div>
-				<div class="owl-buttons">
-					<div class="owl-prev">prev</div>
-					<div class="owl-next">next</div>
-				</div>
-			</div>
-		</div>
+<!-- 		<div id="index_banner" class="owl-carousel owl-theme" style="opacity: 1; display: block;"> -->
+<!-- 			<div class="owl-wrapper-outer"> -->
+<!-- 				<div class="owl-wrapper" style=" left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px);"> -->
+<!-- 					th:each="temp,iter : ${homeSlideshowList}" th:style="|width:${temp.whObj.width}px; height:${temp.whObj.height}px;|" -->
+<!-- 					<div class="owl-item" > -->
+<!-- 						<div class="item"> -->
+<!-- 							th:href="${temp.apcurl}" -->
+<!-- 							th:src="${temp.aimgpath}" th:alt="${temp.atitle}" -->
+<!-- 							<a ><img  class="w100"></a> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<div class="owl-controls clickable"> -->
+<!-- 				<div class="owl-pagination"> -->
+<!-- 					<div class="owl-page active"><span class=""></span></div> -->
+<!-- 					<div class="owl-page"><span class=""></span></div> -->
+<!-- 					<div class="owl-page"><span class=""></span></div> -->
+<!-- 				</div> -->
+<!-- 				<div class="owl-buttons"> -->
+<!-- 					<div class="owl-prev">prev</div> -->
+<!-- 					<div class="owl-next">next</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 		<!--banner end-->
 
-		<div class="b_box">
-			<h2 class="index_h2_title">社区服务 开启您韩国生活的第一步 中文</h2>
-			<div class="community_service_box">
-				<ul class="community_service_ul">
-					th:each="temp,iter : ${homeMidAdvertingList}" th:style="|width:${temp.whObj.width}px; height:${temp.whObj.height}px;|"
-					<li >
-						th:href="${temp.apcurl}"
-						<a >
-							th:src="${temp.aimgpath}" th:alt="${temp.atitle}"
-							<img >
-							<div class="sv_over_show">
-								th:text="${temp.atitle}
-								<h3 class="sv_h3" ">自驾游</h3>
-								th:text="${temp.adescribe}"
-								<p class="sv_text" >1660名导游提供服务</p>
-							</div>
-						</a>
-					</li>
-				</ul>
-			</div>
+<!-- 		<div class="b_box"> -->
+<!-- 			<h2 class="index_h2_title">社区服务 开启您韩国生活的第一步 中文</h2> -->
+<!-- 			<div class="community_service_box"> -->
+<!-- 				<ul class="community_service_ul"> -->
+<!-- 					th:each="temp,iter : ${homeMidAdvertingList}" th:style="|width:${temp.whObj.width}px; height:${temp.whObj.height}px;|" -->
+<!-- 					<li > -->
+<!-- 						th:href="${temp.apcurl}" -->
+<!-- 						<a > -->
+<!-- 							th:src="${temp.aimgpath}" th:alt="${temp.atitle}" -->
+<!-- 							<img > -->
+<!-- 							<div class="sv_over_show"> -->
+<!-- 								th:text="${temp.atitle} -->
+<!-- 								<h3 class="sv_h3" ">自驾游</h3> -->
+<!-- 								th:text="${temp.adescribe}" -->
+<!-- 								<p class="sv_text" >1660名导游提供服务</p> -->
+<!-- 							</div> -->
+<!-- 						</a> -->
+<!-- 					</li> -->
+<!-- 				</ul> -->
+<!-- 			</div> -->
 
-			<h2 class="index_h2_title">星级服务商家推荐</h2>
-			<div class="star_recommend_tab">
-				<a href="javascript:void(0);" class="cur">自驾游</a>
-				<a href="javascript:void(0);">微整形</a>
-				<a href="javascript:void(0);">留学中介</a>
-				<a href="javascript:void(0);">韩语翻译</a>
-				<a href="javascript:void(0);">学习资源</a>
-			</div>
-			<div class="star_recommend_show" style="display:block;">
-				<div id="star_recommend_part_0" class="owl-carousel star_recommend_part owl-theme" style="opacity: 1; display: block;">
-					<div class="owl-wrapper-outer">
-						th:style="|width: ${recommendStidByOneList.size()*400*2}px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(0px, 0px, 0px);|"
-						<div class="owl-wrapper" >
-							th:each="temp,iter : ${recommendStidByOneList}"
-							<div class="owl-item" style="width: 400px;" >
-								<div class="item">
-									<a href="javascript:void(0);">
-										<div class="star_img">
-										th:src="${temp.shopImg}" th:alt="${temp.userName}"
-										<img ></div>
-										<dl class="star_user_dl">
-											<dt>
-											th:src="${temp.userImgPath}" th:alt="${temp.userName}"
-											<img  class="star_user_photo">
-					                    </dt>
-											<dd>
-												<div class="star_user_name_s">
-													th:text="${temp.userName}"
-													<h3 class="star_user_name" >■ˉ苏〃筱萌◇◆ </h3>
-													<div class="star_pl">
-													th:style="|width:${temp.merchantLevel*20}%;|"
-													<span class="star_pl_sp" ></span></div>
-												</div>
-												 th:utext="${temp.selfIntroduction}"
-												<p class="star_user_text">For man is man and master of his fate.</p>
-											</dd>
-										</dl>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="owl-controls clickable">
-						th:if="${recommendStidByOneList.size()>0}"
-						<div class="owl-pagination" >
-							th:if="${recommendStidByOneList.size()>3}"
-							<div class="owl-page active" ><span class=""></span></div>
-							th:if="${recommendStidByOneList.size()>3}"
-							<div class="owl-page" ><span class=""></span></div>
-							th:if="${recommendStidByOneList.size()>6}"
-							<div class="owl-page" ><span class=""></span></div>
-						</div>
-					</div>
-				</div>
+<!-- 			<h2 class="index_h2_title">星级服务商家推荐</h2> -->
+<!-- 			<div class="star_recommend_tab"> -->
+<!-- 				<a href="javascript:void(0);" class="cur">自驾游</a> -->
+<!-- 				<a href="javascript:void(0);">微整形</a> -->
+<!-- 				<a href="javascript:void(0);">留学中介</a> -->
+<!-- 				<a href="javascript:void(0);">韩语翻译</a> -->
+<!-- 				<a href="javascript:void(0);">学习资源</a> -->
+<!-- 			</div> -->
+<!-- 			<div class="star_recommend_show" style="display:block;"> -->
+<!-- 				<div id="star_recommend_part_0" class="owl-carousel star_recommend_part owl-theme" style="opacity: 1; display: block;"> -->
+<!-- 					<div class="owl-wrapper-outer"> -->
+<!-- 						th:style="|width: ${recommendStidByOneList.size()*400*2}px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(0px, 0px, 0px);|" -->
+<!-- 						<div class="owl-wrapper" > -->
+<!-- 							th:each="temp,iter : ${recommendStidByOneList}" -->
+<!-- 							<div class="owl-item" style="width: 400px;" > -->
+<!-- 								<div class="item"> -->
+<!-- 									<a href="javascript:void(0);"> -->
+<!-- 										<div class="star_img"> -->
+<!-- 										th:src="${temp.shopImg}" th:alt="${temp.userName}" -->
+<!-- 										<img ></div> -->
+<!-- 										<dl class="star_user_dl"> -->
+<!-- 											<dt> -->
+<!-- 											th:src="${temp.userImgPath}" th:alt="${temp.userName}" -->
+<!-- 											<img  class="star_user_photo"> -->
+<!-- 					                    </dt> -->
+<!-- 											<dd> -->
+<!-- 												<div class="star_user_name_s"> -->
+<!-- 													th:text="${temp.userName}" -->
+<!-- 													<h3 class="star_user_name" >■ˉ苏〃筱萌◇◆ </h3> -->
+<!-- 													<div class="star_pl"> -->
+<!-- 													th:style="|width:${temp.merchantLevel*20}%;|" -->
+<!-- 													<span class="star_pl_sp" ></span></div> -->
+<!-- 												</div> -->
+<!-- 												 th:utext="${temp.selfIntroduction}" -->
+<!-- 												<p class="star_user_text">For man is man and master of his fate.</p> -->
+<!-- 											</dd> -->
+<!-- 										</dl> -->
+<!-- 									</a> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="owl-controls clickable"> -->
+<!-- 						th:if="${recommendStidByOneList.size()>0}" -->
+<!-- 						<div class="owl-pagination" > -->
+<!-- 							th:if="${recommendStidByOneList.size()>3}" -->
+<!-- 							<div class="owl-page active" ><span class=""></span></div> -->
+<!-- 							th:if="${recommendStidByOneList.size()>3}" -->
+<!-- 							<div class="owl-page" ><span class=""></span></div> -->
+<!-- 							th:if="${recommendStidByOneList.size()>6}" -->
+<!-- 							<div class="owl-page" ><span class=""></span></div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
 
-				<a target="_blank" href="/c/lsm/serviceUrl?htmlUrl=fw-zjyTAB&stid=1" class="btn_a_more">查看更多<span class="sp_i_1"></span></a>
-			</div>
-			<div class="star_recommend_show" style="display:none;">
-				<div id="star_recommend_part_0" class="owl-carousel star_recommend_part owl-theme" style="opacity: 0; display: block;">
-					<div class="owl-wrapper-outer">
-					 	th:style="|width: ${recommendStidByTwoList.size()*400*2}px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(0px, 0px, 0px);|"
-						<div class="owl-wrapper">
-							th:each="temp,iter : ${recommendStidByTwoList}"
-							<div class="owl-item" style="width: 400px;" >
-								<div class="item">
-									<a href="javascript:void(0);">
-										<div class="star_img">
-										th:src="${temp.shopImg}" th:alt="${temp.userName}"
-										<img ></div>
-										<dl class="star_user_dl">
-											<dt>
-											th:src="${temp.userImgPath}" th:alt="${temp.userName}"
-											<img  class="star_user_photo">
-					                    </dt>
-											<dd>
-												<div class="star_user_name_s">
-													th:text="${temp.userName}"
-													<h3 class="star_user_name" >暖暖哒</h3>
-													<div class="star_pl">
-													th:style="|width:${temp.merchantLevel*20}%;|"
-													<span class="star_pl_sp" ></span></div>
-												</div>
-												th:utext="${temp.selfIntroduction}"
-												<p class="star_user_text" ></p>
-											</dd>
-										</dl>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="owl-controls clickable">
-						th:if="${recommendStidByTwoList.size()>0}"
-						<div class="owl-pagination" >
-							th:if="${recommendStidByTwoList.size()>3}"	
-							<div class="owl-page active" ><span class=""></span></div>
-							th:if="${recommendStidByTwoList.size()>3}"
-							<div class="owl-page" ><span class=""></span></div>
-							th:if="${recommendStidByTwoList.size()>6}"
-							<div class="owl-page" ><span class=""></span></div>
-						</div>
-					</div>
-				</div>
+<!-- 				<a target="_blank" href="/c/lsm/serviceUrl?htmlUrl=fw-zjyTAB&stid=1" class="btn_a_more">查看更多<span class="sp_i_1"></span></a> -->
+<!-- 			</div> -->
+<!-- 			<div class="star_recommend_show" style="display:none;"> -->
+<!-- 				<div id="star_recommend_part_0" class="owl-carousel star_recommend_part owl-theme" style="opacity: 0; display: block;"> -->
+<!-- 					<div class="owl-wrapper-outer"> -->
+<!-- 					 	th:style="|width: ${recommendStidByTwoList.size()*400*2}px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(0px, 0px, 0px);|" -->
+<!-- 						<div class="owl-wrapper"> -->
+<!-- 							th:each="temp,iter : ${recommendStidByTwoList}" -->
+<!-- 							<div class="owl-item" style="width: 400px;" > -->
+<!-- 								<div class="item"> -->
+<!-- 									<a href="javascript:void(0);"> -->
+<!-- 										<div class="star_img"> -->
+<!-- 										th:src="${temp.shopImg}" th:alt="${temp.userName}" -->
+<!-- 										<img ></div> -->
+<!-- 										<dl class="star_user_dl"> -->
+<!-- 											<dt> -->
+<!-- 											th:src="${temp.userImgPath}" th:alt="${temp.userName}" -->
+<!-- 											<img  class="star_user_photo"> -->
+<!-- 					                    </dt> -->
+<!-- 											<dd> -->
+<!-- 												<div class="star_user_name_s"> -->
+<!-- 													th:text="${temp.userName}" -->
+<!-- 													<h3 class="star_user_name" >暖暖哒</h3> -->
+<!-- 													<div class="star_pl"> -->
+<!-- 													th:style="|width:${temp.merchantLevel*20}%;|" -->
+<!-- 													<span class="star_pl_sp" ></span></div> -->
+<!-- 												</div> -->
+<!-- 												th:utext="${temp.selfIntroduction}" -->
+<!-- 												<p class="star_user_text" ></p> -->
+<!-- 											</dd> -->
+<!-- 										</dl> -->
+<!-- 									</a> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="owl-controls clickable"> -->
+<!-- 						th:if="${recommendStidByTwoList.size()>0}" -->
+<!-- 						<div class="owl-pagination" > -->
+<!-- 							th:if="${recommendStidByTwoList.size()>3}"	 -->
+<!-- 							<div class="owl-page active" ><span class=""></span></div> -->
+<!-- 							th:if="${recommendStidByTwoList.size()>3}" -->
+<!-- 							<div class="owl-page" ><span class=""></span></div> -->
+<!-- 							th:if="${recommendStidByTwoList.size()>6}" -->
+<!-- 							<div class="owl-page" ><span class=""></span></div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
 
-				<a target="_blank" href="/c/lsm/serviceUrl?htmlUrl=fw-wzxTAB&stid=2" class="btn_a_more">查看更多<span class="sp_i_1"></span></a>
-			</div>
-			<div class="star_recommend_show" style="display:none;">
-				<div id="star_recommend_part_0" class="owl-carousel star_recommend_part owl-theme" style="opacity: 0; display: block;">
-					<div class="owl-wrapper-outer">
-						th:style="|width: ${recommendStidByThreeList.size()*400*2}px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(0px, 0px, 0px);|"
-						<div class="owl-wrapper" >
-							th:each="temp,iter : ${recommendStidByThreeList}"
-							<div class="owl-item" style="width: 400px;" >
-								<div class="item">
-									<a href="javascript:void(0);">
-										<div class="star_img">
-										th:src="${temp.shopImg}" th:alt="${temp.userName}"
-										<img ></div>
-										<dl class="star_user_dl">
-											<dt>
-											th:src="${temp.userImgPath}" th:alt="${temp.userName}"
-											<img  class="star_user_photo">
-					                    </dt>
-											<dd>
-												<div class="star_user_name_s">
-													th:text="${temp.userName}"
-													<h3 class="star_user_name" >暖暖哒</h3>
-													<div class="star_pl">
-													th:style="|width:${temp.merchantLevel*20}%;|"
-													<span class="star_pl_sp" ></span></div>
-												</div>
-												th:utext="${temp.selfIntroduction}"
-												<p class="star_user_text" ></p>
-											</dd>
-										</dl>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="owl-controls clickable">
-						th:if="${recommendStidByThreeList.size()>0}"
-						<div class="owl-pagination" >
-							th:if="${recommendStidByThreeList.size()>3}"
-							<div class="owl-page active" ><span class=""></span></div>
-							th:if="${recommendStidByThreeList.size()>3}"
-							<div class="owl-page" ><span class=""></span></div>
-							th:if="${recommendStidByThreeList.size()>6}"
-							<div class="owl-page" ><span class=""></span></div>
-						</div>
-					</div>
-				</div>
+<!-- 				<a target="_blank" href="/c/lsm/serviceUrl?htmlUrl=fw-wzxTAB&stid=2" class="btn_a_more">查看更多<span class="sp_i_1"></span></a> -->
+<!-- 			</div> -->
+<!-- 			<div class="star_recommend_show" style="display:none;"> -->
+<!-- 				<div id="star_recommend_part_0" class="owl-carousel star_recommend_part owl-theme" style="opacity: 0; display: block;"> -->
+<!-- 					<div class="owl-wrapper-outer"> -->
+<!-- 						th:style="|width: ${recommendStidByThreeList.size()*400*2}px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(0px, 0px, 0px);|" -->
+<!-- 						<div class="owl-wrapper" > -->
+<!-- 							th:each="temp,iter : ${recommendStidByThreeList}" -->
+<!-- 							<div class="owl-item" style="width: 400px;" > -->
+<!-- 								<div class="item"> -->
+<!-- 									<a href="javascript:void(0);"> -->
+<!-- 										<div class="star_img"> -->
+<!-- 										th:src="${temp.shopImg}" th:alt="${temp.userName}" -->
+<!-- 										<img ></div> -->
+<!-- 										<dl class="star_user_dl"> -->
+<!-- 											<dt> -->
+<!-- 											th:src="${temp.userImgPath}" th:alt="${temp.userName}" -->
+<!-- 											<img  class="star_user_photo"> -->
+<!-- 					                    </dt> -->
+<!-- 											<dd> -->
+<!-- 												<div class="star_user_name_s"> -->
+<!-- 													th:text="${temp.userName}" -->
+<!-- 													<h3 class="star_user_name" >暖暖哒</h3> -->
+<!-- 													<div class="star_pl"> -->
+<!-- 													th:style="|width:${temp.merchantLevel*20}%;|" -->
+<!-- 													<span class="star_pl_sp" ></span></div> -->
+<!-- 												</div> -->
+<!-- 												th:utext="${temp.selfIntroduction}" -->
+<!-- 												<p class="star_user_text" ></p> -->
+<!-- 											</dd> -->
+<!-- 										</dl> -->
+<!-- 									</a> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="owl-controls clickable"> -->
+<!-- 						th:if="${recommendStidByThreeList.size()>0}" -->
+<!-- 						<div class="owl-pagination" > -->
+<!-- 							th:if="${recommendStidByThreeList.size()>3}" -->
+<!-- 							<div class="owl-page active" ><span class=""></span></div> -->
+<!-- 							th:if="${recommendStidByThreeList.size()>3}" -->
+<!-- 							<div class="owl-page" ><span class=""></span></div> -->
+<!-- 							th:if="${recommendStidByThreeList.size()>6}" -->
+<!-- 							<div class="owl-page" ><span class=""></span></div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
 
-				<a target="_blank" href="/c/lsm/serviceUrl?htmlUrl=fw-lxzjTAB&stid=3" class="btn_a_more">查看更多<span class="sp_i_1"></span></a>
-			</div>
-			<div class="star_recommend_show" style="display:none;">
-				<div id="star_recommend_part_0" class="owl-carousel star_recommend_part owl-theme" style="opacity: 0; display: block;">
-					<div class="owl-wrapper-outer">
-						th:style="|width: ${recommendStidByFourList.size()*400*2}px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(0px, 0px, 0px);|"
-						<div class="owl-wrapper" >
-							th:each="temp,iter : ${recommendStidByFourList}"
-							<div class="owl-item" style="width: 400px;" >
-								<div class="item">
-									<a href="javascript:void(0);">
-										<div class="star_img">
-										th:src="${temp.shopImg}" th:alt="${temp.userName}"
-										<img ></div>
-										<dl class="star_user_dl">
-											<dt>
-											th:src="${temp.userImgPath}" th:alt="${temp.userName}"
-											<img  class="star_user_photo">
-					                    </dt>
-											<dd>
-												<div class="star_user_name_s">
-													<h3 class="star_user_name" >暖暖哒</h3>
-													<div class="star_pl"><span class="star_pl_sp"></span></div>
-												</div>
-												<p class="star_user_text"></p>
-											</dd>
-										</dl>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="owl-controls clickable">
-						<div class="owl-pagination" th:if="${recommendStidByFourList.size()>0}">
-							<div class="owl-page active" th:if="${recommendStidByFourList.size()>3}"><span class=""></span></div>
-							<div class="owl-page" th:if="${recommendStidByFourList.size()>3}"><span class=""></span></div>
-							<div class="owl-page" th:if="${recommendStidByFourList.size()>6}"><span class=""></span></div>
-						</div>
-					</div>
-				</div>
+<!-- 				<a target="_blank" href="/c/lsm/serviceUrl?htmlUrl=fw-lxzjTAB&stid=3" class="btn_a_more">查看更多<span class="sp_i_1"></span></a> -->
+<!-- 			</div> -->
+<!-- 			<div class="star_recommend_show" style="display:none;"> -->
+<!-- 				<div id="star_recommend_part_0" class="owl-carousel star_recommend_part owl-theme" style="opacity: 0; display: block;"> -->
+<!-- 					<div class="owl-wrapper-outer"> -->
+<!-- 						th:style="|width: ${recommendStidByFourList.size()*400*2}px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(0px, 0px, 0px);|" -->
+<!-- 						<div class="owl-wrapper" > -->
+<!-- 							th:each="temp,iter : ${recommendStidByFourList}" -->
+<!-- 							<div class="owl-item" style="width: 400px;" > -->
+<!-- 								<div class="item"> -->
+<!-- 									<a href="javascript:void(0);"> -->
+<!-- 										<div class="star_img"> -->
+<!-- 										th:src="${temp.shopImg}" th:alt="${temp.userName}" -->
+<!-- 										<img ></div> -->
+<!-- 										<dl class="star_user_dl"> -->
+<!-- 											<dt> -->
+<!-- 											th:src="${temp.userImgPath}" th:alt="${temp.userName}" -->
+<!-- 											<img  class="star_user_photo"> -->
+<!-- 					                    </dt> -->
+<!-- 											<dd> -->
+<!-- 												<div class="star_user_name_s"> -->
+<!-- 													<h3 class="star_user_name" >暖暖哒</h3> -->
+<!-- 													<div class="star_pl"><span class="star_pl_sp"></span></div> -->
+<!-- 												</div> -->
+<!-- 												<p class="star_user_text"></p> -->
+<!-- 											</dd> -->
+<!-- 										</dl> -->
+<!-- 									</a> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="owl-controls clickable"> -->
+<!-- 						<div class="owl-pagination" th:if="${recommendStidByFourList.size()>0}"> -->
+<!-- 							<div class="owl-page active" th:if="${recommendStidByFourList.size()>3}"><span class=""></span></div> -->
+<!-- 							<div class="owl-page" th:if="${recommendStidByFourList.size()>3}"><span class=""></span></div> -->
+<!-- 							<div class="owl-page" th:if="${recommendStidByFourList.size()>6}"><span class=""></span></div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
 
-				<a target="_blank" href="/c/lsm/serviceUrl?htmlUrl=fw-hyfyTAB&stid=4" class="btn_a_more">查看更多<span class="sp_i_1"></span></a>
-			</div>
-			<div class="star_recommend_show" style="display:none;">
-				<div id="star_recommend_part_0" class="owl-carousel star_recommend_part owl-theme" style="opacity: 0; display: block;">
-					<div class="owl-wrapper-outer">
-						<div class="owl-wrapper" th:style="|width: ${recommendStidByFiveList.size()*400*2}px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(0px, 0px, 0px);|">
-							<div class="owl-item" style="width: 400px;" th:each="temp,iter : ${recommendStidByFiveList}">
-								<div class="item">
-									<a href="javascript:void(0);">
-										<div class="star_img"><img th:src="${temp.shopImg}" th:alt="${temp.userName}"></div>
-										<dl class="star_user_dl">
-											<dt><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" class="star_user_photo">
-					                    </dt>
-											<dd>
-												<div class="star_user_name_s">
-													<h3 class="star_user_name" th:text="${temp.userName}">暖暖哒</h3>
-													<div class="star_pl"><span class="star_pl_sp" th:style="|width:${temp.merchantLevel*20}%;|"></span></div>
-												</div>
-												<p class="star_user_text" th:utext="${temp.selfIntroduction}"></p>
-											</dd>
-										</dl>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="owl-controls clickable">
-						<div class="owl-pagination" th:if="${recommendStidByFiveList.size()>0}">
-							<div class="owl-page active" th:if="${recommendStidByFiveList.size()>3}"><span class=""></span></div>
-							<div class="owl-page" th:if="${recommendStidByFiveList.size()>3}"><span class=""></span></div>
-							<div class="owl-page" th:if="${recommendStidByFiveList.size()>6}"><span class=""></span></div>
-						</div>
-					</div>
-				</div>
+<!-- 				<a target="_blank" href="/c/lsm/serviceUrl?htmlUrl=fw-hyfyTAB&stid=4" class="btn_a_more">查看更多<span class="sp_i_1"></span></a> -->
+<!-- 			</div> -->
+<!-- 			<div class="star_recommend_show" style="display:none;"> -->
+<!-- 				<div id="star_recommend_part_0" class="owl-carousel star_recommend_part owl-theme" style="opacity: 0; display: block;"> -->
+<!-- 					<div class="owl-wrapper-outer"> -->
+<!-- 						<div class="owl-wrapper" th:style="|width: ${recommendStidByFiveList.size()*400*2}px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(0px, 0px, 0px);|"> -->
+<!-- 							<div class="owl-item" style="width: 400px;" th:each="temp,iter : ${recommendStidByFiveList}"> -->
+<!-- 								<div class="item"> -->
+<!-- 									<a href="javascript:void(0);"> -->
+<!-- 										<div class="star_img"><img th:src="${temp.shopImg}" th:alt="${temp.userName}"></div> -->
+<!-- 										<dl class="star_user_dl"> -->
+<!-- 											<dt><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" class="star_user_photo"> -->
+<!-- 					                    </dt> -->
+<!-- 											<dd> -->
+<!-- 												<div class="star_user_name_s"> -->
+<!-- 													<h3 class="star_user_name" th:text="${temp.userName}">暖暖哒</h3> -->
+<!-- 													<div class="star_pl"><span class="star_pl_sp" th:style="|width:${temp.merchantLevel*20}%;|"></span></div> -->
+<!-- 												</div> -->
+<!-- 												<p class="star_user_text" th:utext="${temp.selfIntroduction}"></p> -->
+<!-- 											</dd> -->
+<!-- 										</dl> -->
+<!-- 									</a> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="owl-controls clickable"> -->
+<!-- 						<div class="owl-pagination" th:if="${recommendStidByFiveList.size()>0}"> -->
+<!-- 							<div class="owl-page active" th:if="${recommendStidByFiveList.size()>3}"><span class=""></span></div> -->
+<!-- 							<div class="owl-page" th:if="${recommendStidByFiveList.size()>3}"><span class=""></span></div> -->
+<!-- 							<div class="owl-page" th:if="${recommendStidByFiveList.size()>6}"><span class=""></span></div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
 
-				<a target="_blank" href="/c/lsm/serviceUrl?htmlUrl=fw-xxzyTAB&stid=5" class="btn_a_more">查看更多<span class="sp_i_1"></span></a>
-			</div>
-			<!--ad -->
-			<div class="ad_box">
-				<div class="fl ad_left">
-					<a href=""><img th:src="${homeTopAdvertingList[0].aimgpath}" th:alt="${homeTopAdvertingList[0].atitle}"  th:style="|width:${homeTopAdvertingList[0].whObj.width}px; height:${homeTopAdvertingList[0].whObj.height}px;|"> </a>
-				</div>
-				<div class="fr ad_right">
-					<a href=""><img th:src="${homeTopAdvertingList[1].aimgpath}" th:alt="${homeTopAdvertingList[1].atitle}"  th:style="|width:${homeTopAdvertingList[1].whObj.width}px; height:${homeTopAdvertingList[1].whObj.height}px;|"> </a>
-				</div>
-			</div>
-			<a href="">
-				ad end
+<!-- 				<a target="_blank" href="/c/lsm/serviceUrl?htmlUrl=fw-xxzyTAB&stid=5" class="btn_a_more">查看更多<span class="sp_i_1"></span></a> -->
+<!-- 			</div> -->
+<!-- 			<!--ad --> -->
+<!-- 			<div class="ad_box"> -->
+<!-- 				<div class="fl ad_left"> -->
+<!-- 					<a href=""><img th:src="${homeTopAdvertingList[0].aimgpath}" th:alt="${homeTopAdvertingList[0].atitle}"  th:style="|width:${homeTopAdvertingList[0].whObj.width}px; height:${homeTopAdvertingList[0].whObj.height}px;|"> </a> -->
+<!-- 				</div> -->
+<!-- 				<div class="fr ad_right"> -->
+<!-- 					<a href=""><img th:src="${homeTopAdvertingList[1].aimgpath}" th:alt="${homeTopAdvertingList[1].atitle}"  th:style="|width:${homeTopAdvertingList[1].whObj.width}px; height:${homeTopAdvertingList[1].whObj.height}px;|"> </a> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<a href=""> -->
+<!-- 				ad end -->
 
-			</a>
-		</div>
+<!-- 			</a> -->
+<!-- 		</div> -->
 		<a href="">
 
 		</a>
-		<div class="bg_c1">
-			<a href="">
-			</a>
-			<div class="b_box">
-				<a href="">
-				</a>
-				<h2 class="index_h2_title c_0"><a href=""></a><a href="/index.php/Home/Bbs/hotlist.html">韩汀社区 学习 交流 互助不亦乐乎</a></h2>
-				<div class="study_box">
-					<div id="study_box" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
-						item
-						<div class="owl-wrapper-outer">
-							<div class="owl-wrapper" style="width: 7200px; left: 0px; display: block; transition: all 400ms ease 0s; transform: translate3d(0px, 0px, 0px);">
-								<div class="owl-item" style="width: 1200px;" th:if="${homePostVOList.size()>0}">
-									<div class="item">
-										<div class="study_part">
-											<ul class="study_part_ul">
-												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count<=3}">
-													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a>
-													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4>
-													<dl class="study_dl">
-														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt>
-														<dd>
-															<p class="study_p1">
-																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> •
-																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a>
-																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span>
-																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span>
-																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a>
-															</p>
-															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p>
-														</dd>
-													</dl>
-												</li>
-											</ul>
-											<ul class="study_part_ul">
-												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count>=4&&iter.count<=6}">
-													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a>
-													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4>
-													<dl class="study_dl">
-														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt>
-														<dd>
-															<p class="study_p1">
-																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> •
-																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a>
-																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span>
-																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span>
-																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a>
-															</p>
-															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p>
-														</dd>
-													</dl>
-												</li>
-											</ul>
+<!-- 		<div class="bg_c1"> -->
+<!-- 			<a href=""> -->
+<!-- 			</a> -->
+<!-- 			<div class="b_box"> -->
+<!-- 				<a href=""> -->
+<!-- 				</a> -->
+<!-- 				<h2 class="index_h2_title c_0"><a href=""></a><a href="/index.php/Home/Bbs/hotlist.html">韩汀社区 学习 交流 互助不亦乐乎</a></h2> -->
+<!-- 				<div class="study_box"> -->
+<!-- 					<div id="study_box" class="owl-carousel owl-theme" style="opacity: 1; display: block;"> -->
+<!-- 						item -->
+<!-- 						<div class="owl-wrapper-outer"> -->
+<!-- 							<div class="owl-wrapper" style="width: 7200px; left: 0px; display: block; transition: all 400ms ease 0s; transform: translate3d(0px, 0px, 0px);"> -->
+<!-- 								<div class="owl-item" style="width: 1200px;" th:if="${homePostVOList.size()>0}"> -->
+<!-- 									<div class="item"> -->
+<!-- 										<div class="study_part"> -->
+<!-- 											<ul class="study_part_ul"> -->
+<!-- 												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count<=3}"> -->
+<!-- 													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a> -->
+<!-- 													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4> -->
+<!-- 													<dl class="study_dl"> -->
+<!-- 														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt> -->
+<!-- 														<dd> -->
+<!-- 															<p class="study_p1"> -->
+<!-- 																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> • -->
+<!-- 																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a> -->
+<!-- 																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span> -->
+<!-- 																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span> -->
+<!-- 																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a> -->
+<!-- 															</p> -->
+<!-- 															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p> -->
+<!-- 														</dd> -->
+<!-- 													</dl> -->
+<!-- 												</li> -->
+<!-- 											</ul> -->
+<!-- 											<ul class="study_part_ul"> -->
+<!-- 												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count>=4&&iter.count<=6}"> -->
+<!-- 													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a> -->
+<!-- 													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4> -->
+<!-- 													<dl class="study_dl"> -->
+<!-- 														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt> -->
+<!-- 														<dd> -->
+<!-- 															<p class="study_p1"> -->
+<!-- 																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> • -->
+<!-- 																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a> -->
+<!-- 																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span> -->
+<!-- 																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span> -->
+<!-- 																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a> -->
+<!-- 															</p> -->
+<!-- 															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p> -->
+<!-- 														</dd> -->
+<!-- 													</dl> -->
+<!-- 												</li> -->
+<!-- 											</ul> -->
 
-											<div class="study_right">
-												<a href="/index.php/Home/Bbs/lists/cid/9.html" class="study_style">美妆天地</a>
-												<ul class="study_video_ul">
-													<li class="last" th:each="temp,iter : ${homePostMakeUpList}" th:if="${iter.count<=3}">
-														<div class="study_video_img">
-															<a href="javascript:void(0);"><img th:src="${temp.coverpath}" th:alt="${temp.title}" width="170" height="100"><span class="video_tiem" th:text="${temp.time}">12分13秒</span></a>
-														</div>
-														<p class="study_video_text">
-															<a href="javascript:void(0);" th:text="${temp.title}">韩语入门-第一讲</a>
-														</p>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="owl-item" style="width: 1200px;" th:if="${homePostVOList.size()>6}">
-									<div class="item">
-										<div class="study_part">
-											<ul class="study_part_ul">
-												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count>=7&&iter.count<=9}">
-													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a>
-													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4>
-													<dl class="study_dl">
-														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt>
-														<dd>
-															<p class="study_p1">
-																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> •
-																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a>
-																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span>
-																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span>
-																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a>
-															</p>
-															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p>
-														</dd>
-													</dl>
-												</li>
-											</ul>
-											<ul class="study_part_ul">
-												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count>=10&&iter.count<=12}">
-													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a>
-													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4>
-													<dl class="study_dl">
-														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt>
-														<dd>
-															<p class="study_p1">
-																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> •
-																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a>
-																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span>
-																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span>
-																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a>
-															</p>
-															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p>
-														</dd>
-													</dl>
-												</li>
-											</ul>
+<!-- 											<div class="study_right"> -->
+<!-- 												<a href="/index.php/Home/Bbs/lists/cid/9.html" class="study_style">美妆天地</a> -->
+<!-- 												<ul class="study_video_ul"> -->
+<!-- 													<li class="last" th:each="temp,iter : ${homePostMakeUpList}" th:if="${iter.count<=3}"> -->
+<!-- 														<div class="study_video_img"> -->
+<!-- 															<a href="javascript:void(0);"><img th:src="${temp.coverpath}" th:alt="${temp.title}" width="170" height="100"><span class="video_tiem" th:text="${temp.time}">12分13秒</span></a> -->
+<!-- 														</div> -->
+<!-- 														<p class="study_video_text"> -->
+<!-- 															<a href="javascript:void(0);" th:text="${temp.title}">韩语入门-第一讲</a> -->
+<!-- 														</p> -->
+<!-- 													</li> -->
+<!-- 												</ul> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="owl-item" style="width: 1200px;" th:if="${homePostVOList.size()>6}"> -->
+<!-- 									<div class="item"> -->
+<!-- 										<div class="study_part"> -->
+<!-- 											<ul class="study_part_ul"> -->
+<!-- 												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count>=7&&iter.count<=9}"> -->
+<!-- 													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a> -->
+<!-- 													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4> -->
+<!-- 													<dl class="study_dl"> -->
+<!-- 														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt> -->
+<!-- 														<dd> -->
+<!-- 															<p class="study_p1"> -->
+<!-- 																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> • -->
+<!-- 																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a> -->
+<!-- 																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span> -->
+<!-- 																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span> -->
+<!-- 																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a> -->
+<!-- 															</p> -->
+<!-- 															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p> -->
+<!-- 														</dd> -->
+<!-- 													</dl> -->
+<!-- 												</li> -->
+<!-- 											</ul> -->
+<!-- 											<ul class="study_part_ul"> -->
+<!-- 												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count>=10&&iter.count<=12}"> -->
+<!-- 													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a> -->
+<!-- 													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4> -->
+<!-- 													<dl class="study_dl"> -->
+<!-- 														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt> -->
+<!-- 														<dd> -->
+<!-- 															<p class="study_p1"> -->
+<!-- 																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> • -->
+<!-- 																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a> -->
+<!-- 																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span> -->
+<!-- 																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span> -->
+<!-- 																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a> -->
+<!-- 															</p> -->
+<!-- 															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p> -->
+<!-- 														</dd> -->
+<!-- 													</dl> -->
+<!-- 												</li> -->
+<!-- 											</ul> -->
 
-											<div class="study_right">
-												<a href="/index.php/Home/Bbs/lists/cid/9.html" class="study_style">美妆天地</a>
-												<ul class="study_video_ul">
-													<li class="last" th:each="temp,iter : ${homePostMakeUpList}" th:if="${iter.count>=4&&iter.count<=6}">
-														<div class="study_video_img">
-															<a href="javascript:void(0);"><img th:src="${temp.coverpath}" th:alt="${temp.title}" width="170" height="100"><span class="video_tiem" th:text="${temp.time}">12分13秒</span></a>
-														</div>
-														<p class="study_video_text">
-															<a href="javascript:void(0);" th:text="${temp.title}">韩语入门-第一讲</a>
-														</p>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="owl-item" style="width: 1200px;" th:if="${homePostVOList.size()>0}">
-									<div class="item">
-										<div class="study_part">
-											<ul class="study_part_ul">
-												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count>=13&&iter.count<=15}">
-													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a>
-													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4>
-													<dl class="study_dl">
-														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt>
-														<dd>
-															<p class="study_p1">
-																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> •
-																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a>
-																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span>
-																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span>
-																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a>
-															</p>
-															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p>
-														</dd>
-													</dl>
-												</li>
-											</ul>
-											<ul class="study_part_ul">
-												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count>=16&&iter.count<=18}">
-													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a>
-													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4>
-													<dl class="study_dl">
-														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt>
-														<dd>
-															<p class="study_p1">
-																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> •
-																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a>
-																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span>
-																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span>
-																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a>
-															</p>
-															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p>
-														</dd>
-													</dl>
-												</li>
-											</ul>
+<!-- 											<div class="study_right"> -->
+<!-- 												<a href="/index.php/Home/Bbs/lists/cid/9.html" class="study_style">美妆天地</a> -->
+<!-- 												<ul class="study_video_ul"> -->
+<!-- 													<li class="last" th:each="temp,iter : ${homePostMakeUpList}" th:if="${iter.count>=4&&iter.count<=6}"> -->
+<!-- 														<div class="study_video_img"> -->
+<!-- 															<a href="javascript:void(0);"><img th:src="${temp.coverpath}" th:alt="${temp.title}" width="170" height="100"><span class="video_tiem" th:text="${temp.time}">12分13秒</span></a> -->
+<!-- 														</div> -->
+<!-- 														<p class="study_video_text"> -->
+<!-- 															<a href="javascript:void(0);" th:text="${temp.title}">韩语入门-第一讲</a> -->
+<!-- 														</p> -->
+<!-- 													</li> -->
+<!-- 												</ul> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="owl-item" style="width: 1200px;" th:if="${homePostVOList.size()>0}"> -->
+<!-- 									<div class="item"> -->
+<!-- 										<div class="study_part"> -->
+<!-- 											<ul class="study_part_ul"> -->
+<!-- 												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count>=13&&iter.count<=15}"> -->
+<!-- 													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a> -->
+<!-- 													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4> -->
+<!-- 													<dl class="study_dl"> -->
+<!-- 														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt> -->
+<!-- 														<dd> -->
+<!-- 															<p class="study_p1"> -->
+<!-- 																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> • -->
+<!-- 																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a> -->
+<!-- 																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span> -->
+<!-- 																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span> -->
+<!-- 																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a> -->
+<!-- 															</p> -->
+<!-- 															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p> -->
+<!-- 														</dd> -->
+<!-- 													</dl> -->
+<!-- 												</li> -->
+<!-- 											</ul> -->
+<!-- 											<ul class="study_part_ul"> -->
+<!-- 												<li th:each="temp,iter : ${homePostVOList}" th:if="${iter.count>=16&&iter.count<=18}"> -->
+<!-- 													<a href="javascript:void(0);" class="study_style" th:text="${temp.fmName}">财经类</a> -->
+<!-- 													<h4 class="study_h4"><a href="javascript:void(0);" th:text="${temp.title}">吱吱吱吱吱吱吱吱吱吱吱吱</a></h4> -->
+<!-- 													<dl class="study_dl"> -->
+<!-- 														<dt><a href="javascript:void(0);"><img th:src="${temp.userImgPath}" th:alt="${temp.userName}" height="50" class="star_user_photo"></a></dt> -->
+<!-- 														<dd> -->
+<!-- 															<p class="study_p1"> -->
+<!-- 																<a href="javascript:void(0);" th:text="${temp.userName}">say goodbye</a> • -->
+<!-- 																<a href="/index.php/Home/Bbs/lists/cid/109.html" th:text="${temp.fmName}">财经类</a> -->
+<!-- 																 • [[${temp.replyUserTime!=null&&temp.replyUserTime!=''?temp.replyUserTime+'前':''}]]<span class="bbs_dot" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">·</span> -->
+<!-- 																 <span th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">最后回复</span> -->
+<!-- 																<a href="/index.php/Home/Homepage/index/sid/270.html" class="lst_nem" th:text="${temp.replyUserName}" th:if="${temp.replyUserTime!=null&&temp.replyUserTime!=''}">make Bug</a> -->
+<!-- 															</p> -->
+<!-- 															<p class="date_sp" th:text="${temp.releaseTime+'前'}">18天前 </p> -->
+<!-- 														</dd> -->
+<!-- 													</dl> -->
+<!-- 												</li> -->
+<!-- 											</ul> -->
 
-											<div class="study_right">
-												<a href="/index.php/Home/Bbs/lists/cid/9.html" class="study_style">美妆天地</a>
-												<ul class="study_video_ul">
-													<li class="last" th:each="temp,iter : ${homePostMakeUpList}" th:if="${iter.count>=7&&iter.count<=9}">
-														<div class="study_video_img">
-															<a href="javascript:void(0);"><img th:src="${temp.coverpath}" th:alt="${temp.title}" width="170" height="100"><span class="video_tiem" th:text="${temp.time}">12分13秒</span></a>
-														</div>
-														<p class="study_video_text">
-															<a href="javascript:void(0);" th:text="${temp.title}">韩语入门-第一讲</a>
-														</p>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
+<!-- 											<div class="study_right"> -->
+<!-- 												<a href="/index.php/Home/Bbs/lists/cid/9.html" class="study_style">美妆天地</a> -->
+<!-- 												<ul class="study_video_ul"> -->
+<!-- 													<li class="last" th:each="temp,iter : ${homePostMakeUpList}" th:if="${iter.count>=7&&iter.count<=9}"> -->
+<!-- 														<div class="study_video_img"> -->
+<!-- 															<a href="javascript:void(0);"><img th:src="${temp.coverpath}" th:alt="${temp.title}" width="170" height="100"><span class="video_tiem" th:text="${temp.time}">12分13秒</span></a> -->
+<!-- 														</div> -->
+<!-- 														<p class="study_video_text"> -->
+<!-- 															<a href="javascript:void(0);" th:text="${temp.title}">韩语入门-第一讲</a> -->
+<!-- 														</p> -->
+<!-- 													</li> -->
+<!-- 												</ul> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
 								
-							</div>
-						</div>
-						<div class="owl-controls clickable">
-							<div class="owl-pagination" th:if="${homePostVOList.size()>0}">
-								<div class="owl-page active" th:if="${homePostVOList.size()>6}"><span class=""></span></div>
-								<div class="owl-page" th:if="${homePostVOList.size()>6}"><span class=""></span></div>
-								<div class="owl-page" th:if="${homePostVOList.size()>12}"><span class=""></span></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="bt_btn_d">
-					<a href="/index.php/Home/Bbs/index.html" class="btn_a_more btn_s2">查看更多<span class="sp_i_1"></span></a>
-				</div>
-			</div>
-		</div>
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="owl-controls clickable"> -->
+<!-- 							<div class="owl-pagination" th:if="${homePostVOList.size()>0}"> -->
+<!-- 								<div class="owl-page active" th:if="${homePostVOList.size()>6}"><span class=""></span></div> -->
+<!-- 								<div class="owl-page" th:if="${homePostVOList.size()>6}"><span class=""></span></div> -->
+<!-- 								<div class="owl-page" th:if="${homePostVOList.size()>12}"><span class=""></span></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="bt_btn_d"> -->
+<!-- 					<a href="/index.php/Home/Bbs/index.html" class="btn_a_more btn_s2">查看更多<span class="sp_i_1"></span></a> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 
-		<div class="b_box">
-			<!--ad -->
-			<div class="ad_box2">
-				<a href=""><img th:src="${homeBottomAdvertingList[0].aimgpath}" th:alt="${homeBottomAdvertingList[0].atitle}"  th:style="|width:${homeBottomAdvertingList[0].whObj.width}px; height:${homeBottomAdvertingList[0].whObj.height}px;|"></a>
-			</div>
-			<!--ad end -->
-			<a href="/index.php/Home/Member/seller.html" class="footer_text">
-				<h2 class="index_h2_title c_0">加入我们<span class="c_1">•</span>招募韩国商家、华人</h2>
-				<div class="bg_ic_1">招募韩国商家、海外留学生、华人兼司机、导游</div>
-				<div class="bt_btn_d"><span class="btn_a_more bs_bt_a">商家入驻</span></div>
-			</a>
-		</div>
+<!-- 		<div class="b_box"> -->
+<!-- 			<!--ad --> -->
+<!-- 			<div class="ad_box2"> -->
+<!-- 				<a href=""><img th:src="${homeBottomAdvertingList[0].aimgpath}" th:alt="${homeBottomAdvertingList[0].atitle}"  th:style="|width:${homeBottomAdvertingList[0].whObj.width}px; height:${homeBottomAdvertingList[0].whObj.height}px;|"></a> -->
+<!-- 			</div> -->
+<!-- 			<!--ad end --> -->
+<!-- 			<a href="/index.php/Home/Member/seller.html" class="footer_text"> -->
+<!-- 				<h2 class="index_h2_title c_0">加入我们<span class="c_1">•</span>招募韩国商家、华人</h2> -->
+<!-- 				<div class="bg_ic_1">招募韩国商家、海外留学生、华人兼司机、导游</div> -->
+<!-- 				<div class="bt_btn_d"><span class="btn_a_more bs_bt_a">商家入驻</span></div> -->
+<!-- 			</a> -->
+<!-- 		</div> -->
 
 		<!--footer-->
 		<div class="footer community_footer_dl">

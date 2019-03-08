@@ -1,20 +1,25 @@
 package com.accp.t4.action.wxxAction;
 
+import java.awt.PageAttributes.MediaType;
 import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
+import org.apache.tomcat.util.http.fileupload.FileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import com.accp.t4.util.file.Upload;
+import com.alibaba.fastjson.JSONObject;
 import com.mchange.v2.beans.swing.BoundButtonUtils;
 import com.accp.t4.biz.wxxBiz.RuZhuBiz;
 import com.accp.t4.entity.wxxEntity.GoldNotes;
@@ -32,10 +37,10 @@ public class RuZhuServlet {
 
 	// 查询服务类别
 	@GetMapping("selectServiceType")
-	public String selectServiceType(HttpSession session) {
+	public String selectServiceType(HttpSession session,String stPid) {
 		session.setAttribute("shareaList", biz.selectSharea(null));
 		session.setAttribute("liveCityList", biz.selectSharea("2"));
-		session.setAttribute("servicetypeList", biz.selectServiceType());
+		session.setAttribute("servicetypeList", biz.selectServiceType(stPid));
 		session.setAttribute("languagetypeList", biz.selectLanguageType());
 		session.setAttribute("majortypeList", biz.selectMajorType());
 		session.setAttribute("bond", biz.selectBound());
@@ -47,7 +52,6 @@ public class RuZhuServlet {
 	@ResponseBody
 	public List<Sharea> selectSharea(HttpSession session, String pId) {
 		session.setAttribute("shareaList", biz.selectSharea(pId));
-		System.out.println(biz.selectSharea(pId));
 		return biz.selectSharea(pId);
 	}
 

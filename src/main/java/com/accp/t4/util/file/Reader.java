@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class Reader {
 	// 文件访问前缀
-	public final static String VISIT_FOLDER = "/api/upload/";
+	public final static String VISIT_FOLDER = "/Uploads/image/";
 
 	/**
 	 * 文件转换字节流

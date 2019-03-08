@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.accp.t4.dao.wxxDao.IFaBuDao">
+	<insert id="addService">
+		INSERT INTO `services` (`stid`, `userID`, `resourceID`,`serviceTitle`,
+		`serviceFuTitle`,`downloadTitle`,`servicePrice`,
+		`serviceCoverImg`, `serviceImgUrlOne`,`serviceImgUrlTwo`, `serviceImgUrlThree`,
+		`serviceImgUrlFour`,
+		`serviceCostTypeID`,`serviceIntro`, `serviceCity`,`country`, `serviceCostInclude`,
+		`serviceStartDate`,`serviceEndDate`, `schoolRegion`,
+		`schoolNameByCN`,`majoyNameByCN`,
+		`schoolNameByROK`, `majoyNameByROK`,`goodAtMajoy`,`hospitalName`,`serviceHour`,
+		`uploadDataUrl`,`releaseTime`,
+		`browseNumber`,`weight`,`recommendBool`,
+		`adminOpinion`,`auditStatus`)VALUES
+		(#{services.stid},#{services.userid},#{services.resourceid},#{services.servicetitle},#{services.servicefutitle},
+		#{services.downloadtitle},#{services.serviceprice},#{services.servicecoverimg},#{services.serviceimgurlone},#{services.serviceimgurltwo},
+		#{services.serviceimgurlthree},
+		#{services.serviceimgurlfour},#{services.servicecosttypeid},#{services.serviceintro},
+		#{services.servicecity},#{services.country},#{services.servicecostinclude},#{services.servicestartdate},#{services.serviceenddate},
+		#{services.schoolregion},#{services.schoolnamebycn},#{services.majoynamebycn},#{services.schoolnamebyrok},#{services.majoynamebyrok},#{services.goodatmajoy},
+		#{services.hospitalname},#{services.servicehour},#{services.uploaddataurl},NOW(),#{services.browsenumber},#{services.weight},#{services.recommendbool},#{services.adminopinion},2);
+	</insert>
+	
+	<select id="selectResource" resultType="resouroe">
+		select * from `resouroe`
+	</select>
+	
+	<select id="selectServiceOne" resultType="services">
+		SELECT * FROM `services`  WHERE `serviceID` = #{sId}
+	</select>
+</mapper>

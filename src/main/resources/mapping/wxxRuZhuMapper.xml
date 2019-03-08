@@ -7,8 +7,15 @@
 <mapper namespace="com.accp.t4.dao.wxxDao.IRuZhuDao">
 	<!-- 查询服务类别 -->
 	<select id="selectServiceType" resultType="servicetype">
-		select * from
-		`servicetype` WHERE `stPid` = '0'
+		select * from `servicetype` 
+		<where>
+			<if test="stPid==null">
+				`stPid` = 0
+			</if>
+			<if test="stPid!=null">
+				`stPid` = #{stPid}
+			</if>
+		</where> 
 	</select>
 
 	<!-- 查询地址 -->

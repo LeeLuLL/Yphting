@@ -3,10 +3,11 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
 		<link rel="stylesheet" href="/Public/css/common.css" />
-		<script type="text/javascript" src="/Public/js/jquery-1.8.3.min.js"></script>
 		<link rel="stylesheet" href="/Public/js/valid/css/validationEngine.jquery.css" type="text/css">
+		<link rel="stylesheet" href="/Public/js/croppic/croppic.css" type="text/css">
+		<title>账户设置-个人资料</title>
+		<script type="text/javascript" src="/Public/js/jquery-1.8.3.min.js"></script>
 		<style type="text/css">
 			.edit_pohto dt img {
 				width: 120px;
@@ -25,7 +26,6 @@
 				overflow: visible;
 			}
 		</style>
-		<link rel="stylesheet" href="/Public/js/croppic/croppic.css" type="text/css">
 	</head>
 
 	<body>
@@ -44,7 +44,7 @@
 						<a href="grzx-index.html">[[${session.USER.username}]]</a> <span class="ht_line"></span>
 						<a href="/c/szy/user/close">退出</a>
 						<span class="ht_line"></span>
-						<a href=""><img src="Public/images/e_i.png" alt=""></a>
+						<a href=""><img src="/Public/images/e_i.png" alt=""></a>
 					</div>
 				</div>
 			</div>
@@ -87,13 +87,13 @@
 							<a href="/c/szy/user/queryGrzxInfo"><span class="msp2 pre_c1"></span>个人资料</a>
 						</li>
 						<li>
-							<a href="/zhsz-xgmm.html"><span class="msp2 pre_c2"></span>修改密码</a>
+							<a href="/view/updPwd"><span class="msp2 pre_c2"></span>修改密码</a>
 						</li>
 						<li>
 							<a href="javascript:void(0)"><span class="msp2 pre_c4"></span>帐号管理</a>
 						</li>
 						<li>
-							<a href="/c/szy/user/getdpszInfo"><span class="msp2 pre_c2"></span>店铺信息</a>
+							<a href="/view/zhsz-dpxx"><span class="msp2 pre_c2"></span>店铺信息</a>
 						</li>
 					</ul>
 				</div>
@@ -104,11 +104,11 @@
 					<h3 class="h3_sec_t">修改头像</h3>
 					<dl class="edit_pohto">
 						<dt>
-							<div class="upload_photo" id="cropContainerEyecandy" style="background:url(http://thirdqq.qlogo.cn/qqapp/101390132/D81FE8BF55FB9B4D96B7DD6B937E776A/100) no-repeat center center;border: solid 1px #dbdbde;height: 118px;width: 118px;position: relative;z-index: 1;float: left;">
+							<div class="upload_photo" id="cropContainerEyecandy" style="background:url(${session.USER.userImgPath}) no-repeat center center;border: solid 1px #dbdbde;height: 118px;width: 118px;position: relative;z-index: 1;float: left;">
 			                	<div class="cropControls cropControlsUpload">
 			                		<i class="cropControlUpload"></i>
 			                	</div>
-			                	<form action="/c/szy/user/updateUserImg"  id="updateUserImg" method="post" enctype="multipart/form-data" class="cropContainerEyecandy_imgUploadForm" style="visibility: hidden;">
+			                	<form action="/c/wxx/login/updUserImg"  id="updateUserImg" method="post" enctype="multipart/form-data" class="cropContainerEyecandy_imgUploadForm" style="visibility: hidden;">
 			                		<input type="file" name="img" id="cropContainerEyecandy_imgUploadField">
 			                	</form>
 							</div>
@@ -119,7 +119,7 @@
 						</dd>
 					</dl>
 					<h3 class="h3_sec_t">修改资料</h3>
-					<form action="/c/szy/user/updateUserInfo" id="formcfg" method="post" target="topost">
+					<form action="/c/wxx/login/updUserInfo" id="formcfg" method="post" target="topost">
 						<ul class="member_zl_ul">
 							<li>
 								<span class="m_zl_sp">用户名</span>
@@ -129,7 +129,7 @@
 							<li>
 								<span class="m_zl_sp">邮箱</span>
 								<div class="m_zl_r">
-									<span class="c_4">[[${session.Email}]]</span>
+									<span class="c_4">[[${session.USER.contactmailbox}]]</span>
 								</div>
 							</li>
 							<li>
@@ -141,21 +141,15 @@
 							</li>
 							<li>
 								<span class="m_zl_sp">性别</span>
-								<div class="m_zl_r" th:switch="${session.USER.usersex}">
-									<span th:case="1">
-										<label ><input type="radio" name="usersex" value="1" class="radio_input validate[required]" checked="">男</label>
-										<label class="ml30"><input type="radio" name="usersex" value="2" class="radio_input" >女</label>
-									</span>
-									<span th:case="2">
-										<label><input type="radio" name="usersex" value="1" class="radio_input validate[required]">男</label>
-										<label class="ml30"><input type="radio" name="usersex" value="2" class="radio_input" checked="">女</label>
-									</span>
+								<div class="m_zl_r">
+										<label ><input type="radio" name="usersex" value="1" class="radio_input validate[required]" th:checked="${session.USER.usersex==1}">男</label>
+										<label class="ml30"><input type="radio" name="usersex" value="2" class="radio_input" th:checked='${session.USER.usersex==2}'>女</label>
 								</div>
 							</li>
 							<li>
 								<span class="m_zl_sp">联系电话</span>
 								<div class="m_zl_r">
-									<input type="tel" placeholder="联系电话" id="tel" name="userphone" th:value="${session?.USER?.userphone}" class="input_c w350 validate[required]">&nbsp;&nbsp;&nbsp;&nbsp;<span id="telspan"></span>
+									<input type="tel" placeholder="联系电话" id="tel" name="userphone" th:value="${session.USER.userphone}" class="input_c w350 validate[required]">&nbsp;&nbsp;&nbsp;&nbsp;<span id="telspan"></span>
 								</div>
 							</li>
 							<li>
@@ -168,7 +162,7 @@
 										<select class="sel_f sel_f2" name="cityid" id="cityid">
 											<option th:if="${session.USER.cityid}==null" value='0'>请选择</option>
 										</select>
-										<select class="sel_f sel_f2 validate[required]" id="countyid" name="countyid">
+										<select class="sel_f sel_f2 validate[required]" id="cityid" name="countyid">
 											<option th:if="${session.USER.countyid}==null" value='0'>请选择</option>
 										</select>
 									</div>
@@ -192,7 +186,7 @@
 			<dl class="footer_dl">
 				<dt>
 					<div class="footer_ewm_box">
-						<img src="Public/images/footer_ewm.png" alt="">
+						<img src="/Public/images/footer_ewm.png" alt="">
 					</div>
 					<span class="ft_ewm_name">御品韩汀</span>
 				</dt>
@@ -221,7 +215,7 @@
 			</li>
 			<li>
 				<a href="" class="rn_wx">官方微信</a>
-				<div class="over_show"><img src="Public/images/r_ewm.jpg" alt="" class="gw_ewm"></div>
+				<div class="over_show"><img src="/Public/images/r_ewm.jpg" alt="" class="gw_ewm"></div>
 			</li>
 			<li>
 				<a href="" class="rn_kf">在线客服</a>
@@ -240,65 +234,66 @@
 <script type="text/javascript" th:inline="javascript">
 		$("#thumb_preview").attr("src",[[${session.USER.userimgpath}]]);
 		$("#cropContainerEyecandy").css("background","url("+[[${session.USER.userimgpath}]]+") no-repeat center center");
-		var provincialID="[[${session.USER.provincialid}]]";
-		var cityID="[[${session.USER.cityid}]]";
+		var country = "[[${session.USER.country}]]"; //国
+		var provincialID="[[${session.USER.provincialid}]]"; //省
+		var cityID="[[${session.USER.cityid}]]"; //市
 		//国地址
 		function guo(){
-			$.getJSON("/c/szy/user/querySharea",function(data){
+			$.getJSON("/c/wxx/ruzhu/selectSharea",function(data){
 				$.each(data,function(i,obj){
-					if(obj.pid==0){
-						var option=$("<option value='"+obj.areaid+"'>"+obj.name+"</option>");
+					if(obj.pId==0){
+						var option=$("<option value='"+obj.areaID+"'>"+obj.mergerName+"</option>");
 						$("[name=provincialid]").append(option);
 					}
 				})
-				$("[name=provincialid]").val([[${session.USER.provincialid}]]);
+				$("[name=provincialid]").val([[${session.USER.country}]]);
 			})
 		}
 		//省
 		function sheng(){
-			$.getJSON("/c/szy/user/querySharea",function(data){
+			$.getJSON("/c/wxx/ruzhu/selectSharea?pId="+country,function(data){
 				if(provincialID!=null){
 					$.each(data,function(i,obj){
-						if(obj.pid==provincialID){
-							var option=$("<option value='"+obj.areaid+"'>"+obj.name+"</option>");
+						if(obj.pId==country){
+							var option=$("<option value='"+obj.areaID+"'>"+obj.mergerName+"</option>");
 							$("[name=cityid]").append(option);
 						}
 					})
-					$("[name=cityid]").val([[${session.USER.cityid}]]);
+					$("[name=cityid]").val([[${session.USER.provincialid}]]);
 				}
 			})
 		}
 		//市
 		function shi(){
-			$.getJSON("/c/szy/user/querySharea",function(data){
+			$.getJSON("/c/wxx/ruzhu/selectSharea?pId="+provincialID,function(data){
 				if(cityID!=null){
 					$.each(data,function(i,obj){
-						if(obj.pid==cityID){
-							var option=$("<option value='"+obj.areaid+"'>"+obj.name+"</option>");
+						if(obj.pId==provincialID){
+							var option=$("<option value='"+obj.areaID+"'>"+obj.mergerName+"</option>");
 							$("[name=countyid]").append(option);
 						}
 					})
-					$("[name=countyid]").val([[${session.USER.countyid}]]);	
+					$("[name=countyid]").val([[${session.USER.cityid}]]);	
 				}
 			})
 		}
+
 		guo();sheng();shi();
 
-		$("[name=provincialid]").on("change",function(){
-			provincialID=$(this).val();
+		$("[name=provincialid]").on("change",function(){ //国
 			$("[name=cityid]").html("");
-			$("[name=cityid]").append($("<option value='0'>请选择</option>"));
+			$("[name=cityid]").append($("<option value='0'>请选择</option>")); //省
+			$("[name=countyid]").html("");
+			$("[name=countyid]").append($("<option value='0'>请选择</option>")); //市
+			country=$(this).val();
 			sheng();
-			$("[name=countyid]").html("");
-			$("[name=countyid]").append($("<option value='0'>请选择</option>"));
 		})
-		$("[name=cityid]").on("change",function(){
+		$("[name=cityid]").on("change",function(){ //省
 			$("[name=countyid]").html("");
-			$("[name=countyid]").append($("<option value='0'>请选择</option>"));
-			cityID=$(this).val();
+			$("[name=countyid]").append($("<option value='0'>请选择</option>")); //市
+			provincialID=$(this).val();
 			shi();
 		})
-		
 		$(".cropControlUpload").click(function(){
 			 $("[name=img]").trigger("click");
 		})

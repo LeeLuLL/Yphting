@@ -12,12 +12,16 @@ import com.accp.t4.entity.wxxEntity.ServiceType;
 import com.accp.t4.entity.wxxEntity.Sharea;
 import com.accp.t4.entity.wxxEntity.User;
 
+/**
+ * 商家入驻
+ * @author dell
+ */
 public interface IRuZhuDao {
 	/**
 	 * 查询服务类别
 	 * @return
 	 */
-	public List<ServiceType> selectServiceType();
+	public List<ServiceType> selectServiceType(@Param("stPid") String stPid);
 	
 	/**
 	 * 查询地址

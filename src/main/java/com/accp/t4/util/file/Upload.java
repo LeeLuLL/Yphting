@@ -16,7 +16,7 @@ import com.accp.t4.util.DateTime;
  */
 public class Upload {
 	// 文件上传文件夹
-	public final static String UPLOADED_FOLDER = "E:\\Y2\\Upload/";
+	public final static String UPLOADED_FOLDER = "E:\\Y2\\Yphting\\src\\main\\resources\\static\\Uploads\\image/";
 
 	/**
 	 * 上传文件
