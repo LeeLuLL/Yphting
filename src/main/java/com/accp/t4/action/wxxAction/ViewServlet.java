@@ -114,7 +114,7 @@ public class ViewServlet {
 	public String goToHYFYFaBu(Model model) {
 		model.addAttribute("majorList", biz.selectMajorType());
 		return "qianTai/sjzx-hwfyfb";
-	}
+	}   
 	
 //	//查询单个服务
 //	@GetMapping("sjzx-selOne")
