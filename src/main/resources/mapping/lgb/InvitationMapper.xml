@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.accp.t4.dao.lgbDao.IinvitationDao">
+
+	
+	<select resultType="com.accp.t4.vo.lgbVO.postVo" id="queryall">
+		SELECT * FROM post p JOIN forummanagement f ON p.fmID=f.fmID
+		<where>
+
+			<if test="fmname!=null">AND fmName=#{fmname} </if>
+
+			<if test="title!=null">AND title=#{title} </if>
+
+		</where>
+
+	</select>
+
+	<select resultType="com.accp.t4.vo.lgbVO.postVo" id="querypost">SELECT * FROM
+		post p JOIN forummanagement f ON p.fmID=f.fmID where postID=#{postid}
+	</select>
+	<delete id="deletechoose">
+		delete from post where postID =${postid}
+	</delete>
+
+	<delete id="deletefor">delete from forummanagement where fmID=#{fmid}</delete>
+
+	 <select resultType="Forummanagement" id="queryfmname">select * from forummanagement </select>
+	 
+	<update id="updatepost">
+	update post
+
+	<set>
+
+		<if test="post.auditstatus!=null">auditstatus = #{post.auditstatus}, </if>
+
+		<if test="post.operatingstate!=null">operatingstate = #{post.operatingstate}, </if>
+
+		<if test="post.adminopinion!=null">adminopinion = #{post.adminopinion}, </if>
+
+		<if test="post.essence!=null">essence = #{post.essence}, </if>
+
+	</set>
+	where postId = #{post.postid} and userId = #{post.userid}
+</update>
+
+<insert id="insertfor">insert intopostcomment(`postID`,`commentator`,`pid`,`content`,`reviewTime`) values(#{comm.postid},#{comm.commentator},#{comm.pid},#{comm.content},#{comm.reviewtime}) </insert>
+</mapper>

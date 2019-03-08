@@ -6,7 +6,8 @@
 <title></title>
 <link rel="stylesheet" href="/Public/css/common.css" />
 <script type="text/javascript" src="/Public/js/jquery-1.8.3.min.js"></script>
-<link rel="stylesheet" href="/Public/js/valid/css/validationEngine.jquery.css" type="text/css">
+<link rel="stylesheet"
+	href="/Public/js/valid/css/validationEngine.jquery.css" type="text/css">
 <style type="text/css">
 .edit_pohto dt img {
 	width: 120px;
@@ -25,7 +26,8 @@
 	overflow: visible;
 }
 </style>
-<link rel="stylesheet" href="/Public/js/croppic/croppic.css" type="text/css">
+<link rel="stylesheet" href="/Public/js/croppic/croppic.css"
+	type="text/css">
 </head>
 
 <body>
@@ -53,7 +55,7 @@
 			<ul class="member_nav_ul">
 				<li id="li1"><a href="">商家中心</a><span class="my_nav_i"></span>
 				</li>
-<style type="text/css">
+				<style type="text/css">
 .layui-layer-btn .layui-layer-btn0 {
 	background: #4c1b98;
 }
@@ -80,10 +82,9 @@
 			<div class="member_left">
 				<h1 class="member_left_title">消息</h1>
 				<ul class="member_system_ul">
-					<li ><a href="/xx-xtxx.html"><span
-							class="msp mss1"></span>系统消息(<span class="sms_sp_n" name="xtxx">0</span>)</a>
-					</li>
-					<li class="cur"><a href="/xx-znx.html"><span class="msp mss2"></span>站内信(<span
+					<li><a href="show"><span class="msp mss1"></span>系统消息(<span
+							class="sms_sp_n" name="xtxx">0</span>)</a></li>
+					<li class="cur"><a href="show1"><span class="msp mss2"></span>站内信(<span
 							class="sms_sp_n" name="znx">0</span>)</a></li>
 				</ul>
 			</div>
@@ -93,40 +94,49 @@
 				<div class="member_system_r_top and_who">
 					<span>[[${news[0].Sender.shopname}]]</span>-<span>[[${news[0].Ressee.username}]]</span>对话中
 				</div>
-				
+
 				<div class="xqData">
-				<div class="date_line"><span class="date_line_time">[[${#dates.format(news[0].sendingtime, 'yyyy-MM-dd')}]]</span></div>			
-				<ul class="member_s_list_ul mslist_ul2" th:each="temp,iter :${news}">
-					 
+					<div class="date_line">
+						<span class="date_line_time">[[${#dates.format(news[0].sendingtime,
+							'yyyy-MM-dd')}]]</span>
+					</div>
+					<ul class="member_s_list_ul mslist_ul2"
+						th:each="temp,iter :${news}">
+
 						<div th:if="${iter.index!=0}">
-							<div class="date_line" th:if="${#dates.format(news[iter.index-1].sendingtime,'yyyy-MM-dd')<#dates.format(temp.sendingtime,'yyyy-MM-dd')}"><span class="date_line_time">[[${#dates.format(temp.sendingtime, 'yyyy-MM-dd')}]]
-							</span></div>
+							<div class="date_line"
+								th:if="${#dates.format(news[iter.index-1].sendingtime,'yyyy-MM-dd')<#dates.format(temp.sendingtime,'yyyy-MM-dd')}">
+								<span class="date_line_time">[[${#dates.format(temp.sendingtime,
+									'yyyy-MM-dd')}]] </span>
+							</div>
 						</div>
-					 
-					<li>
-						<p class="bbs_user_photo">
-							<img th:src="${temp.Sender.userimgpath}" alt="梦的N次方-煎饼果子" />
-						</p>
-						<div class="bbs_user_text">
-							<p class="email_con ec2">
-								<span class="date_p fr">[[${#dates.format(temp.sendingtime, 'HH:mm')}]]</span><a
-									href="/index.php/Home/Homepage/index/sid/303.html">[[${temp.Sender.shopname}]]-[[${temp.Sender.username}]]</a>
+
+						<li>
+							<p class="bbs_user_photo">
+								<img th:src="${temp.Sender.userimgpath}" alt="" />
 							</p>
-							<h3 class="member_s_name">
-								<a href="javascript:void(0);" rel="2744" class="talk_del_a">删除</a>[[${temp.content}]]
-							</h3>
-						</div>
-					</li>
-				</ul>
-			
+							<div class="bbs_user_text">
+								<p class="email_con ec2">
+									<span class="date_p fr">[[${#dates.format(temp.sendingtime,
+										'HH:mm')}]]</span><a
+										href="/index.php/Home/Homepage/index/sid/303.html">[[${temp.Sender.shopname}]]-[[${temp.Sender.username}]]</a>
+								</p>
+								<h3 class="member_s_name">
+									<a href="javascript:void(0);" rel="2744" class="talk_del_a">删除</a>[[${temp.content}]]
+								</h3>
+							</div>
+						</li>
+					</ul>
+
 				</div>
-		
+
 				<!--page-->
 				<div class="page_w">
 					<div class="page">
 						<div class='nav'>
 							<a class="page_prev prevdisabled" href="javascript:;">上一页</a> <span
-								class="cur">1</span> <a class="page_next nextdisabled" href="javascript:;">下一页</a>
+								class="cur">1</span> <a class="page_next nextdisabled"
+								href="javascript:;">下一页</a>
 						</div>
 					</div>
 				</div>
@@ -203,7 +213,21 @@ weiduInfo();
 		var newstype=2;
 		var messagegroup=[[${news[0].messagegroup}]];
 		var thesender=[[${param.thesender}]];
-		location.href="/c/szy/user/saveZnx?content="+content+"&newstype="+newstype+"&messagegroup="+messagegroup+"&thesender="+thesender;
+		
+		$.post("/c/lgb/user/saveZnx", {
+			"content" : content,
+			"newstype" : newstype,
+			"messagegroup" : messagegroup,
+			"thesender" : thesender
+		},function(data) {
+			if (data.code = "200") {
+				alert("发送成功!")
+				window.location.reload();
+			}else{
+				alert("q")
+			}
+		})
+		//location.href="/c/szy/user/saveZnx?content="+content+"&newstype="+newstype+"&messagegroup="+messagegroup+"&thesender="+thesender;
 	})
 </script>
 

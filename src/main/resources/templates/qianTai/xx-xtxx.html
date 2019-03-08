@@ -86,10 +86,10 @@
 					<h1 class="member_left_title">消息</h1>
 					<ul class="member_system_ul">
 						<li class="cur">
-							<a href="/xx-xtxx.html"><span class="msp mss1"></span>系统消息(<span class="sms_sp_n" name="xtxx">0</span>)</a>
+							<a href="show"><span class="msp mss1"></span>系统消息(<span class="sms_sp_n" name="xtxx">0</span>)</a>
 						</li>
 						<li>
-							<a href="/xx-znx.html"><span class="msp mss2"></span>站内信(<span class="sms_sp_n" name="znx">0</span>)</a>
+							<a href="show1"><span class="msp mss2"></span>站内信(<span class="sms_sp_n" name="znx">0</span>)</a>
 						</li>
 					</ul>
 				</div>
@@ -121,7 +121,7 @@
 							<div class="page">
 								<div class="nav">
 									<a class="page_prev prevdisabled" href="javascript:void(0)" name="prePage">上一页</a>
-									<span class="cur">1</span>
+									<!-- <span class="cur">1</span> -->
 									<a class="page_next" href="javascript:void(0)" name="nextPage">下一页</a>
 								</div>
 							</div>
@@ -184,6 +184,7 @@
 		<!--right nav end-->
 
 	</body>
+<script type="text/javascript" src="/Public/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="/Public/js/sessionHeader.js"></script>
 <script type="text/javascript" src="/Public/js/grzx-interlinkage.js"></script>
 <script type="text/javascript" src="/Public/js/noRead.js"></script>
@@ -193,7 +194,7 @@ var newsType=1;
 var pageNum=1;
 var pageSize=8;
 	function queryXX(){
-		$.getJSON("/c/szy/user/queryNewPageInfo",{"newsType":newsType,"pageNum":pageNum,"pageSize":pageSize},function(data){
+		$.getJSON("/c/lgb/user/queryNewPageInfo",{"newsType":newsType,"pageNum":pageNum,"pageSize":pageSize},function(data){
 			$(".member_s_list_ul").html("");
 		
 			$.each(data.list,function(i,obj){
@@ -237,7 +238,7 @@ var pageSize=8;
 			alert("请选择信息");
 			return;
 		}
-		$.post("/c/szy/user/updateXtNews",{"newsID":newsid},function(data){
+		$.post("/c/lgb/user/updateXtNews",{"newsID":newsid},function(data){
 			if(data.code="200"){
 				queryXX();
 				weiduInfo();
@@ -258,7 +259,7 @@ var pageSize=8;
 		if(confirm("确认删除吗？")==false){
 			return;
 		}
-		$.post("/c/szy/user/deleteNews",{"newsID":newsid},function(data){
+		$.post("/c/lgb/user/deleteNews",{"newsID":newsid},function(data){
 			if(data.code="200"){
 				alert("删除成功");
 				queryXX();

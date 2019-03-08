@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="/Css/admin-style.css" />
+<link rel="stylesheet" href="/Css/bootstrap.min.css" />
+<!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+#vmCnt th, td {
+	text-align: center;
+}
+
+input, select {
+	height: 25px;
+	width: 170px;
+	font-size: 7px;
+}
+
+#admin_reason {
+	width: 300px;
+}
+
+#cv td {
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+}
+</style>
+
+
+
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+	<DIV id=container>
+		<DIV id=header>
+			<H4>
+				帖子版块管理<BR>
+			</H4>
+
+		</DIV>
+		<DIV id="mainContent">
+			<BR>
+			<div class="col-md-12" style="padding: 0px;">
+				<div class="table-responsive">
+					<table id="vmCnt"
+						class="table table-hover alert-dismissable table-bordered ">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>排序</th>
+								<th>栏目名称</th>
+								<th>审核</th>
+								<th>赠送积分</th>
+								<th>版主</th>
+								<th>操作</th>
+
+
+							</tr>
+						</thead>
+						<tbody id="cv">
+
+							<tr id="data-row-8"  th:each="temp : ${LIST_INFO}">
+								<td nowrap th:text="${temp.fmid}">8</td>
+								<td nowrap><input name="sort[8]" type="text"
+									class="validate[required,custom[integer],min[0],max[255]]"
+									id="sort8" th:value="${temp.sort}" size="8" /></td>
+								<td nowrap th:text="${temp.fmname}">语种学习
+								 <!-- <input type="text" name="catname[8]"
+									id="catname8" value="语种学习" class="validate[required]"
+									style="display: none" /> --></td>
+								<td nowrap>不需要</td>
+								<!-- <td nowrap th:if="${temp.auditstatus=='false'}">未审核</td> -->
+								<td nowrap>赠送</td>
+								<!-- <td nowrap th:text="${temp.adminid}">-</td> -->
+								<td nowrap class="sb" th:text="${temp.fmid}" type="hidden">-</td>
+								<td nowrap>
+								<a th:href=|/lgbinvitation/queryplate?fmid=${temp.fmid}|>修改</a>
+								<a href="javascript:__del(8)" name="delete">删除</a>
+								</td>
+							</tr>
+							
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="7"><input type="hidden" name="update"
+									value="update" />
+									<input type="submit" value=" 更新" /> 
+									<input name="add" type="button" value=" 增加栏目"/></td>
+									<!-- onClick="location.href='addtiezibanzhupaixu.html'" --> 
+							</tr>
+						</tfoot>
+					</table>
+
+				</div>
+			</div>
+
+
+			<H4>&nbsp;</H4>
+			<!-- end #mainContent -->
+		</DIV>
+		<DIV id=footer>
+			<P>&nbsp;</P>
+			<!-- end #footer -->
+		</DIV>
+		<!-- end #container -->
+	</DIV>
+</BODY>
+<script type="text/javascript" src="/JS/jquery-2.1.4.js"></script>
+<script src="/Js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/Public/js/sessionHeader.js"></script>
+<script type="text/javascript" src="/Public/js/grzx-interlinkage.js"></script>
+<script type="text/javascript" src="/Public/js/noRead.js"></script>
+<script type="text/javascript" src="/JS/newsList.js"></script>
+<script type="text/javascript">
+$("[name=delete]").click(function(){
+	alert(111)
+	fmid=$(this).parents("tr").find(".sb").html();
+	alert(fmid)
+	  $.ajax({
+		type:"delete",
+		url:"/lgbinvitation/deletefor/"+fmid,
+		dataType:"json",
+		success:function(json){
+			alert(1)
+			location.href="/lgbinvitation/getlist";
+		}
+	});
+})
+$("[name=add]").click(function(){
+	alert(222)
+	location.href="/lgbinvitation/tzadd";
+})
+
+</script>
+</HTML>

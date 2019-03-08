@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="/Css/admin-style.css" />
+<link rel="stylesheet" href="/Css/bootstrap.min.css" />
+<!-- <link rel="stylesheet" type="text/css" href="/Public/css/admin/pagelist.css" /> -->
+<style>
+#vmCnt th, td {
+	text-align: center;
+}
+
+input, select {
+	height: 25px;
+	width: 170px;
+	font-size: 7px;
+}
+
+#admin_reason {
+	width: 300px;
+}
+
+#vm td {
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+}
+</style>
+
+
+
+
+</HEAD>
+<BODY class=oneColLiqCtrHdr style="width: 1600px;">
+	<DIV id=container>
+		<DIV id=header>
+			<H4>
+				帖子管理<BR>
+			</H4>
+			<form method="get" class="form-inline" name="searchform" action="/lgbinvitation/getlist"
+				style="display:;">
+				<div class="form-group">
+					<TABLE>
+						<TBODY>
+							<TR>
+								<TD>栏目: <select name="fmname" >
+										<option value="">所有的</option>
+										<option th:each="temp,item : ${LIST_INFO}" th:text="${temp.fmname}">语种学习</option>
+								</select> 标题： <label for="subject"></label> 
+								<!-- <input type="hidden" name="" value="0" />  -->
+								<input type="text" name="title"
+									id="subject" style="height: 15px; margin-top: 5px;"> <input
+									value="搜索" type="submit" ></TD>
+							</TR>
+						</TBODY>
+					</TABLE>
+
+
+
+				</div>
+			</form>
+		</DIV>
+		<DIV id="mainContent">
+			<BR>
+			<div class="col-md-12" style="padding: 0px;">
+				<div class="table-responsive">
+					<table id="vmCnt"
+						class="table table-hover alert-dismissable table-bordered ">
+						<thead>
+							<tr>
+								<th><input type="checkbox" name="da" lay-skin="primary" lay-filter="allChoose" id="allChoose"></th>
+								<th>ID</th>
+								<TH>分类</TH>
+								<TH>标题</TH>
+								<TH>发布时间</TH>
+								<TH>状态</TH>
+								<TH>&nbsp;</TH>
+							</tr>
+						</thead>
+						<tbody id="vm">
+							<tr th:each="temp : ${PAGE_INFO.list}">
+							<th><input type="checkbox" name="xx" lay-skin="primary" lay-filter="allChoose" id="allChoose"></th>
+								<!-- <td align="center"><input value="739" type="checkbox"
+									name="articleid[]"></td> -->
+								<td align="center" th:text="${temp.postid}">739</td>
+								<td align="center" nowrap th:text="${temp.fmname}">校园求职</td>
+								<td nowrap th:text="${temp.title}">ttttt</td>
+								<td nowrap th:text="${temp.releasetime}">2019-01-21 10:01</td>
+								<td nowrap >已审核</td>
+								<td nowrap align=center><a th:href="|/lgbinvitation/querypostbyid?postid=${temp.postid}|">修改</a></td>
+								<!--  -->
+							</tr>
+						</tbody>
+						<tfoot>
+
+						</tfoot>
+					</table>
+
+				</div>
+			</div>
+			</tbody>
+			</TABLE>
+			<TABLE id="itemlist" class="tablesorter" border=0 cellSpacing=1
+				cellPadding=6 width="100%">
+				<TR>
+					<TD colspan="7"><div class="digg">
+							<div>
+								<span class="current">首页</span><a class="num"
+									href="/index.php/Admincp/Bbs/index/status/0/p/2.html">上一页</a><a
+									class="next"
+									href="/index.php/Admincp/Bbs/index/status/0/p/2.html">下一页</a> <a
+									class="end"
+									href="/index.php/Admincp/Bbs/index/status/0/p/13.html">尾页</a>
+							</div>
+						</div></td>
+				</TR>
+				<TR>
+					<TD colspan="11">
+						<table width="100%" border="0">
+							<tr>
+								<td width="33%" nowrap>
+								 <!-- <INPUT id="select" value="选择所有"
+									type=button name="select">  -->
+								<INPUT id="delete"
+									value="删除所选" type="button" name="delete">
+								</td>
+								<td width="67%" nowrap></td>
+							</tr>
+						</table>
+					</td>
+				</TR>
+			</TABLE>
+			<H4>&nbsp;</H4>
+			<!-- end #mainContent -->
+		</DIV>
+		
+		<DIV id=footer>
+			<P>&nbsp;</P>
+			<!-- end #footer -->
+		</DIV>
+		<!-- end #container -->
+	</DIV>
+</BODY>
+<script type="text/javascript" src="/JS/jquery-2.1.4.js"></script>
+<script src="/Js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/Public/js/sessionHeader.js"></script>
+<script type="text/javascript" src="/Public/js/grzx-interlinkage.js"></script>
+<script type="text/javascript" src="/Public/js/noRead.js"></script>
+<script type="text/javascript" src="/JS/newsList.js"></script>
+<script type="text/javascript">
+
+$("[name=delete]").click(function(){
+	var array=[];
+	$("[name=xx]").each(function() {
+		if(this.checked){ 
+			var serviceAppraiseID=$(this).parents("tr").find("td:eq(0)").html();
+			array.push(serviceAppraiseID);
+		 }
+	})
+	 $.ajax({
+		type:"delete",
+		url:"/lgbinvitation/deletelist/"+array,
+		dataType:"json",
+		success:function(json){
+			alert(1)
+			location.href="lgbinvitation/getlist";
+		}
+	});
+})
+$("[name=da]").click(function(){
+	if ($(this)[0].checked==false) {
+		$("[name=xx]").each(function() {
+			this.checked = false;
+		});
+	} else {
+		$("[name=xx]").each(function() {
+			this.checked = true;
+		});
+	}
+})
+</script>

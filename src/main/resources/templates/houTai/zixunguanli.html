@@ -1,17 +1,17 @@
 
 
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 	<head>
 		<meta http-equiv="Content-Language" content="zh-cn">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="Css/style_admin.css">
+		<link rel="stylesheet" type="text/css" href="/Css/style_admin.css">
 		
 	</head>
 
 	<body>
-		<form>
+		<form  method="get" action="/lgbinvitation/updatepost">
 			<table cellspacing="1" cellpadding="4" width="100%"
 				class="tableborder" id="table3">
 
@@ -25,7 +25,7 @@
 					<td class="altbg1">
 						标题:
 					</td>
-					<td class="altbg2" colspan="11">
+					<td class="altbg2" colspan="11" th:text="${querypost.title}">
 						好饿
 					</td>
 				</tr>
@@ -33,7 +33,7 @@
 					<td class="altbg1">
 						栏目:
 					</td>
-					<td class="altbg2" colspan="11">
+					<td class="altbg2" colspan="11" th:text="${querypost.fmname}">
 						 校园求职
 					</td>
 				</tr>
@@ -41,13 +41,13 @@
 					<td class="altbg1">
 						发布时间:
 					</td>
-					<td class="altbg2" colspan="11">
+					<td class="altbg2" colspan="11" th:text="${querypost.releasetime}">
 						2019-01-21 10:01
 					</td>
 				</tr>
 				<tr>
-					<TD class="altbg1">内容:</TD>
-            <TD class="altbg2" colspan="11">xxcxzcxzx</TD>
+					<TD class="altbg1" >内容:</TD>
+            <TD class="altbg2" colspan="11" th:text="${querypost.content}">xxcxzcxzx</TD>
 
           <TR>
             <TD class="altbg1">审核状态：</TD>
@@ -102,7 +102,7 @@
 
 	</body>
 	<script src="../js/jquery-1.12.4.js"></script>
-<script type="text/javascript">
+	<script type="text/javascript">
 
 	
 </script>	

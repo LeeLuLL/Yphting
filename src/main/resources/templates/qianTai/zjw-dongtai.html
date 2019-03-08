@@ -44,7 +44,7 @@
 
 <body>
 	<!--header-->
-	<div class="header" id="botop">
+<!-- 	<div class="header" id="botop">
 		<div class="h_top">
 			<div class="b_box">
 				<div class="top_nav">
@@ -58,7 +58,7 @@
 				<div class="top_right">
 					<a href="javascript:;">登录</a><span class="ht_line"></span><a
 						href="javascript:;">注册</a>
-					<!-- 	<span style="font-size:14px;"> &nbsp;&nbsp;| 切换到：<select  id="lang" onchange="changelang();"><option value="" >请选择</option><option value="zh-cn" >简体中文</option> <option value="en-us" >English</option> </select> -->
+						<span style="font-size:14px;"> &nbsp;&nbsp;| 切换到：<select  id="lang" onchange="changelang();"><option value="" >请选择</option><option value="zh-cn" >简体中文</option> <option value="en-us" >English</option> </select>
 					<script language="javascript">
 						function changelang() {
 							var lang = $("#lang").val();
@@ -102,11 +102,11 @@
 			</ul>
 		</div>
 	</div>
-	<!--header end-->
+	header end
 
 	<div class="bg_c2 pt1">
 		<div class="b_box">
-			<!--left bar-->
+			left bar
 			<div class="left_bar">
 				<div class="left_part pb10">
 					<dl class="sj_user_dl pt_user_dl">
@@ -129,12 +129,12 @@
 					</dl>
 				</div>
 			</div>
-			<!--left bar end-->
+			left bar end
 			</script>
 
 			</if>
 
-			<!--right bar-->
+			right bar
 			<div class="right_bar">
 				<div class="pt_per_tab">
 					<ul class="pt_per_tab_ul">
@@ -144,10 +144,10 @@
 						<li th:data-type="4"><a th:href="@{/c/sxy/toCenter(userId=${param.userId},type=4,page=1,size=${user_center.total})}">收藏的帖子</a></li>
 					</ul>
 				</div>
-				<!--1-->
-				<!--1 end-->
-				<!--2-->
-				<!-- 全部动态 -->
+				1
+				1 end
+				2
+				全部动态
 				<div th:if="${type==1}" class="pt_tab_show" style="display: block;">
 					<h3 class="pt_h3">
 						<a th:href="@{/c/sxy/toCenter(userId=${param.userId},type=2,page=1,size=${user_center.total})}" class="fr btna_s3">全部</a>发布的帖子 ( <span
@@ -205,9 +205,9 @@
 						</li>
 					</ul>
 				</div>
-				<!-- 全部动态结束 -->
+				全部动态结束
 				
-				<!-- 用户的发帖，收藏，回复-->
+				用户的发帖，收藏，回复
 					<div th:if="${type!=1}" class="pt_tab_show" style="display: block;">
 					<ul class="bbs_list_ul pt_user_ul_list">
 					   <li th:each="temp,item : ${user_center.list}">
@@ -225,17 +225,17 @@
                     </li>	
                     </ul>
                     </div>
-                    <!-- 用户的发帖，收藏，回复显示结束 -->
+                    用户的发帖，收藏，回复显示结束
 			</div>
-			<!--right bar end-->
+			right bar end
 
 			<div class="clear"></div>
-			<!--ad-->
+			ad
 			<div class="ad_box2">
 				<a href="javascript:;"><img
 					src="/Uploads/adv/2018-04/20180414123932-28064.jpg" alt="底部广告 说吧" /></a>
 			</div>
-			<!--ad end-->
+			ad end
 		</div>
 	</div>
 
@@ -253,7 +253,7 @@
 	</div>
 
 
-	<!--footer-->
+	footer
 	<div class="footer community_footer_dl">
 		<dl class="footer_dl">
 			<dt>
@@ -278,9 +278,9 @@
 			</dd>
 		</dl>
 	</div>
-	<!--footer end-->
+	footer end
 
-	<!--right nav-->
+	right nav
 	<ul class="right_nav">
 		<li><a href="javascript:void(0);" class="rn_tel">客服电话</a>
 		<div class="over_show kf_tel">0731-2286-7673</div></li>
@@ -291,7 +291,7 @@
 		<li><a href="javascript:;" class="rn_kf">在线客服</a></li>
 		<li><a href="javascript:;" class="rn_top">Back top</a></li>
 	</ul>
-	<!--right nav end-->
+	right nav end
 
 	<link rel="stylesheet"
 		href="/Public/js/valid/css/validationEngine.jquery.css" type="text/css" />
@@ -338,7 +338,7 @@
 		}
 	</script>
 
-	<!--联系我们的浮层-->
+	联系我们的浮层
 	<div class="pop_contact">
 		<a href="javascript:void(0);" class="close_pop_contact"></a>
 		<div class="w1000">
@@ -415,10 +415,10 @@
 			<div class="clear"></div>
 		</div>
 	</div>
-	<!--联系我们的浮层 end-->
+	联系我们的浮层 end
 
 	<script src="/Public/js/jquery.scrollto.js"></script>
-<script type="text/javascript" src="/Public/js/sessionHeader.js"></script>
+<script type="text/javascript" src="/Public/js/sessionHeader.js"></script> -->
 
 
 
